@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>test3</title>
+      <link href="/2019/05/08/test3/"/>
+      <url>/2019/05/08/test3/</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(&apos;Hello World!&apos;);</span><br></pre></td></tr></table></figure><p><img src="/2019/05/08/test3/QQ.png" alt="title"><br><a id="more"></a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端技術 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> css </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>test2</title>
+      <link href="/2019/05/08/test2/"/>
+      <url>/2019/05/08/test2/</url>
+      
+        <content type="html"><![CDATA[<p>ddddddd<br><a id="more"></a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端技術 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2019/05/07/hello-world/"/>
+      <url>/2019/05/07/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.<br><a id="more"></a></p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="hljs-string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>test</title>
+      <link href="/2019/05/07/test/"/>
+      <url>/2019/05/07/test/</url>
+      
+        <content type="html"><![CDATA[<h1 id="高雄旅遊網"><a href="#高雄旅遊網" class="headerlink" title="高雄旅遊網"></a>高雄旅遊網</h1><p><img src="https://github.com/Jimmywei01/KHTravel/blob/master/src/images/demo1.png" alt="首頁" title="首頁畫面"><br><a id="more"></a><br><blockquote><p>Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</p><footer><strong>David Levithan</strong><cite>Wide Awake</cite></footer></blockquote></p><h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><p><a href="https://jimmywei01.github.io/KHTravel/" target="_blank" rel="noopener">https://jimmywei01.github.io/KHTravel/</a></p><h3 id="主要練習"><a href="#主要練習" class="headerlink" title="主要練習"></a>主要練習</h3><ul><li>練習串接開放平台 json資料並呈現在網頁上 </li></ul><h2 id="使用技術"><a href="#使用技術" class="headerlink" title="使用技術:"></a>使用技術:</h2><ul><li>pug</li><li>sass</li><li>串接開放平台 json 資料</li></ul><h2 id="內容介紹"><a href="#內容介紹" class="headerlink" title="內容介紹"></a>內容介紹</h2><h3 id="熱門區域展示列表"><a href="#熱門區域展示列表" class="headerlink" title="熱門區域展示列表"></a>熱門區域展示列表</h3><ul><li>可利用區域篩選出此區域景點<br><img src="https://github.com/Jimmywei01/KHTravel/blob/master/src/images/demo2.png" alt></li></ul><h2 id="Statement"><a href="#Statement" class="headerlink" title="Statement"></a>Statement</h2><p>本作品的文字內容及圖片，純為個人網頁技術練習，不做任何商業行為</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端技術 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
