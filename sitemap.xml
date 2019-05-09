@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://jimmywei01.github.io/2019/05/07/test/</loc>
+    
+    <lastmod>2019-05-09T02:39:32.791Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://jimmywei01.github.io/2019/05/08/test3/</loc>
     
     <lastmod>2019-05-08T03:44:51.199Z</lastmod>
@@ -40,13 +47,6 @@
     <loc>https://jimmywei01.github.io/2019/05/07/hello-world/</loc>
     
     <lastmod>2019-05-07T08:30:06.499Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jimmywei01.github.io/2019/05/07/test/</loc>
-    
-    <lastmod>2019-05-07T08:28:24.645Z</lastmod>
     
   </url>
   
