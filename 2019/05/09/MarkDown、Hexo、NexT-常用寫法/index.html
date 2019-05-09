@@ -113,7 +113,7 @@
 <meta property="og:site_name" content="Jimmy&#39;s Notes">
 <meta property="og:description" content="我不是一個偉大的程式設計師 我只是一個具有良好習慣的優秀程式設計師">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2019-05-09T07:40:19.134Z">
+<meta property="og:updated_time" content="2019-05-09T07:45:49.052Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MarkDown、Hexo、NexT 常用寫法">
 <meta name="twitter:description" content="我不是一個偉大的程式設計師 我只是一個具有良好習慣的優秀程式設計師">
@@ -410,7 +410,7 @@
                 
               
 
-              <time title="創建時間：2019-05-09 11:43:00 / 修改時間：15:40:19" itemprop="dateCreated datePublished" datetime="2019-05-09T11:43:00+08:00">2019-05-09</time>
+              <time title="創建時間：2019-05-09 11:43:00 / 修改時間：15:45:49" itemprop="dateCreated datePublished" datetime="2019-05-09T11:43:00+08:00">2019-05-09</time>
             
 
             
@@ -492,7 +492,7 @@
 </blockquote>
 <ul>
 <li>小區塊<br><code>`your text`</code></li>
-<li>大區塊<br><code>dd</code></li>
+<li>大區塊<br>    前面加四個空白</li>
 </ul>
 <h3 id="標題"><a href="#標題" class="headerlink" title="標題"></a>標題</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># H1</span><br><span class="line">## H2</span><br><span class="line">### H3</span><br><span class="line">#### H4</span><br><span class="line">##### H5</span><br><span class="line">###### H6</span><br></pre></td></tr></table></figure>
 <h3 id="文字增加顏色"><a href="#文字增加顏色" class="headerlink" title="文字增加顏色"></a>文字增加顏色</h3><font style="color:#f90;font-size:20px;">20px的字</font><br><font style="color:red;font-size:15px;">15px的字</font>
@@ -528,15 +528,12 @@
 <li>[url] 是頂部右邊的超鏈接地址，非必須</li>
 <li>[link text] 如它的字面意思，超鏈接的名稱，非必須</li>
 </ul>
-<ol>
-<li>使用 <code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> </span><br></pre></td></tr></table></figure></code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% codeblock [language] [title] [url] [link text] %&#125;</span><br><span class="line">  your code</span><br><span class="line">&#123;% endcodeblock %&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
+<p>使用 <code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> </span><br></pre></td></tr></table></figure></code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% codeblock [language] [title] [url] [link text] %&#125;</span><br><span class="line">  your code</span><br><span class="line">&#123;% endcodeblock %&#125;</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><figcaption><span>css test /index 首頁</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  max-width: 960px;</span><br><span class="line">  margin: 0 auto;</span><br><span class="line">  margin-top: 10px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>使用<code>大區塊</code></li>
-</ol>
-<p>` <figure class="highlight plain"><figcaption><span>[title] [url] [link text]`</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">  `your code`</span><br><span class="line">` ``` `</span><br><span class="line"></span><br><span class="line">``` css test /index 首頁 </span><br><span class="line">  .container &#123;</span><br><span class="line">    max-width: 960px;</span><br><span class="line">    margin: 0 auto;</span><br><span class="line">    /* 起手式 */</span><br><span class="line">    margin-top: 10px;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<p>使用<code>大區塊</code></p>
+<p><code>``</code> [language] [title] [url] [link text]<code></code>your code<code></code> <code>`</code> `</p>
+<pre><code>css test /index 首頁 
+</code></pre><p>  .container {<br>    max-width: 960px;<br>    margin: 0 auto;<br>    /<em> 起手式 </em>/<br>    margin-top: 10px;<br>  }</p>
 
       
     </div>
