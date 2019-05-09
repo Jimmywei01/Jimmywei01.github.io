@@ -125,7 +125,7 @@
 <meta property="og:image" content="https://jimmywei01.github.io/2019/05/09/使用GA替網站作分析/ga10.png">
 <meta property="og:image" content="https://jimmywei01.github.io/2019/05/09/使用GA替網站作分析/ga11.png">
 <meta property="og:image" content="https://jimmywei01.github.io/2019/05/09/使用GA替網站作分析/ga12.png">
-<meta property="og:updated_time" content="2019-05-09T14:56:45.410Z">
+<meta property="og:updated_time" content="2019-05-09T15:00:11.365Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用GA替網站作分析">
 <meta name="twitter:description" content="Google Analytics SEO 的工具之一">
@@ -423,7 +423,7 @@
                 
               
 
-              <time title="創建時間：2019-05-09 19:24:15 / 修改時間：22:56:45" itemprop="dateCreated datePublished" datetime="2019-05-09T19:24:15+08:00">2019-05-09</time>
+              <time title="創建時間：2019-05-09 19:24:15 / 修改時間：23:00:11" itemprop="dateCreated datePublished" datetime="2019-05-09T19:24:15+08:00">2019-05-09</time>
             
 
             
@@ -518,7 +518,7 @@
 <p>將追蹤 ID 貼入 themes/next/_config.yml 第 758 行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">google_analytics:</span><br><span class="line">  tracking_id: UA-XXXXXX-1</span><br><span class="line">  localhost_ignored: true</span><br></pre></td></tr></table></figure></p>
 <h3 id="修改-google-analytics-swig-檔案"><a href="#修改-google-analytics-swig-檔案" class="headerlink" title="修改 google-analytics.swig 檔案"></a>修改 google-analytics.swig 檔案</h3><p>檔案路徑 : <code>themes/next/layout/_third-party/analytics/google-analytics.swig</code></p>
 <p>NexT 模板預設的 src 路徑不正確所導致需要加上 <font style="color:red;font-size:ㄓpx;">https://</font><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">加入前</span><br><span class="line"></span><br><span class="line">&lt;script async src=&quot;//www.googletagmanager.com/gtag/js?id=&#123;&#123; theme.google_analytics.tracking_id &#125;&#125;&quot;&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">加入後</span><br><span class="line"></span><br><span class="line">&lt;script async src=&quot;https://www.googletagmanager.com/gtag/js?id=&#123;&#123; theme.google_analytics.tracking_id &#125;&#125;&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-<h3 id="測試埋入結果"><a href="#測試埋入結果" class="headerlink" title="測試埋入結果"></a>測試埋入結果</h3><p>回到追蹤程式碼頁面，然後上面有一個傳送測試瀏覽按鈕，按下可以看結果，<font style="color:red;font-size:20px;">but</font>都沒回傳結果</p>
+<h3 id="測試埋入結果"><a href="#測試埋入結果" class="headerlink" title="測試埋入結果"></a>測試埋入結果</h3><p>回到追蹤程式碼頁面，然後上面有一個傳送測試瀏覽按鈕，按下可以看結果，<font style="color:red;font-size:20px;">but</font> 都沒回傳結果</p>
 <p><img src="/2019/05/09/使用GA替網站作分析/ga9.png" alt="title"></p>
 <p>將 網站追蹤碼 貼入 <code>&lt;head&gt;</code><br>檔案路徑 : <code>themes/next/layout/_partials/head/head.swig</code></p>
 <p><img src="/2019/05/09/使用GA替網站作分析/ga10.png" alt="title"></p>
@@ -672,8 +672,6 @@
                     
                       
                     
-                      
-                    
                     <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">分類</span>
                   </a>
@@ -690,14 +688,6 @@
                     
                   
                     
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
                     
                       
                     
