@@ -117,7 +117,9 @@
 <meta property="og:image" content="https://jimmywei01.github.io/2019/05/09/使用Google-Search-Console和sitemap進行SEO優化/gs1.png">
 <meta property="og:image" content="https://jimmywei01.github.io/2019/05/09/使用Google-Search-Console和sitemap進行SEO優化/gs2.png">
 <meta property="og:image" content="https://jimmywei01.github.io/2019/05/09/使用Google-Search-Console和sitemap進行SEO優化/gs3.png">
-<meta property="og:updated_time" content="2019-05-10T03:54:45.508Z">
+<meta property="og:image" content="https://jimmywei01.github.io/2019/05/09/使用Google-Search-Console和sitemap進行SEO優化/gs4.png">
+<meta property="og:image" content="https://jimmywei01.github.io/2019/05/09/使用Google-Search-Console和sitemap進行SEO優化/gs5.png">
+<meta property="og:updated_time" content="2019-05-10T09:05:36.771Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Google_Search_Console和sitemap進行SEO優化">
 <meta name="twitter:description" content="讓你的網站更親近 Google">
@@ -432,7 +434,7 @@
                 
                   <span class="post-meta-item-text">更新於</span>
                 
-                <time title="修改時間：2019-05-10 11:54:45" itemprop="dateModified" datetime="2019-05-10T11:54:45+08:00">2019-05-10</time>
+                <time title="修改時間：2019-05-10 17:05:36" itemprop="dateModified" datetime="2019-05-10T17:05:36+08:00">2019-05-10</time>
               
             
           </span>
@@ -507,7 +509,7 @@
 <p>路徑：<code>/_config.yml</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># sitmap</span><br><span class="line">sitemap:</span><br><span class="line">  path: sitemap.xml</span><br></pre></td></tr></table></figure>
 <p>重新部署到 GitHub<br><img src="/2019/05/09/使用Google-Search-Console和sitemap進行SEO優化/sitemap.png" alt="title"></p>
-<h3 id="選擇性增加-robots-txt"><a href="#選擇性增加-robots-txt" class="headerlink" title="選擇性增加 robots.txt"></a>選擇性增加 robots.txt</h3><p>主要行為就是在搜尋引擎檢索網站時，告訴它網站哪些內容可以被檢索，哪些內容可以不用被檢索<br><br>可參考 -&gt; robots.txt用途與使用範例教學，釐清SEO收錄觀念</p>
+<h3 id="選擇性增加-robots-txt"><a href="#選擇性增加-robots-txt" class="headerlink" title="選擇性增加 robots.txt"></a>選擇性增加 robots.txt</h3><p>主要行為就是在搜尋引擎檢索網站時，告訴它網站哪些內容可以被檢索，哪些內容可以不用被檢索<br><br>可參考 -&gt; <a href="https://www.awoo.com.tw/blog/2018/03/robotstxt-crawl/" target="_blank" rel="noopener">robots.txt用途與使用範例教學，釐清SEO收錄觀念</a></p>
 <p>在站點 source 文件夾下新建 robots.txt 文件，文件內容如下</p>
 <ul>
 <li>Allow 字段的值即為允許搜索引擎爬區的內容，可以對應到主題配置文件中的 menu 目錄配置，如果還有其他選項都可以按照格式自行添加</li>
@@ -515,14 +517,23 @@
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">User-agent: *</span><br><span class="line">Allow: /</span><br><span class="line">Allow: /archives/</span><br><span class="line">Allow: /categories/</span><br><span class="line">Allow: /tags/ </span><br><span class="line">Allow: /resources/ </span><br><span class="line">Disallow: /vendors/</span><br><span class="line">Disallow: /js/</span><br><span class="line">Disallow: /css/</span><br><span class="line">Disallow: /fonts/</span><br><span class="line">Disallow: /vendors/</span><br><span class="line">Disallow: /fancybox/</span><br><span class="line"></span><br><span class="line">Sitemap: https://hoxis.github.io/sitemap.xml</span><br></pre></td></tr></table></figure>
 <h3 id="Google-Search-Console"><a href="#Google-Search-Console" class="headerlink" title="Google_Search_Console"></a>Google_Search_Console</h3><p><a href="https://www.google.com/webmasters/#?modal_active=none" target="_blank" rel="noopener">https://www.google.com/webmasters/#?modal_active=none</a></p>
-<p>可參考 -&gt; 新版Google Search Console基礎介紹，透析新舊版介面、功能差異</p>
+<p>可參考 -&gt; <a href="https://www.awoo.com.tw/blog/2018/10/new-searchconsole-introduction/" target="_blank" rel="noopener">新版Google Search Console基礎介紹，透析新舊版介面、功能差異</a></p>
 <p>登入後，會顯示你沒有存取這項資源的權限</p>
 <p><img src="/2019/05/09/使用Google-Search-Console和sitemap進行SEO優化/gs1.png" alt="title"></p>
-<p>點擊驗證擁有權可以發現有多種驗證方式，我們用上一篇埋好的 GA 進行驗證<br>如果失敗就回去 <code>&lt;head&gt;</code> 去認有沒有正確埋入</p>
+<p>點擊驗證擁有權可以發現有多種驗證方式，我們用上一篇埋好的 GA 進行驗證<br>如果失敗就回去 <code>&lt;head&gt;</code> 確認有沒有正確埋入</p>
 <p><img src="/2019/05/09/使用Google-Search-Console和sitemap進行SEO優化/gs2.png" alt="title"></p>
-<p>成功後進入 sitemap 面板選項再加入 sitemap url</p>
+<p>成功後進入 sitemap 面板選項再加入 sitemap.xml</p>
 <p><img src="/2019/05/09/使用Google-Search-Console和sitemap進行SEO優化/gs3.png" alt="title"></p>
-<p>加入網址索引<br>檢測網頁在其他優化方向的狀況；右上方的「測試線上網址」可以即時測試網頁是否能夠讓Google進行索引，如果出現任何問題，新版Search Console也會明確的指出問題，修正後也可以直接要求Google建立索引</p>
+<p>加入網址索引</p>
+<ul>
+<li>點擊 <code>網址審查</code>加入網頁</li>
+<li>點擊右上方的<code>測試線上網址</code>可以即時測試網頁是否能夠讓 Google 進行索引</li>
+<li>點擊 <code>加入索引</code></li>
+</ul>
+<p><img src="/2019/05/09/使用Google-Search-Console和sitemap進行SEO優化/gs4.png" alt="title"></p>
+<p>完成後</p>
+<p><img src="/2019/05/09/使用Google-Search-Console和sitemap進行SEO優化/gs5.png" alt="title"></p>
+<p>最後可以用 <code>site:你的網址</code> 來看有沒有被 Google 搜尋到</p>
 
       
     </div>
