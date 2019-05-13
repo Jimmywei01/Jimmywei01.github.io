@@ -116,7 +116,10 @@
 <meta property="og:image" content="https://jimmywei01.github.io/2019/05/12/HTML-紀錄/h1.png">
 <meta property="og:image" content="https://jimmywei01.github.io/2019/05/12/HTML-紀錄/h2.png">
 <meta property="og:image" content="https://jimmywei01.github.io/2019/05/12/HTML-紀錄/h3.png">
-<meta property="og:updated_time" content="2019-05-13T07:15:05.290Z">
+<meta property="og:image" content="https://jimmywei01.github.io/2019/05/12/HTML-紀錄/h6.png">
+<meta property="og:image" content="https://jimmywei01.github.io/2019/05/12/HTML-紀錄/h4.png">
+<meta property="og:image" content="https://jimmywei01.github.io/2019/05/12/HTML-紀錄/h5.png">
+<meta property="og:updated_time" content="2019-05-13T09:42:28.632Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML 紀錄">
 <meta name="twitter:description" content="紀錄常用的HTML  -&amp;gt; Hyper Text Markup Language (超文本標記語言)">
@@ -431,7 +434,7 @@
                 
                   <span class="post-meta-item-text">更新於</span>
                 
-                <time title="修改時間：2019-05-13 15:15:05" itemprop="dateModified" datetime="2019-05-13T15:15:05+08:00">2019-05-13</time>
+                <time title="修改時間：2019-05-13 17:42:28" itemprop="dateModified" datetime="2019-05-13T17:42:28+08:00">2019-05-13</time>
               
             
           </span>
@@ -671,6 +674,76 @@
 </li>
 </ul>
 <figure class="highlight plain"><figcaption><span>html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;oh&lt;/h1&gt;</span><br><span class="line">&lt;h2&gt;oh&lt;/h2&gt;</span><br><span class="line">&lt;h3&gt;oh&lt;/h3&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="HTML-提問"><a href="#HTML-提問" class="headerlink" title="HTML - 提問"></a>HTML - 提問</h2><ol>
+<li>DOCTYPE 有什麼作用？標準模式與混雜模式如何區分？它們有何意義?<br>告訴瀏覽器使用哪個版本的 HTML 規範來渲染文件，DOCTYPE 不存在或形式不正確會導致 HTML 文件以混雜模式呈現<ul>
+<li>標準模式（Standards mode）以瀏覽器支援的最高標準執行</li>
+<li>混雜模式（Quirks mode）中頁面是一種比較寬鬆的向後相容的方式顯示</li>
+</ul>
+</li>
+</ol>
+<ol start="2">
+<li>HTML5 為什麼只需要寫 <code>&lt;!DOCTYPE HTML&gt;</code>？</li>
+</ol>
+<ul>
+<li>HTML5 不基於 SGML（Standard Generalized Markup Language 標準通用標記語言),因此不需要對 DTD（DTD 文件型別定義）進行引用，但是需要 DOCTYPE 來規範瀏覽器行為</li>
+<li>HTML4.01 基於 SGML，所以需要引用 DTD。才能告知瀏覽器文件所使用的文件型別，如下：<br><code>&lt;!DOCTYPE HTML PUBLIC “-//W3C//DTD HTML 4.01//EN” “http://www.w3.org/TR/html4/strict.dtd”&gt;</code></li>
+</ul>
+<ol start="3">
+<li>行內元素有哪些？塊級元素有哪些？ 空(void)元素有那些？</li>
+</ol>
+<ul>
+<li>塊級元素：<code>&lt;div&gt;  &lt;ul&gt;  &lt;ol&gt;  &lt;li&gt;  &lt;dl&gt;  &lt;dt&gt;  &lt;dd&gt;  &lt;h1&gt;  &lt;p&gt;</code></li>
+<li>行內元素：<code>&lt;a&gt;  &lt;span&gt;  &lt;img&gt;  &lt;input&gt;  &lt;select&gt;</code></li>
+<li>空元素：<code>&lt;hr&gt;  &lt;link&gt;  &lt;meta&gt;</code></li>
+</ul>
+<ol start="4">
+<li>頁面匯入樣式時，使用 link 和 @import 有什麼區別？</li>
+</ol>
+<ul>
+<li>都是外部引用 CSS 方式</li>
+<li>@import 屬於 CSS 範疇，只能載入 CSS</li>
+<li>@import 需要在頁面完全載入以後載入，而且被 @import 引用的 CSS 會等到引用它的 CSS 檔案被載入完才載入</li>
+<li>link 引用 CSS 時候，頁面載入時同時載入</li>
+<li>link 方式的樣式的權重高於 @import 的權重</li>
+<li>import 在 html 使用時候需要 <code>&lt;style type=&quot;text/css&quot;&gt;</code>標籤</li>
+</ul>
+<ol start="5">
+<li>介紹一下瀏覽器核心的理解？</li>
+</ol>
+<ul>
+<li><h3 id="渲染引擎"><a href="#渲染引擎" class="headerlink" title="渲染引擎"></a>渲染引擎</h3></li>
+<li>HTML 經過 HTML parser 產生 HTML DOM tree</li>
+</ul>
+<p><img src="/2019/05/12/HTML-紀錄/h6.png" alt="title"></p>
+<ul>
+<li>CSS 經過 CSS parser 產生 CSS rules</li>
+</ul>
+<p><img src="/2019/05/12/HTML-紀錄/h4.png" alt="title"></p>
+<ul>
+<li>進入 style 將 rules 賦予 DOM tree 產生 style tree 的元素</li>
+<li>進入 layout 將 style tree 元素進行排版產生 layout tree</li>
+</ul>
+<p><img src="/2019/05/12/HTML-紀錄/h5.png" alt="title"></p>
+<ul>
+<li>進入 渲染顯示在應用程式上</li>
+</ul>
+<ul>
+<li><h3 id="JS-引擎"><a href="#JS-引擎" class="headerlink" title="JS 引擎"></a>JS 引擎</h3></li>
+<li>javascript 來實現網頁動態效果的解析和執行</li>
+<li>每解析和執行渲染引擎會重新渲染</li>
+<li>每個動作最好在 16 ms 內，畫面上大約為 每秒 60fps 人眼最 ok 的幀數</li>
+</ul>
+<ol start="6">
+<li>HTML語義化的理解？</li>
+</ol>
+<ul>
+<li>去掉或丟失樣式的時候能夠讓頁面呈現出清晰的結構</li>
+<li>有利於SEO和搜尋引擎建立良好溝通，有助於爬蟲抓取更多的資訊，爬蟲依賴於標籤來確定上下文和各個關鍵字的權重</li>
+<li>方便其它裝置解析</li>
+<li>便於團隊開發和維護</li>
+</ul>
+
       
     </div>
 
@@ -904,7 +977,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-table-表格"><span class="nav-number">1.</span> <span class="nav-text">HTML - table 表格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-form-表單"><span class="nav-number">2.</span> <span class="nav-text">HTML - form 表單</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#form-常用操作"><span class="nav-number">2.1.</span> <span class="nav-text">form 常用操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#input-type"><span class="nav-number">2.1.1.</span> <span class="nav-text">input type</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#select-下拉式選單"><span class="nav-number">2.1.2.</span> <span class="nav-text">select 下拉式選單</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#button"><span class="nav-number">2.2.</span> <span class="nav-text">button</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#multiple"><span class="nav-number">2.3.</span> <span class="nav-text">multiple</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#textarea"><span class="nav-number">2.4.</span> <span class="nav-text">textarea</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-常犯的錯誤"><span class="nav-number">3.</span> <span class="nav-text">HTML - 常犯的錯誤</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-table-表格"><span class="nav-number">1.</span> <span class="nav-text">HTML - table 表格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-form-表單"><span class="nav-number">2.</span> <span class="nav-text">HTML - form 表單</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#form-常用操作"><span class="nav-number">2.1.</span> <span class="nav-text">form 常用操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#input-type"><span class="nav-number">2.1.1.</span> <span class="nav-text">input type</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#select-下拉式選單"><span class="nav-number">2.1.2.</span> <span class="nav-text">select 下拉式選單</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#button"><span class="nav-number">2.2.</span> <span class="nav-text">button</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#multiple"><span class="nav-number">2.3.</span> <span class="nav-text">multiple</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#textarea"><span class="nav-number">2.4.</span> <span class="nav-text">textarea</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-常犯的錯誤"><span class="nav-number">3.</span> <span class="nav-text">HTML - 常犯的錯誤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-提問"><span class="nav-number">4.</span> <span class="nav-text">HTML - 提問</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#渲染引擎"><span class="nav-number">4.1.</span> <span class="nav-text">渲染引擎</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JS-引擎"><span class="nav-number">4.2.</span> <span class="nav-text">JS 引擎</span></a></li></ol></li></ol></div>
             
 
           </div>
