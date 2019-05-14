@@ -105,18 +105,21 @@
 
 
 
-  <meta name="description" content="記不下來就寫下來">
-<meta name="keywords" content="other">
+  <meta name="description" content="重要的傳遞手法">
+<meta name="keywords" content="cookie,web storage">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MarkDown、Hexo、NexT 常用寫法">
-<meta property="og:url" content="https://jimmywei01.github.io/2019/05/09/MarkDown、Hexo、NexT-常用寫法/index.html">
+<meta property="og:title" content="cookie、session、local storage、session storage 差異">
+<meta property="og:url" content="https://jimmywei01.github.io/2019/05/14/cookie、session、local-storage、session-storage-差異/index.html">
 <meta property="og:site_name" content="Jimmy&#39;s Notes">
-<meta property="og:description" content="記不下來就寫下來">
+<meta property="og:description" content="重要的傳遞手法">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2019-05-09T09:44:49.183Z">
+<meta property="og:image" content="https://jimmywei01.github.io/2019/05/14/cookie、session、local-storage、session-storage-差異/local1.png">
+<meta property="og:image" content="https://jimmywei01.github.io/2019/05/14/cookie、session、local-storage、session-storage-差異/local2.png">
+<meta property="og:updated_time" content="2019-05-14T09:54:53.483Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MarkDown、Hexo、NexT 常用寫法">
-<meta name="twitter:description" content="記不下來就寫下來">
+<meta name="twitter:title" content="cookie、session、local storage、session storage 差異">
+<meta name="twitter:description" content="重要的傳遞手法">
+<meta name="twitter:image" content="https://jimmywei01.github.io/2019/05/14/cookie、session、local-storage、session-storage-差異/local1.png">
 
 
 
@@ -124,7 +127,7 @@
 
   
   
-  <link rel="canonical" href="https://jimmywei01.github.io/2019/05/09/MarkDown、Hexo、NexT-常用寫法/">
+  <link rel="canonical" href="https://jimmywei01.github.io/2019/05/14/cookie、session、local-storage、session-storage-差異/">
 
 
 
@@ -134,7 +137,7 @@
   };
 </script>
 
-  <title>MarkDown、Hexo、NexT 常用寫法 | Jimmy's Notes</title>
+  <title>cookie、session、local storage、session storage 差異 | Jimmy's Notes</title>
   
 
 
@@ -367,7 +370,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://jimmywei01.github.io/2019/05/09/MarkDown、Hexo、NexT-常用寫法/">
+    <link itemprop="mainEntityOfPage" href="https://jimmywei01.github.io/2019/05/14/cookie、session、local-storage、session-storage-差異/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jimmy Wei">
@@ -384,7 +387,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">MarkDown、Hexo、NexT 常用寫法<a href="https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name_posts/MarkDown、Hexo、NexT-常用寫法.md" class="post-edit-link" title="編輯" rel="noopener" target="_blank"><i class="fa fa-pencil"></i></a>
+          <h1 class="post-title" itemprop="name headline">cookie、session、local storage、session storage 差異<a href="https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name_posts/cookie、session、local-storage、session-storage-差異.md" class="post-edit-link" title="編輯" rel="noopener" target="_blank"><i class="fa fa-pencil"></i></a>
 
               
             
@@ -410,7 +413,7 @@
                 
               
 
-              <time title="創建時間：2019-05-09 11:43:00 / 修改時間：17:44:49" itemprop="dateCreated datePublished" datetime="2019-05-09T11:43:00+08:00">2019-05-09</time>
+              <time title="創建時間：2019-05-14 15:56:55 / 修改時間：17:54:53" itemprop="dateCreated datePublished" datetime="2019-05-14T15:56:55+08:00">2019-05-14</time>
             
 
             
@@ -432,7 +435,7 @@
                 <span class="post-meta-item-text">分類於</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/other/" itemprop="url" rel="index"><span itemprop="name">other</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/HTTP/" itemprop="url" rel="index"><span itemprop="name">HTTP</span></a></span>
 
                 
                 
@@ -451,8 +454,8 @@
                 </span>
             
                 <span class="post-meta-item-text">評論數：</span>
-                <a href="/2019/05/09/MarkDown、Hexo、NexT-常用寫法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/05/09/MarkDown、Hexo、NexT-常用寫法/" itemprop="commentCount"></span>
+                <a href="/2019/05/14/cookie、session、local-storage、session-storage-差異/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/05/14/cookie、session、local-storage、session-storage-差異/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -480,100 +483,148 @@
       
 
       
-        <blockquote class="blockquote-center"><p>記不下來就寫下來</p>
+        <blockquote class="blockquote-center"><p>重要的傳遞手法</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="MarkDown-常用寫法"><a href="#MarkDown-常用寫法" class="headerlink" title="MarkDown 常用寫法"></a>MarkDown 常用寫法</h2><hr>
-<h3 id="字體基本設定"><a href="#字體基本設定" class="headerlink" title="字體基本設定"></a>字體基本設定</h3><blockquote>
-<p>階層式區塊語法<br><code>&gt;text 、 &gt;&gt;text 、 &gt;&gt;&gt;text</code></p>
-<blockquote>
-<p><strong>粗體</strong>  <code>**your text**</code><br><em>斜體</em>    <code>*your text*</code><br><del>刪除線</del> <code>~~your text~~</code><br><a href="https://jimmywei01.github.io/">超連結</a> <code>[超連結](https://jimmywei01.github.io/)</code></p>
-</blockquote>
-</blockquote>
-<ul>
-<li>小區塊<br><code>`your text`</code></li>
-<li>大區塊<br>前後三個反引號</li>
-</ul>
-<h3 id="標題"><a href="#標題" class="headerlink" title="標題"></a>標題</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># H1</span><br><span class="line">## H2</span><br><span class="line">### H3</span><br><span class="line">#### H4</span><br><span class="line">##### H5</span><br><span class="line">###### H6</span><br></pre></td></tr></table></figure>
-<h3 id="文字增加顏色"><a href="#文字增加顏色" class="headerlink" title="文字增加顏色"></a>文字增加顏色</h3><font style="color:#f90;font-size:20px;">20px的字</font><br><font style="color:red;font-size:15px;">15px的字</font>
-
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">style</span>=<span class="string">"color:#f90;font-size:20px;"</span>&gt;</span>20px的字<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">style</span>=<span class="string">"color:red;font-size:10px;"</span>&gt;</span>10px的字<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><ul>
-<li>Item 1</li>
-<li>Item 2<ul>
-<li>Item 2a</li>
-<li>Item 2b</li>
+<h2 id="session-Storage-和-local-Storage-的差別"><a href="#session-Storage-和-local-Storage-的差別" class="headerlink" title="session Storage 和 local Storage 的差別"></a>session Storage 和 local Storage 的差別</h2><ul>
+<li>可參考<ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/localStorage" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/API/Window/localStorage</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/sessionStorage" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/API/Window/sessionStorage</a></li>
 </ul>
 </li>
+<li>JSON.stringify - 轉字串儲存</li>
+<li>JSON.parse - 轉物件取出</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* Item 1</span><br><span class="line">* Item 2</span><br><span class="line">  * Item 2a</span><br><span class="line">  * Item 2b</span><br></pre></td></tr></table></figure>
-<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p>冒號（Colons）是用來對齊的（擺左齊左、擺右齊右，都擺就置中）</p>
+<p>寫入 local Storage (session Storage 亦同)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 設定 local storage</span><br><span class="line">let todo = [ ]</span><br><span class="line">todo.push(&apos;Mario red’,&apos;Mario blue’,&apos;Mario black’,&apos;Mario pink’,&apos;Mario yellow&apos;)</span><br><span class="line">localStorage.setItem(&apos;todolist&apos;,JSON.stringify(todo))</span><br></pre></td></tr></table></figure>
+<p><img src="/2019/05/14/cookie、session、local-storage、session-storage-差異/local1.png" alt="title"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 取出 local storage</span><br><span class="line">let data = JSON.parse(localStorage.getItem(&apos;todolist’))</span><br><span class="line">-&gt; [&quot;Mario red&quot;, &quot;Mario blue&quot;, &quot;Mario black&quot;, &quot;Mario pink&quot;, &quot;Mario yellow”]</span><br><span class="line"></span><br><span class="line">// 資料操作</span><br><span class="line">data.splice(data2.indexOf(&apos;Mario blue&apos;),1)</span><br><span class="line">-&gt; [&quot;Mario red&quot;, &quot;Mario black&quot;, &quot;Mario pink&quot;, &quot;Mario yellow”]</span><br><span class="line"></span><br><span class="line">// 刪除整個 local storage</span><br><span class="line">localStorage.removeItem(&apos;todolist&apos;)</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
-<th>Markdown</th>
-<th style="text-align:center">Less</th>
-<th style="text-align:right">Pretty</th>
+<th>Storage</th>
+<th>sessionStorage</th>
+<th>localStorage</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><em>Still</em></td>
-<td style="text-align:center"><code>renders</code></td>
-<td style="text-align:right"><strong>nicely</strong></td>
+<td>存儲大小限制</td>
+<td>5M或更大，不會把數據發給服務器僅在本地保存</td>
+<td>5M或更大，不會把數據發給服務器僅在本地保存</td>
 </tr>
 <tr>
-<td>1</td>
-<td style="text-align:center">2</td>
-<td style="text-align:right">3</td>
+<td>數據有效期</td>
+<td>僅在當前瀏覽器窗口關閉前有效</td>
+<td>始終有效，窗口或瀏覽器關閉也一直保存</td>
+</tr>
+<tr>
+<td>作用域</td>
+<td>不在不同的瀏覽器窗口中共享，即使是同一個頁面</td>
+<td>在所有同源瀏覽器窗口中都是共享的</td>
+</tr>
+<tr>
+<td>安全性</td>
+<td>比 cookie 高一點</td>
+<td>比 cookie 高一點</td>
 </tr>
 </tbody>
 </table>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Markdown | Less | Pretty</span><br><span class="line">--- | :---: | ---:</span><br><span class="line">*Still* | `renders` | nicely</span><br><span class="line">1 | 2 | 3:</span><br></pre></td></tr></table></figure>
-<h2 id="Hexo-標籤外掛"><a href="#Hexo-標籤外掛" class="headerlink" title="Hexo 標籤外掛"></a>Hexo 標籤外掛</h2><hr>
-<h3 id="hexo-標籤外掛參考連結"><a href="#hexo-標籤外掛參考連結" class="headerlink" title="hexo 標籤外掛參考連結"></a>hexo 標籤外掛參考連結</h3><p><a href="https://hexo.io/zh-tw/docs/tag-plugins" target="_blank" rel="noopener">https://hexo.io/zh-tw/docs/tag-plugins</a></p>
-<h3 id="hexo-指令"><a href="#hexo-指令" class="headerlink" title="hexo 指令"></a>hexo 指令</h3><ul>
-<li><p>啟動 server<br>hexo server</p>
-</li>
-<li><p>建立新文章<br>hexo new post [title]</p>
-</li>
-<li><p>s →啟動伺服器 -g →生成靜態頁面<br>hexo s -g</p>
-</li>
-<li><p>d →部屬模式 -g →生成靜態頁面<br>hexo d -g</p>
-</li>
-<li><p>刪除已生成的靜態頁面及快取檔案<br>hexo clean</p>
-</li>
-</ul>
-<h3 id="程式碼區塊"><a href="#程式碼區塊" class="headerlink" title="程式碼區塊"></a>程式碼區塊</h3><p>寫法</p>
+<p>舉例 session Storage 較適合傳送頁面</p>
 <ul>
-<li>[language] 是代碼語言的名稱，用來設置代碼塊顏色高亮，非必須</li>
-<li>[title] 是頂部左邊的說明，非必須</li>
-<li>[url] 是頂部右邊的超鏈接地址，非必須</li>
-<li>[link text] 如它的字面意思，超鏈接的名稱，非必須</li>
+<li>例如購物流程，加入購物車 &gt; 填寫購物資料 &gt; 進入結帳畫面 &gt; 成功</li>
+<li>假設填寫購物資料時回到上一頁按加入購物車的時候， JS 就可透過 sessionStorage 傳遞即時資訊，而頁面關閉時購物資料的 sessionStorage 也會跟著關閉，以減少機敏資訊外流的風險</li>
 </ul>
-<h4 id="使用-代碼塊語法"><a href="#使用-代碼塊語法" class="headerlink" title="使用 代碼塊語法"></a>使用 <code>代碼塊語法</code></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% codeblock [language] [title] [url] [link text] %&#125;</span><br><span class="line">  your code</span><br><span class="line">&#123;% endcodeblock %&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><figcaption><span>css css /index 首頁</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  max-width: 960px;</span><br><span class="line">  margin: 0 auto;</span><br><span class="line">  margin-top: 10px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="session-和-cookie-的差別"><a href="#session-和-cookie-的差別" class="headerlink" title="session 和 cookie 的差別"></a>session 和 cookie 的差別</h2><ul>
+<li>session：帳號登錄驗證過後，後端所發的識別證</li>
+<li>cookie：是瀏覽器存放資料的地方，可以存放 seesion 之類的資料</li>
+<li>後端可以要求前端要設置 cookie 來存放 seesion，這樣在換頁的時候，每發送一次 request 時順便也會把 seesion 送到後端，這樣後端都可以知道是同一個人（而不是每次都要送一次帳號密碼去做驗證）</li>
+<li>建議在後端進行寫 cookie 操作，並通過 session 來控制 cookie 的過期時間</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>cookie 欄位</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name  名稱</td>
+<td>key 鍵</td>
+</tr>
+<tr>
+<td>value 內容</td>
+<td>value 值</td>
+</tr>
+<tr>
+<td>Domin 網域</td>
+<td>取得該 cookie 的網域</td>
+</tr>
+<tr>
+<td>path 路徑</td>
+<td>設定可以存取該 cookie 路徑</td>
+</tr>
+<tr>
+<td>secure 傳送連線類型</td>
+<td>設定 cookie 是否要 https 才可以進行傳送</td>
+</tr>
+<tr>
+<td>Expires  建立時間</td>
+<td>限制 cookie 有效時間</td>
+</tr>
+<tr>
+<td>httpOnly</td>
+<td>此 cookie 只能從 web server 訪問，以避免不正確的進入來取得竄改</td>
+</tr>
+</tbody>
+</table>
+<p>clint 端寫入 cookie</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.cookie = &quot;myName=jimmy&quot;</span><br></pre></td></tr></table></figure>
+<p><img src="/2019/05/14/cookie、session、local-storage、session-storage-差異/local2.png" alt="title"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 寫入 cookie，並加入過期時間</span><br><span class="line">document.cookie=&quot;username=bob; expires=Mon, 04 Dec 2017 08:18:32 GMT; path=/&quot;</span><br><span class="line"></span><br><span class="line">// 寫入 cookie，設定 10 秒後失效</span><br><span class="line">document.cookie=&quot;username=bob; max-age=10; path=/&quot;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>server</th>
+<th>session</th>
+<th>cookie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>儲存大小限制</td>
+<td>與 cookie 共用，利用 session Id 來判定＆記錄資料 ex. 會員網站登入</td>
+<td>cookie 在瀏覽器和服務器間來回傳遞，可以限制 cookie 只屬於某個路徑下。cookie 數據不能超過 4k，每次 http 請求都會攜帶 cookie</td>
+</tr>
+<tr>
+<td>數據有效期</td>
+<td>僅在當前瀏覽器窗口關閉前有效</td>
+<td>在設置的 cookie 過期時間之前一直有效，即使窗口或瀏覽器關閉作用域</td>
+</tr>
+<tr>
+<td>作用域</td>
+<td>無</td>
+<td>在所有同源瀏覽器窗口中都是共享的</td>
+</tr>
+<tr>
+<td>安全性</td>
+<td>比 cookie 高</td>
+<td>低</td>
+</tr>
+</tbody>
+</table>
+<p>舉例 cookie、session 登錄流程</p>
 <ul>
-<li>加上說明 </li>
+<li>客戶端使用用戶名跟密碼請求登錄</li>
+<li>服務端收到請求，去驗證用戶名和密碼（後台根據請求去數據庫查找是否有該用戶）</li>
+<li>驗證成功後，服務端會簽發一個 API token（進行 API 路徑存取時先 JWT 驗證 -&gt; 驗證成功才允許訪問該 API，該 token 值一般都會存入資料庫中，並設置過期時間），再把這個 token 發送給客戶端</li>
+<li>客戶端收到 token 之後，再用 js 塞到 cookie 或 storage 裡面</li>
+<li>客戶端每次向服務端請求資源的時候需要帶著服務端簽發的 token</li>
+<li>服務端收到請求，然後去驗證客戶端請求裡面帶著的 token（token 是否為該用戶的令牌以及 token 是否有效等），如果驗證成功就向客戶端返回請求的數據</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% codeblock Array.map %&#125;</span><br><span class="line">array.map(callback[, thisArg])</span><br><span class="line">&#123;% endcodeblock %&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><figcaption><span>Array.map</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array.map(callback[, thisArg])</span><br></pre></td></tr></table></figure>
-<ul>
-<li>加上說明和網址</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;% codeblock _.compact http://underscorejs.org/#compact Underscore.js %&#125;</span><br><span class="line">_.compact([0, 1, false, 2, &apos;&apos;, 3]);</span><br><span class="line">=&gt; [1, 2, 3]</span><br><span class="line">&#123;% endcodeblock %&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><figcaption><span>_.compact</span><a href="http://underscorejs.org/#compact" target="_blank" rel="noopener">Underscore.js</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_.compact([0, 1, false, 2, &apos;&apos;, 3]);</span><br><span class="line">=&gt; [1, 2, 3]</span><br></pre></td></tr></table></figure>
-<h4 id="使用-大區塊-前後三個反引號"><a href="#使用-大區塊-前後三個反引號" class="headerlink" title="使用 大區塊(前後三個反引號)"></a>使用 <code>大區塊(前後三個反引號)</code></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">``` [language] [title] [url] [link text]</span><br><span class="line">  your code </span><br><span class="line">```</span><br></pre></td></tr></table></figure>
-<figure class="highlight css"><figcaption><span>css</span><a href="/index">首頁 </a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">max-width</span>: <span class="number">960px</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">  <span class="comment">/* 起手式 */</span></span><br><span class="line">  <span class="attribute">margin-top</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="NexT"><a href="#NexT" class="headerlink" title="NexT"></a>NexT</h2><hr>
-<h3 id="無需路徑名插入圖片"><a href="#無需路徑名插入圖片" class="headerlink" title="無需路徑名插入圖片"></a>無需路徑名插入圖片</h3><ul>
-<li>新建文章在相同目錄下創建同名文件夾（便於圖片管理）</li>
-<li>打開站點配置文件_config.yml/post_asset_folder，設置值為true</li>
-<li>安裝hexo-asset-image：npm install hexo-asset-image –save</li>
-<li>此時hexo new “fileName”會在/source/_posts目錄下創建同名的文件夾</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">只需在md文件裡使用 無需路徑名就可以插入圖片</span><br><span class="line">![title](圖片名.jpg)</span><br></pre></td></tr></table></figure>
-<h3 id="文章頁面顯示繼續閱讀"><a href="#文章頁面顯示繼續閱讀" class="headerlink" title="文章頁面顯示繼續閱讀"></a>文章頁面顯示繼續閱讀</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- more —&gt;</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -596,7 +647,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/other/" <i class="fa fa-tag"> other</a>
+            <a href="/tags/cookie/" <i class="fa fa-tag"> cookie</a>
+          
+            <a href="/tags/web-storage/" <i class="fa fa-tag"> web storage</a>
           
         </div>
       
@@ -609,15 +662,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/05/12/HTML-紀錄/" rel="next" title="HTML 紀錄">
+                <i class="fa fa-chevron-left"></i> HTML 紀錄
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/09/使用GA替網站作分析/" rel="prev" title="使用GA替網站作分析">
-                使用GA替網站作分析 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -811,7 +864,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MarkDown-常用寫法"><span class="nav-number">1.</span> <span class="nav-text">MarkDown 常用寫法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字體基本設定"><span class="nav-number">1.1.</span> <span class="nav-text">字體基本設定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#標題"><span class="nav-number">1.2.</span> <span class="nav-text">標題</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文字增加顏色"><span class="nav-number">1.3.</span> <span class="nav-text">文字增加顏色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列表"><span class="nav-number">1.4.</span> <span class="nav-text">列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表格"><span class="nav-number">1.5.</span> <span class="nav-text">表格</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo-標籤外掛"><span class="nav-number">2.</span> <span class="nav-text">Hexo 標籤外掛</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-標籤外掛參考連結"><span class="nav-number">2.1.</span> <span class="nav-text">hexo 標籤外掛參考連結</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-指令"><span class="nav-number">2.2.</span> <span class="nav-text">hexo 指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#程式碼區塊"><span class="nav-number">2.3.</span> <span class="nav-text">程式碼區塊</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用-代碼塊語法"><span class="nav-number">2.3.1.</span> <span class="nav-text">使用 代碼塊語法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用-大區塊-前後三個反引號"><span class="nav-number">2.3.2.</span> <span class="nav-text">使用 大區塊(前後三個反引號)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NexT"><span class="nav-number">3.</span> <span class="nav-text">NexT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#無需路徑名插入圖片"><span class="nav-number">3.1.</span> <span class="nav-text">無需路徑名插入圖片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文章頁面顯示繼續閱讀"><span class="nav-number">3.2.</span> <span class="nav-text">文章頁面顯示繼續閱讀</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#session-Storage-和-local-Storage-的差別"><span class="nav-number">1.</span> <span class="nav-text">session Storage 和 local Storage 的差別</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#session-和-cookie-的差別"><span class="nav-number">2.</span> <span class="nav-text">session 和 cookie 的差別</span></a></li></ol></div>
             
 
           </div>
@@ -973,9 +1026,9 @@
 
 <script>
   var disqus_config = function() {
-    this.page.url = "https://jimmywei01.github.io/2019/05/09/MarkDown、Hexo、NexT-常用寫法/";
-    this.page.identifier = "2019/05/09/MarkDown、Hexo、NexT-常用寫法/";
-    this.page.title = 'MarkDown、Hexo、NexT 常用寫法';
+    this.page.url = "https://jimmywei01.github.io/2019/05/14/cookie、session、local-storage、session-storage-差異/";
+    this.page.identifier = "2019/05/14/cookie、session、local-storage、session-storage-差異/";
+    this.page.title = 'cookie、session、local storage、session storage 差異';
     };
   function loadComments() {
     var d = document, s = d.createElement('script');
