@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-TW">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-139836366-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-139836366-1');
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/QQ2.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/QQ2.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/QQ2.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/lQQ2.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.1.1',
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+
+  <meta name="description" content="紀錄常用的CSS  -&amp;gt; Cascading Style Sheet 層疊樣式表">
+<meta name="keywords" content="CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS 紀錄">
+<meta property="og:url" content="https://jimmywei01.github.io/2019/05/16/CSS-紀錄/index.html">
+<meta property="og:site_name" content="Jimmy&#39;s Notes">
+<meta property="og:description" content="紀錄常用的CSS  -&amp;gt; Cascading Style Sheet 層疊樣式表">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="https://jimmywei01.github.io/2019/05/16/CSS-紀錄/c13.png">
+<meta property="og:image" content="https://jimmywei01.github.io/2019/05/16/CSS-紀錄/c14.png">
+<meta property="og:image" content="https://jimmywei01.github.io/2019/05/16/CSS-紀錄/c15.png">
+<meta property="og:image" content="https://jimmywei01.github.io/2019/05/16/CSS-紀錄/c1.png">
+<meta property="og:image" content="https://jimmywei01.github.io/2019/05/16/CSS-紀錄/c2.png">
+<meta property="og:image" content="https://jimmywei01.github.io/2019/05/16/CSS-紀錄/c3.png">
+<meta property="og:image" content="https://jimmywei01.github.io/2019/05/16/CSS-紀錄/c4.png">
+<meta property="og:image" content="https://jimmywei01.github.io/2019/05/16/CSS-紀錄/c5.png">
+<meta property="og:image" content="https://jimmywei01.github.io/2019/05/16/CSS-紀錄/c6.png">
+<meta property="og:image" content="https://jimmywei01.github.io/2019/05/16/CSS-紀錄/c7.png">
+<meta property="og:image" content="https://jimmywei01.github.io/2019/05/16/CSS-紀錄/c8.png">
+<meta property="og:image" content="https://jimmywei01.github.io/2019/05/16/CSS-紀錄/c9.png">
+<meta property="og:image" content="https://jimmywei01.github.io/2019/05/16/CSS-紀錄/c10.png">
+<meta property="og:image" content="https://jimmywei01.github.io/2019/05/16/CSS-紀錄/c12.png">
+<meta property="og:image" content="https://jimmywei01.github.io/2019/05/16/CSS-紀錄/c11.png">
+<meta property="og:updated_time" content="2019-05-17T14:49:52.742Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS 紀錄">
+<meta name="twitter:description" content="紀錄常用的CSS  -&amp;gt; Cascading Style Sheet 層疊樣式表">
+<meta name="twitter:image" content="https://jimmywei01.github.io/2019/05/16/CSS-紀錄/c13.png">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://jimmywei01.github.io/2019/05/16/CSS-紀錄/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>CSS 紀錄 | Jimmy's Notes</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-TW">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Jimmy's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">你可以沒有熱情，但不應該自我設限</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切換導航欄">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首頁</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>標籤</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分類</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>歸檔</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜尋</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜尋..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://jimmywei01.github.io/2019/05/16/CSS-紀錄/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jimmy Wei">
+      <meta itemprop="description" content="光電/程式/工藝/設計/哲學">
+      <meta itemprop="image" content="/images/panda.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jimmy's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">CSS 紀錄<a href="https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name_posts/CSS-紀錄.md" class="post-edit-link" title="編輯" rel="noopener" target="_blank"><i class="fa fa-pencil"></i></a>
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+
+              
+                
+              
+
+              <time title="創建時間：2019-05-16 13:40:41" itemprop="dateCreated datePublished" datetime="2019-05-16T13:40:41+08:00">2019-05-16</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新於</span>
+                
+                <time title="修改時間：2019-05-17 22:49:52" itemprop="dateModified" datetime="2019-05-17T22:49:52+08:00">2019-05-17</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CSS/" itemprop="url" rel="index"><span itemprop="name">CSS</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">評論數：</span>
+                <a href="/2019/05/16/CSS-紀錄/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/05/16/CSS-紀錄/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote class="blockquote-center"><p>紀錄常用的<br>CSS  -&gt; Cascading Style Sheet 層疊樣式表</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="CSS-塊級元素-block-amp-行內元素-inline"><a href="#CSS-塊級元素-block-amp-行內元素-inline" class="headerlink" title="CSS - 塊級元素(block) &amp; 行內元素(inline)"></a>CSS - 塊級元素(block) &amp; 行內元素(inline)</h2><ul>
+<li>塊級元素<ul>
+<li>自動換行</li>
+<li>能設置寬高</li>
+<li>margin 和 padding 上下左右的值都可以設定</li>
+<li><code>&lt;div&gt;</code>、<code>&lt;p&gt;</code>、<code>&lt;ul&gt;</code>、<code>&lt;table&gt;</code></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>行內元素<ul>
+<li>不自動換行</li>
+<li>設置寬高無效</li>
+<li>padding 上下左右都可以設置；但 margin 左右值有效，上下值無效</li>
+<li><code>&lt;a&gt;</code>、<code>&lt;span&gt;</code>、<code>&lt;img&gt;</code>、<code>&lt;button&gt;</code>、 偽元素、label</li>
+</ul>
+</li>
+</ul>
+<h2 id="CSS-選擇器"><a href="#CSS-選擇器" class="headerlink" title="CSS - 選擇器"></a>CSS - 選擇器</h2><table>
+<thead>
+<tr>
+<th>選擇器</th>
+<th>表示方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>子孫</td>
+<td>空格</td>
+</tr>
+<tr>
+<td>孩子</td>
+<td><code>&gt;</code></td>
+</tr>
+<tr>
+<td>兄弟姊妹</td>
+<td><code>~/+</code></td>
+</tr>
+<tr>
+<td>元素</td>
+<td>a{}</td>
+</tr>
+<tr>
+<td>偽元素</td>
+<td>::before{} </td>
+</tr>
+<tr>
+<td>class</td>
+<td>.link{}</td>
+</tr>
+<tr>
+<td>屬性</td>
+<td>[type=radio]{}</td>
+</tr>
+<tr>
+<td>偽類</td>
+<td>:hover{} </td>
+</tr>
+<tr>
+<td>id</td>
+<td><code>#id{}</code></td>
+</tr>
+<tr>
+<td>組合</td>
+<td>[type=checkbox]+label{}</td>
+</tr>
+<tr>
+<td>否定</td>
+<td>:not(.link){}</td>
+</tr>
+<tr>
+<td>通用</td>
+<td>*{}</td>
+</tr>
+</tbody>
+</table>
+<h3 id="CSS-選擇器優先級"><a href="#CSS-選擇器優先級" class="headerlink" title="CSS - 選擇器優先級"></a>CSS - 選擇器優先級</h3><p>!important(10000) &gt; 行內樣式(1000) &gt; id 選擇器(100) &gt; class 選擇器(10) &gt; tag 選擇器(1) </p>
+<h2 id="CSS-前綴詞"><a href="#CSS-前綴詞" class="headerlink" title="CSS - 前綴詞"></a>CSS - 前綴詞</h2><ul>
+<li>Chrome與Safari正是用webkit核心</li>
+<li>-moz-則是Mozilla公司的縮寫(Gecko核心)，代表瀏覽器為Firefox</li>
+<li>-o-是Opera瀏覽器的縮寫(Presto核心)</li>
+<li>-ms-微軟的縮寫代表瀏覽器是ie</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.class&#123;</span><br><span class="line">    -webkit-border-radius: 5px;</span><br><span class="line">    -moz-border-radius: 5px;</span><br><span class="line">    -ms-border-radius: 5px;</span><br><span class="line">    -o-border-radius: 5px;</span><br><span class="line">    border-radius: 5px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="CSS-reset-amp-normalize"><a href="#CSS-reset-amp-normalize" class="headerlink" title="CSS - reset &amp; normalize"></a>CSS - reset &amp; normalize</h2><ul>
+<li>reset<ul>
+<li>使用時機 - 設計師針對畫面樣式的規定不一定會與瀏覽器的預設相符的時候</li>
+<li>把所有瀏覽器最不一致的地方強制歸 0</li>
+<li>優點是統整、重置了各個瀏覽器的樣式設定</li>
+<li>缺點是必須全部重新做設定，比較沒有彈性</li>
+</ul>
+</li>
+<li>normalize<ul>
+<li>最大的特色就是保留原本預設 HTML 標籤的樣式，僅針對不同瀏覽器與各版本間不相容的標籤進行些微調整</li>
+<li>修正瀏覽器的 Bug 與不一致</li>
+</ul>
+</li>
+</ul>
+<h2 id="CSS-語法"><a href="#CSS-語法" class="headerlink" title="CSS - 語法"></a>CSS - 語法</h2><h3 id="display-常用的元件顯示類別屬性"><a href="#display-常用的元件顯示類別屬性" class="headerlink" title="display - 常用的元件顯示類別屬性"></a>display - 常用的元件顯示類別屬性</h3><table>
+<thead>
+<tr>
+<th>block</th>
+<th>inline</th>
+<th>inline-block</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>flex</td>
+<td>grid</td>
+<td>table</td>
+</tr>
+<tr>
+<td>none</td>
+<td>initial - 讓屬性恢復預設值</td>
+<td>inherit</td>
+</tr>
+</tbody>
+</table>
+<h4 id="black-佔據一整行的方塊有自己的寬高，其他內容都會被擠走"><a href="#black-佔據一整行的方塊有自己的寬高，其他內容都會被擠走" class="headerlink" title="black - 佔據一整行的方塊有自己的寬高，其他內容都會被擠走"></a>black - 佔據一整行的方塊有自己的寬高，其他內容都會被擠走</h4><p><img src="/2019/05/16/CSS-紀錄/c13.png" alt="title"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.block &#123;</span><br><span class="line">    display :block; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="inline-內容有多大就多大-沒辦法設定長寬-符合內容長寬"><a href="#inline-內容有多大就多大-沒辦法設定長寬-符合內容長寬" class="headerlink" title="inline - 內容有多大就多大 沒辦法設定長寬 (符合內容長寬)"></a>inline - 內容有多大就多大 沒辦法設定長寬 (符合內容長寬)</h4><p><img src="/2019/05/16/CSS-紀錄/c14.png" alt="title"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;block&quot;&gt;Lorem ipsum dolor&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">.block &#123;</span><br><span class="line">  display: inline;</span><br><span class="line">  border: 1px solid red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="inline-block-可以設定寬高但又不會佔據一整行"><a href="#inline-block-可以設定寬高但又不會佔據一整行" class="headerlink" title="inline-block - 可以設定寬高但又不會佔據一整行"></a>inline-block - 可以設定寬高但又不會佔據一整行</h4><p><img src="/2019/05/16/CSS-紀錄/c15.png" alt="title"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;block&quot;&gt;Lorem ipsum dolor&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;block2&quot;&gt;Lorem ipsum dolor&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">.block &#123;</span><br><span class="line">  display: inline-block;</span><br><span class="line">  border: 1px solid red;</span><br><span class="line">  width:50px;</span><br><span class="line">  height:50px;</span><br><span class="line">&#125;</span><br><span class="line">.block2 &#123;</span><br><span class="line">  display:inline-block;</span><br><span class="line">  border: 1px solid red;</span><br><span class="line">  width:50px;</span><br><span class="line">  height:50px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="display-none-amp-visibility-hidden-amp-overflow-hidden-差異"><a href="#display-none-amp-visibility-hidden-amp-overflow-hidden-差異" class="headerlink" title="display:none &amp; visibility:hidden &amp; overflow:hidden 差異"></a>display:none &amp; visibility:hidden &amp; overflow:hidden 差異</h4><ul>
+<li>display:none - 使用此屬性之後元素不存在了，元素佔據的位置也不存在</li>
+<li>visibility:hidden - 使用此屬性之後元素不存在了，元素佔據的位置依然存在</li>
+<li>overflow:hidden - 對行內元素無效，必須是塊級元素，並且設置寬度高度，隱藏之後元素依然佔據著位置</li>
+</ul>
+<h4 id="display-flex-下-overflow-hidden-失效"><a href="#display-flex-下-overflow-hidden-失效" class="headerlink" title="display: flex 下 overflow: hidden 失效"></a>display: flex 下 overflow: hidden 失效</h4><ul>
+<li>在父元素設定 </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">min-width: 0;  或 min-height: 0;</span><br><span class="line">overflow: hidden; </span><br></pre></td></tr></table></figure>
+<h3 id="position-用來設定”位子”的特性"><a href="#position-用來設定”位子”的特性" class="headerlink" title="position - 用來設定”位子”的特性"></a>position - 用來設定”位子”的特性</h3><h4 id="statice-定位元素-元件按照自然排列無法調整位置"><a href="#statice-定位元素-元件按照自然排列無法調整位置" class="headerlink" title="statice 定位元素 -  元件按照自然排列無法調整位置"></a>statice 定位元素 -  元件按照自然排列無法調整位置</h4><p><img src="/2019/05/16/CSS-紀錄/c1.png" alt="title"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">position: static;</span><br></pre></td></tr></table></figure>
+<h4 id="relative-相對定位元素-可調整元件的位置"><a href="#relative-相對定位元素-可調整元件的位置" class="headerlink" title="relative 相對定位元素 - 可調整元件的位置"></a>relative 相對定位元素 - 可調整元件的位置</h4><p><img src="/2019/05/16/CSS-紀錄/c2.png" alt="title"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">position: relative;</span><br><span class="line">top: 40px; </span><br><span class="line">left: 40px;</span><br></pre></td></tr></table></figure>
+<h4 id="absoult-絕對定位元素-找最近有設定過-position-的祖先-若沒有則去找-body"><a href="#absoult-絕對定位元素-找最近有設定過-position-的祖先-若沒有則去找-body" class="headerlink" title="absoult 絕對定位元素 - 找最近有設定過 position 的祖先 , 若沒有則去找 body"></a>absoult 絕對定位元素 - 找最近有設定過 position 的祖先 , 若沒有則去找 body</h4><p><img src="/2019/05/16/CSS-紀錄/c3.png" alt="title"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">position: absolute; </span><br><span class="line">top: 40px; </span><br><span class="line">left: 40px;</span><br></pre></td></tr></table></figure>
+<h4 id="fixed-固定定位-元件會固定在畫面上，不會隨捲軸滾動而移動"><a href="#fixed-固定定位-元件會固定在畫面上，不會隨捲軸滾動而移動" class="headerlink" title="fixed 固定定位 - 元件會固定在畫面上，不會隨捲軸滾動而移動"></a>fixed 固定定位 - 元件會固定在畫面上，不會隨捲軸滾動而移動</h4><p><img src="/2019/05/16/CSS-紀錄/c4.png" alt="title"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">position: fixed; </span><br><span class="line">top: 20px;</span><br></pre></td></tr></table></figure>
+<h4 id="sticky-黏性定位-relative-fixed-混合"><a href="#sticky-黏性定位-relative-fixed-混合" class="headerlink" title="sticky 黏性定位 - relative + fixed 混合"></a>sticky 黏性定位 - relative + fixed 混合</h4><p><img src="/2019/05/16/CSS-紀錄/c5.png" alt="title"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">position: -webkit-sticky; </span><br><span class="line">position: sticky; </span><br><span class="line">top: 20px;</span><br></pre></td></tr></table></figure>
+<h3 id="float-文繞圖"><a href="#float-文繞圖" class="headerlink" title="float - 文繞圖"></a>float - 文繞圖</h3><p>可參考 -&gt; <a href="https://developer.mozilla.org/zh-CN/docs/CSS/float" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/CSS/float</a></p>
+<p><img src="/2019/05/16/CSS-紀錄/c6.png" alt="title"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">float: none;</span><br></pre></td></tr></table></figure>
+<p><img src="/2019/05/16/CSS-紀錄/c7.png" alt="title"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">float: left;</span><br></pre></td></tr></table></figure>
+<p><img src="/2019/05/16/CSS-紀錄/c8.png" alt="title"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">float: right;</span><br></pre></td></tr></table></figure>
+<h2 id="CSS-清除浮動元件"><a href="#CSS-清除浮動元件" class="headerlink" title="CSS - 清除浮動元件"></a>CSS - 清除浮動元件</h2><p>codePen -&gt; <a href="https://codepen.io/Jimmywei01/pen/vwxzxE?editors=1100" target="_blank" rel="noopener">https://codepen.io/Jimmywei01/pen/vwxzxE?editors=1100</a></p>
+<p> float 浮動元素的父元素高度塌陷問題</p>
+<ul>
+<li>clearfix 作法<ul>
+<li>建立假的元素，設定塊級元素(table or block)，左側和右側均不允許出現浮動元素</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>BFC (Block Formatting Contexts  塊級格式化上下文) 作法 (W3C CSS2.1 規範中的一個概念)<ul>
+<li>具有 BFC 特性的元素可以看作是隔離了的獨立容器，容器裡面的元素不會在佈局上影響到外面的元素，並且 BFC 具有普通容器所沒有的一些特性</li>
+<li>可以把 BFC 理解為一個封閉的大箱子，箱子內部的元素無論如何設定都不會影響到外部元素</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>觸發BFC 特性：<ul>
+<li>body 根元素</li>
+<li>浮動元素：float 除 none 以外的值</li>
+<li>絕對定位元素：position (absolute、fixed)</li>
+<li>display 為 inline-block、table-cells、flex</li>
+<li>overflow 除了 visible 以外的值(hidden、auto、scroll)</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2019/05/16/CSS-紀錄/c9.png" alt="title"></p>
+<figure class="highlight plain"><figcaption><span>BFC 作法 與 clearfix 擇一使用</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=“content clearfix&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;box&quot;&gt;box&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;box2&quot;&gt;box2&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;box3&quot;&gt;box3&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">.content&#123;</span><br><span class="line">  background-color:black;</span><br><span class="line">  width:500px;</span><br><span class="line">/* BFC 作法 */</span><br><span class="line">  overflow:hidden;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* clearfix 作法 */</span><br><span class="line">.clearfix:after &#123;</span><br><span class="line">  content: &quot;&quot;;</span><br><span class="line">  display: table;</span><br><span class="line">  clear: both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="CSS-margin-collapsing-崩塌"><a href="#CSS-margin-collapsing-崩塌" class="headerlink" title="CSS - margin collapsing(崩塌)"></a>CSS - margin collapsing(崩塌)</h2><ul>
+<li>兩個元件之間的 margin 重疊</li>
+<li>讓父元素形成 BFC來接管自己的高度<ul>
+<li>在父元素增加 <code>overflow:hidden</code> 或在子元素增加 <code>display:inline-hidden</code> 等等</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2019/05/16/CSS-紀錄/c10.png" alt="title"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">.towBox&#123;</span><br><span class="line">  /* overflow:hidden; */</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.box4 &#123;</span><br><span class="line">  /* display:inline-block; */</span><br><span class="line">  margin:50px;</span><br><span class="line">  background-color: pink;</span><br><span class="line">  width: 100px;</span><br><span class="line">  height:100px;</span><br><span class="line">  text-align:center;</span><br><span class="line">  line-height:100px;</span><br><span class="line">&#125;</span><br><span class="line">.box5 &#123;</span><br><span class="line">  margin:50px;</span><br><span class="line">  background-color: yellow;</span><br><span class="line">  width: 100px;</span><br><span class="line">  height:100px;</span><br><span class="line">  text-align:center;</span><br><span class="line">  line-height:100px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="CSS-z-index-疊層樣式"><a href="#CSS-z-index-疊層樣式" class="headerlink" title="CSS - z-index 疊層樣式"></a>CSS - z-index 疊層樣式</h2><ul>
+<li>可參考<ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Understanding_z_index/The_stacking_context" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Understanding_z_index/The_stacking_context</a></li>
+<li><a href="https://codepen.io/Jimmywei01/pen/XwRYmQ?editors=1100" target="_blank" rel="noopener">https://codepen.io/Jimmywei01/pen/XwRYmQ?editors=1100</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>設定 HTML 元素定位屬性和 z-index 屬性創建一個層疊上下文 (opacity 值不為1 也會創建疊層)</li>
+<li>Root<ul>
+<li>DIV #1<ul>
+<li>DIV #2</li>
+<li>DIV #3</li>
+</ul>
+</li>
+<li>DIV #4</li>
+<li>DIV #5</li>
+<li>DIV #6</li>
+</ul>
+</li>
+</ul>
+<p>DIV #2、DIV #3 是 DIV #1 的子元素，它們的層疊和渲染完全在 DIV #1 中處理<br>處理完成，DIV #1 元素作為一個整體並與 DIV #4、DIV #5 、DIV #6 元素進行層疊處理</p>
+<p><img src="/2019/05/16/CSS-紀錄/c12.png" alt="title"></p>
+<h2 id="CSS-box-model"><a href="#CSS-box-model" class="headerlink" title="CSS - box-model"></a>CSS - box-model</h2><ul>
+<li>margin / border / padding / width / height</li>
+<li>max-width</li>
+<li>max-height</li>
+<li>可參考 -&gt; <a href="https://codepen.io/Jimmywei01/pen/eaWNda" target="_blank" rel="noopener">https://codepen.io/Jimmywei01/pen/eaWNda</a></li>
+</ul>
+<p>box-sizing: content-box</p>
+<ul>
+<li>元素的寬為 160px，那麼這個元素的內容區會有 160px 寬，並且任何邊框和內邊距的寬度都會被增加到最後繪製出來的元素寬度中</li>
+</ul>
+<p>box-sizing: border-box</p>
+<ul>
+<li>元素的 width 設為160px,那麼這160px 會包含其它的 border 和 padding，內容區的實際寬度會是width 減去 border + padding 的計算值</li>
+<li>表示盒子模型的寬度和高度將包含其內邊距和邊框</li>
+<li>更容易去設定元素的寬高</li>
+</ul>
+<p><img src="/2019/05/16/CSS-紀錄/c11.png" alt="title"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;content-box&quot;&gt;Content box&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;border-box&quot;&gt;Border box&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">div &#123;</span><br><span class="line">  width: 160px;</span><br><span class="line">  height: 80px;</span><br><span class="line">  padding: 20px;</span><br><span class="line">  border: 8px solid red;</span><br><span class="line">  background: yellow;</span><br><span class="line">&#125;</span><br><span class="line">.content-box &#123;</span><br><span class="line">  box-sizing: content-box;</span><br><span class="line">  /* Total width: 160px + (2 * 20px) + (2 * 8px) = 216px</span><br><span class="line">     Total height: 80px + (2 * 20px) + (2 * 8px) = 136px */</span><br><span class="line">&#125;</span><br><span class="line">.border-box &#123;</span><br><span class="line">  box-sizing: border-box;</span><br><span class="line">  /* Total width: 160px</span><br><span class="line">     Total height: 80px */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="CSS-提問"><a href="#CSS-提問" class="headerlink" title="CSS 提問"></a>CSS 提問</h2><ol>
+<li>CSS 的 class 和 id 差異？</li>
+</ol>
+<ul>
+<li>id 權重 &gt; class 權重</li>
+<li>同一個頁面上的兩個元素不能有相同的 id 屬性值</li>
+</ul>
+<ol start="2">
+<li>怎麼實現水平置中 &amp; 垂直置中</li>
+</ol>
+<ul>
+<li><p>可參考 -&gt; <a href="https://ithelp.ithome.com.tw/users/20112550/ironman/2092" target="_blank" rel="noopener">https://ithelp.ithome.com.tw/users/20112550/ironman/2092</a></p>
+</li>
+<li><p>行內元素</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">text-align: center;</span><br><span class="line">line-height: 100px;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>塊級元素</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">margin: 0 auto;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>未知高度和寬度元素的水平垂直居中<ul>
+<li>被置中的元素是 <code>inline</code> 或者 <code>inline-block</code> 元素</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.container&#123; </span><br><span class="line">    width: 600px;</span><br><span class="line">    height: 600px; </span><br><span class="line">    display: table-cell; </span><br><span class="line">    text-align: center; </span><br><span class="line">    vertical-align: middle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>CSS3 的 transform 屬性</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.container&#123;</span><br><span class="line">    width: 100%;</span><br><span class="line">    height: 600px;</span><br><span class="line">    position: relative;</span><br><span class="line">&#125;</span><br><span class="line">.center&#123;</span><br><span class="line">    position:absolute;</span><br><span class="line">    top: 50%;</span><br><span class="line">    left: 50%;</span><br><span class="line">    transform: translate(-50%, -50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>flex</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.container&#123;</span><br><span class="line">    width: 100%;</span><br><span class="line">    height: 600px;</span><br><span class="line">    display: flex;</span><br><span class="line">    justify-content: center;</span><br><span class="line">    align-items: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>實現左邊定寬，右邊自適應佈局</li>
+</ol>
+<ul>
+<li>左盒子左浮動，右盒子 <code>width=100%</code></li>
+<li>左盒子左浮動，右盒子 <code>margin-left=左盒子寬度</code></li>
+<li>左盒子左浮動，右盒子右浮動，設置 <code>width: calc（100 % - 左盒子寬度）</code></li>
+<li>父容器設置 <code>display：flex</code>，右盒子 <code>flex：1</code></li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" <i class="fa fa-tag"> CSS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/14/cookie、session、local-storage、session-storage-差異/" rel="next" title="cookie、session、local storage、session storage 差異">
+                <i class="fa fa-chevron-left"></i> cookie、session、local storage、session storage 差異
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概要
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/panda.png" alt="Jimmy Wei">
+            
+              <p class="site-author-name" itemprop="name">Jimmy Wei</p>
+              <div class="site-description motion-element" itemprop="description">光電/程式/工藝/設計/哲學</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">文章</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">分類</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">標籤</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/Jimmywei01" title="GitHub &rarr; https://github.com/Jimmywei01" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://www.facebook.com/profile.php?id=100000193194715" title="FB Page &rarr; https://www.facebook.com/profile.php?id=100000193194715" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-塊級元素-block-amp-行內元素-inline"><span class="nav-number">1.</span> <span class="nav-text">CSS - 塊級元素(block) &amp; 行內元素(inline)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-選擇器"><span class="nav-number">2.</span> <span class="nav-text">CSS - 選擇器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-選擇器優先級"><span class="nav-number">2.1.</span> <span class="nav-text">CSS - 選擇器優先級</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-前綴詞"><span class="nav-number">3.</span> <span class="nav-text">CSS - 前綴詞</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-reset-amp-normalize"><span class="nav-number">4.</span> <span class="nav-text">CSS - reset &amp; normalize</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-語法"><span class="nav-number">5.</span> <span class="nav-text">CSS - 語法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#display-常用的元件顯示類別屬性"><span class="nav-number">5.1.</span> <span class="nav-text">display - 常用的元件顯示類別屬性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#black-佔據一整行的方塊有自己的寬高，其他內容都會被擠走"><span class="nav-number">5.1.1.</span> <span class="nav-text">black - 佔據一整行的方塊有自己的寬高，其他內容都會被擠走</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#inline-內容有多大就多大-沒辦法設定長寬-符合內容長寬"><span class="nav-number">5.1.2.</span> <span class="nav-text">inline - 內容有多大就多大 沒辦法設定長寬 (符合內容長寬)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#inline-block-可以設定寬高但又不會佔據一整行"><span class="nav-number">5.1.3.</span> <span class="nav-text">inline-block - 可以設定寬高但又不會佔據一整行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#display-none-amp-visibility-hidden-amp-overflow-hidden-差異"><span class="nav-number">5.1.4.</span> <span class="nav-text">display:none &amp; visibility:hidden &amp; overflow:hidden 差異</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#display-flex-下-overflow-hidden-失效"><span class="nav-number">5.1.5.</span> <span class="nav-text">display: flex 下 overflow: hidden 失效</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#position-用來設定”位子”的特性"><span class="nav-number">5.2.</span> <span class="nav-text">position - 用來設定”位子”的特性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#statice-定位元素-元件按照自然排列無法調整位置"><span class="nav-number">5.2.1.</span> <span class="nav-text">statice 定位元素 -  元件按照自然排列無法調整位置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#relative-相對定位元素-可調整元件的位置"><span class="nav-number">5.2.2.</span> <span class="nav-text">relative 相對定位元素 - 可調整元件的位置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#absoult-絕對定位元素-找最近有設定過-position-的祖先-若沒有則去找-body"><span class="nav-number">5.2.3.</span> <span class="nav-text">absoult 絕對定位元素 - 找最近有設定過 position 的祖先 , 若沒有則去找 body</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fixed-固定定位-元件會固定在畫面上，不會隨捲軸滾動而移動"><span class="nav-number">5.2.4.</span> <span class="nav-text">fixed 固定定位 - 元件會固定在畫面上，不會隨捲軸滾動而移動</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sticky-黏性定位-relative-fixed-混合"><span class="nav-number">5.2.5.</span> <span class="nav-text">sticky 黏性定位 - relative + fixed 混合</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#float-文繞圖"><span class="nav-number">5.3.</span> <span class="nav-text">float - 文繞圖</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-清除浮動元件"><span class="nav-number">6.</span> <span class="nav-text">CSS - 清除浮動元件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-margin-collapsing-崩塌"><span class="nav-number">7.</span> <span class="nav-text">CSS - margin collapsing(崩塌)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-z-index-疊層樣式"><span class="nav-number">8.</span> <span class="nav-text">CSS - z-index 疊層樣式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-box-model"><span class="nav-number">9.</span> <span class="nav-text">CSS - box-model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-提問"><span class="nav-number">10.</span> <span class="nav-text">CSS 提問</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jimmy Wei</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 強力驅動 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+  
+  <script id="dsq-count-scr" src="https://Jimmywei01.disqus.com/count.js" async></script>
+
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://jimmywei01.github.io/2019/05/16/CSS-紀錄/";
+    this.page.identifier = "2019/05/16/CSS-紀錄/";
+    this.page.title = 'CSS 紀錄';
+    };
+  function loadComments() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://Jimmywei01.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', '' + +new Date());
+    (d.head || d.body).appendChild(s);
+  }
+  
+    loadComments();
+  
+</script>
+
+
+
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
