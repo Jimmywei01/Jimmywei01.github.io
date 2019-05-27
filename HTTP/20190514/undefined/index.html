@@ -105,25 +105,21 @@
 
 
 
-  <meta name="description" content="讓你的網站更親近 Google">
-<meta name="keywords" content="Analytics,hexo">
+  <meta name="description" content="重要的傳遞手法">
+<meta name="keywords" content="cookie,web storage">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用Google_Search_Console和sitemap進行SEO優化">
-<meta property="og:url" content="https://jimmywei01.github.io/2019/05/09/使用Google-Search-Console和sitemap進行SEO優化/index.html">
+<meta property="og:title" content="cookie、session、local storage、session storage 差異">
+<meta property="og:url" content="https://jimmywei01.github.io/HTTP/20190514/undefined/index.html">
 <meta property="og:site_name" content="Jimmy&#39;s Notes">
-<meta property="og:description" content="讓你的網站更親近 Google">
+<meta property="og:description" content="重要的傳遞手法">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:image" content="https://jimmywei01.github.io/2019/05/09/使用Google-Search-Console和sitemap進行SEO優化/sitemap.png">
-<meta property="og:image" content="https://jimmywei01.github.io/2019/05/09/使用Google-Search-Console和sitemap進行SEO優化/gs1.png">
-<meta property="og:image" content="https://jimmywei01.github.io/2019/05/09/使用Google-Search-Console和sitemap進行SEO優化/gs2.png">
-<meta property="og:image" content="https://jimmywei01.github.io/2019/05/09/使用Google-Search-Console和sitemap進行SEO優化/gs3.png">
-<meta property="og:image" content="https://jimmywei01.github.io/2019/05/09/使用Google-Search-Console和sitemap進行SEO優化/gs4.png">
-<meta property="og:image" content="https://jimmywei01.github.io/2019/05/09/使用Google-Search-Console和sitemap進行SEO優化/gs5.png">
-<meta property="og:updated_time" content="2019-05-10T09:05:36.771Z">
+<meta property="og:image" content="https://jimmywei01.github.io/2019/05/14/cookie、session、local-storage、session-storage-差異/local1.png">
+<meta property="og:image" content="https://jimmywei01.github.io/2019/05/14/cookie、session、local-storage、session-storage-差異/local2.png">
+<meta property="og:updated_time" content="2019-05-14T10:02:17.854Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用Google_Search_Console和sitemap進行SEO優化">
-<meta name="twitter:description" content="讓你的網站更親近 Google">
-<meta name="twitter:image" content="https://jimmywei01.github.io/2019/05/09/使用Google-Search-Console和sitemap進行SEO優化/sitemap.png">
+<meta name="twitter:title" content="cookie、session、local storage、session storage 差異">
+<meta name="twitter:description" content="重要的傳遞手法">
+<meta name="twitter:image" content="https://jimmywei01.github.io/2019/05/14/cookie、session、local-storage、session-storage-差異/local1.png">
 
 
 
@@ -131,7 +127,7 @@
 
   
   
-  <link rel="canonical" href="https://jimmywei01.github.io/2019/05/09/使用Google-Search-Console和sitemap進行SEO優化/">
+  <link rel="canonical" href="https://jimmywei01.github.io/HTTP/20190514/undefined/">
 
 
 
@@ -141,7 +137,7 @@
   };
 </script>
 
-  <title>使用Google_Search_Console和sitemap進行SEO優化 | Jimmy's Notes</title>
+  <title>cookie、session、local storage、session storage 差異 | Jimmy's Notes</title>
   
 
 
@@ -374,7 +370,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://jimmywei01.github.io/2019/05/09/使用Google-Search-Console和sitemap進行SEO優化/">
+    <link itemprop="mainEntityOfPage" href="https://jimmywei01.github.io/HTTP/20190514/undefined/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jimmy Wei">
@@ -391,7 +387,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">使用Google_Search_Console和sitemap進行SEO優化<a href="https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name_posts/使用Google-Search-Console和sitemap進行SEO優化.md" class="post-edit-link" title="編輯" rel="noopener" target="_blank"><i class="fa fa-pencil"></i></a>
+          <h1 class="post-title" itemprop="name headline">cookie、session、local storage、session storage 差異<a href="https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name_posts/cookie、session、local-storage、session-storage-差異.md" class="post-edit-link" title="編輯" rel="noopener" target="_blank"><i class="fa fa-pencil"></i></a>
 
               
             
@@ -417,24 +413,12 @@
                 
               
 
-              <time title="創建時間：2019-05-09 23:11:41" itemprop="dateCreated datePublished" datetime="2019-05-09T23:11:41+08:00">2019-05-09</time>
+              <time title="創建時間：2019-05-14 15:56:55 / 修改時間：18:02:17" itemprop="dateCreated datePublished" datetime="2019-05-14T15:56:55+08:00">2019-05-14</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新於</span>
-                
-                <time title="修改時間：2019-05-10 17:05:36" itemprop="dateModified" datetime="2019-05-10T17:05:36+08:00">2019-05-10</time>
               
             
           </span>
@@ -451,7 +435,7 @@
                 <span class="post-meta-item-text">分類於</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Analytics/" itemprop="url" rel="index"><span itemprop="name">Analytics</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/HTTP/" itemprop="url" rel="index"><span itemprop="name">HTTP</span></a></span>
 
                 
                 
@@ -470,8 +454,8 @@
                 </span>
             
                 <span class="post-meta-item-text">評論數：</span>
-                <a href="/2019/05/09/使用Google-Search-Console和sitemap進行SEO優化/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/05/09/使用Google-Search-Console和sitemap進行SEO優化/" itemprop="commentCount"></span>
+                <a href="/HTTP/20190514/undefined/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="HTTP/20190514/undefined/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -499,41 +483,147 @@
       
 
       
-        <blockquote class="blockquote-center"><p>讓你的網站更親近 Google</p>
+        <blockquote class="blockquote-center"><p>重要的傳遞手法</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>為了讓文章可以被 Google 搜尋到所以設定 sitemap &amp; Google_Search_Console</p>
-<h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><h3 id="sitemap"><a href="#sitemap" class="headerlink" title="sitemap"></a>sitemap</h3><p>使用 npm 自動生成網站的 sitemap，然後將生成的 sitemap 提交 Google</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
-<p>修改文件設定<br>將 sitemap 加到站點設定文件 _config.yml 中，並修改 url 為自己的網址</p>
-<p>路徑：<code>/_config.yml</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># sitmap</span><br><span class="line">sitemap:</span><br><span class="line">  path: sitemap.xml</span><br></pre></td></tr></table></figure>
-<p>重新部署到 GitHub<br><img src="/2019/05/09/使用Google-Search-Console和sitemap進行SEO優化/sitemap.png" alt="title"></p>
-<h3 id="選擇性增加-robots-txt"><a href="#選擇性增加-robots-txt" class="headerlink" title="選擇性增加 robots.txt"></a>選擇性增加 robots.txt</h3><p>主要行為就是在搜尋引擎檢索網站時，告訴它網站哪些內容可以被檢索，哪些內容可以不用被檢索<br><br>可參考 -&gt; <a href="https://www.awoo.com.tw/blog/2018/03/robotstxt-crawl/" target="_blank" rel="noopener">robots.txt用途與使用範例教學，釐清SEO收錄觀念</a></p>
-<p>在站點 source 文件夾下新建 robots.txt 文件，文件內容如下</p>
-<ul>
-<li>Allow 字段的值即為允許搜索引擎爬區的內容，可以對應到主題配置文件中的 menu 目錄配置，如果還有其他選項都可以按照格式自行添加</li>
-<li>需要將 <a href="https://hoxis.github.io" target="_blank" rel="noopener">https://hoxis.github.io</a> 改成自己的域名</li>
+<h2 id="session-Storage-和-local-Storage-的差別"><a href="#session-Storage-和-local-Storage-的差別" class="headerlink" title="session Storage 和 local Storage 的差別"></a>session Storage 和 local Storage 的差別</h2><ul>
+<li>可參考<ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/localStorage" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/API/Window/localStorage</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/sessionStorage" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/API/Window/sessionStorage</a></li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">User-agent: *</span><br><span class="line">Allow: /</span><br><span class="line">Allow: /archives/</span><br><span class="line">Allow: /categories/</span><br><span class="line">Allow: /tags/ </span><br><span class="line">Allow: /resources/ </span><br><span class="line">Disallow: /vendors/</span><br><span class="line">Disallow: /js/</span><br><span class="line">Disallow: /css/</span><br><span class="line">Disallow: /fonts/</span><br><span class="line">Disallow: /vendors/</span><br><span class="line">Disallow: /fancybox/</span><br><span class="line"></span><br><span class="line">Sitemap: https://hoxis.github.io/sitemap.xml</span><br></pre></td></tr></table></figure>
-<h3 id="Google-Search-Console"><a href="#Google-Search-Console" class="headerlink" title="Google_Search_Console"></a>Google_Search_Console</h3><p><a href="https://www.google.com/webmasters/#?modal_active=none" target="_blank" rel="noopener">https://www.google.com/webmasters/#?modal_active=none</a></p>
-<p>可參考 -&gt; <a href="https://www.awoo.com.tw/blog/2018/10/new-searchconsole-introduction/" target="_blank" rel="noopener">新版Google Search Console基礎介紹，透析新舊版介面、功能差異</a></p>
-<p>登入後，會顯示你沒有存取這項資源的權限</p>
-<p><img src="/2019/05/09/使用Google-Search-Console和sitemap進行SEO優化/gs1.png" alt="title"></p>
-<p>點擊驗證擁有權可以發現有多種驗證方式，我們用上一篇埋好的 GA 進行驗證<br>如果失敗就回去 <code>&lt;head&gt;</code> 確認有沒有正確埋入</p>
-<p><img src="/2019/05/09/使用Google-Search-Console和sitemap進行SEO優化/gs2.png" alt="title"></p>
-<p>成功後進入 sitemap 面板選項再加入 sitemap.xml</p>
-<p><img src="/2019/05/09/使用Google-Search-Console和sitemap進行SEO優化/gs3.png" alt="title"></p>
-<p>加入網址索引</p>
-<ul>
-<li>點擊 <code>網址審查</code>加入網頁</li>
-<li>點擊右上方的<code>測試線上網址</code>可以即時測試網頁是否能夠讓 Google 進行索引</li>
-<li>點擊 <code>加入索引</code></li>
+</li>
+<li>JSON.stringify - 轉字串儲存</li>
+<li>JSON.parse - 轉物件取出</li>
 </ul>
-<p><img src="/2019/05/09/使用Google-Search-Console和sitemap進行SEO優化/gs4.png" alt="title"></p>
-<p>完成後</p>
-<p><img src="/2019/05/09/使用Google-Search-Console和sitemap進行SEO優化/gs5.png" alt="title"></p>
-<p>最後可以用 <code>site:你的網址</code> 來看有沒有被 Google 搜尋到</p>
+<p>寫入 local Storage (session Storage 亦同)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 設定 local storage</span><br><span class="line">let todo = [ ]</span><br><span class="line">todo.push(&apos;Mario red’,&apos;Mario blue’,&apos;Mario black’,&apos;Mario pink’,&apos;Mario yellow&apos;)</span><br><span class="line">localStorage.setItem(&apos;todolist&apos;,JSON.stringify(todo))</span><br></pre></td></tr></table></figure>
+<p><img src="/2019/05/14/cookie、session、local-storage、session-storage-差異/local1.png" alt="title"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 取出 local storage</span><br><span class="line">let data = JSON.parse(localStorage.getItem(&apos;todolist’))</span><br><span class="line">-&gt; [&quot;Mario red&quot;, &quot;Mario blue&quot;, &quot;Mario black&quot;, &quot;Mario pink&quot;, &quot;Mario yellow”]</span><br><span class="line"></span><br><span class="line">// 資料操作</span><br><span class="line">data.splice(data2.indexOf(&apos;Mario blue&apos;),1)</span><br><span class="line">-&gt; [&quot;Mario red&quot;, &quot;Mario black&quot;, &quot;Mario pink&quot;, &quot;Mario yellow”]</span><br><span class="line"></span><br><span class="line">// 刪除整個 local storage</span><br><span class="line">localStorage.removeItem(&apos;todolist&apos;)</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>Storage</th>
+<th>sessionStorage</th>
+<th>localStorage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>存儲大小限制</td>
+<td>5M或更大，不會把數據發給服務器僅在本地保存</td>
+<td>5M或更大，不會把數據發給服務器僅在本地保存</td>
+</tr>
+<tr>
+<td>數據有效期</td>
+<td>僅在當前瀏覽器窗口關閉前有效</td>
+<td>始終有效，窗口或瀏覽器關閉也一直保存</td>
+</tr>
+<tr>
+<td>作用域</td>
+<td>不在不同的瀏覽器窗口中共享，即使是同一個頁面</td>
+<td>在所有同源瀏覽器窗口中都是共享的</td>
+</tr>
+<tr>
+<td>安全性</td>
+<td>比 cookie 高一點</td>
+<td>比 cookie 高一點</td>
+</tr>
+</tbody>
+</table>
+<p>舉例 session Storage 傳送頁面</p>
+<ul>
+<li>例如購物流程，加入購物車 &gt; 填寫購物資料 &gt; 進入結帳畫面 &gt; 成功</li>
+<li>假設填寫購物資料時回到上一頁按加入購物車的時候， JS 就可透過 sessionStorage 傳遞即時資訊，而頁面關閉時購物資料的 sessionStorage 也會跟著關閉，以減少機敏資訊外流的風險</li>
+</ul>
+<hr>
+<h2 id="session-和-cookie-的差別"><a href="#session-和-cookie-的差別" class="headerlink" title="session 和 cookie 的差別"></a>session 和 cookie 的差別</h2><ul>
+<li>session：帳號登錄驗證過後，後端所發的識別證</li>
+<li>cookie：是瀏覽器存放資料的地方，可以存放 seesion 之類的資料</li>
+<li>後端可以要求前端要設置 cookie 來存放 seesion，這樣在換頁的時候，每發送一次 request 時順便也會把 seesion 送到後端，這樣後端都可以知道是同一個人（而不是每次都要送一次帳號密碼去做驗證）</li>
+<li>建議在後端進行寫 cookie 操作，並通過 session 來控制 cookie 的過期時間</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>cookie 欄位</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name  名稱</td>
+<td>key 鍵</td>
+</tr>
+<tr>
+<td>value 內容</td>
+<td>value 值</td>
+</tr>
+<tr>
+<td>Domin 網域</td>
+<td>取得該 cookie 的網域</td>
+</tr>
+<tr>
+<td>path 路徑</td>
+<td>設定可以存取該 cookie 路徑</td>
+</tr>
+<tr>
+<td>secure 傳送連線類型</td>
+<td>設定 cookie 是否要 https 才可以進行傳送</td>
+</tr>
+<tr>
+<td>Expires  建立時間</td>
+<td>限制 cookie 有效時間</td>
+</tr>
+<tr>
+<td>httpOnly</td>
+<td>此 cookie 只能從 web server 訪問，以避免不正確的進入來取得竄改</td>
+</tr>
+</tbody>
+</table>
+<p>clint 端寫入 cookie</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.cookie = &quot;myName=jimmy&quot;</span><br></pre></td></tr></table></figure>
+<p><img src="/2019/05/14/cookie、session、local-storage、session-storage-差異/local2.png" alt="title"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 寫入 cookie，並加入過期時間</span><br><span class="line">document.cookie=&quot;username=bob; expires=Mon, 04 Dec 2017 08:18:32 GMT; path=/&quot;</span><br><span class="line"></span><br><span class="line">// 寫入 cookie，設定 10 秒後失效</span><br><span class="line">document.cookie=&quot;username=bob; max-age=10; path=/&quot;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>server</th>
+<th>session</th>
+<th>cookie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>儲存大小限制</td>
+<td>與 cookie 共用，利用 session Id 來判定＆記錄資料 ex. 會員網站登入</td>
+<td>cookie 在瀏覽器和服務器間來回傳遞，可以限制 cookie 只屬於某個路徑下。cookie 數據不能超過 4k，每次 http 請求都會攜帶 cookie</td>
+</tr>
+<tr>
+<td>數據有效期</td>
+<td>僅在當前瀏覽器窗口關閉前有效</td>
+<td>在設置的 cookie 過期時間之前一直有效，即使窗口或瀏覽器關閉作用域</td>
+</tr>
+<tr>
+<td>作用域</td>
+<td>無</td>
+<td>在所有同源瀏覽器窗口中都是共享的</td>
+</tr>
+<tr>
+<td>安全性</td>
+<td>比 cookie 高</td>
+<td>低</td>
+</tr>
+</tbody>
+</table>
+<p>舉例 cookie、session 登錄流程</p>
+<ul>
+<li>客戶端使用用戶名跟密碼請求登錄</li>
+<li>服務端收到請求，去驗證用戶名和密碼（後台根據請求去數據庫查找是否有該用戶）</li>
+<li>驗證成功後，服務端會簽發一個 API token（進行 API 路徑存取時先 JWT 驗證 -&gt; 驗證成功才允許訪問該 API，該 token 值一般都會存入資料庫中，並設置過期時間），再把這個 token 發送給客戶端</li>
+<li>客戶端收到 token 之後，再用 js 塞到 cookie 或 storage 裡面</li>
+<li>客戶端每次向服務端請求資源的時候需要帶著服務端簽發的 token</li>
+<li>服務端收到請求，然後去驗證客戶端請求裡面帶著的 token（token 是否為該用戶的令牌以及 token 是否有效等），如果驗證成功就向客戶端返回請求的數據</li>
+</ul>
 
       
     </div>
@@ -557,9 +647,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Analytics/" <i class="fa fa-tag"> Analytics</a>
+            <a href="/tags/cookie/" <i class="fa fa-tag"> cookie</a>
           
-            <a href="/tags/hexo/" <i class="fa fa-tag"> hexo</a>
+            <a href="/tags/web-storage/" <i class="fa fa-tag"> web storage</a>
           
         </div>
       
@@ -572,8 +662,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/09/使用GA替網站作分析/" rel="next" title="使用GA替網站作分析">
-                <i class="fa fa-chevron-left"></i> 使用GA替網站作分析
+              <a href="/HTML/20190512/undefined/" rel="next" title="HTML 紀錄">
+                <i class="fa fa-chevron-left"></i> HTML 紀錄
               </a>
             
           </div>
@@ -582,8 +672,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/05/10/HTML-Meta-tages-的屬性設定/" rel="prev" title="HTML Meta tages 屬性設定">
-                HTML Meta tages 屬性設定 <i class="fa fa-chevron-right"></i>
+              <a href="/CSS/20190516/undefined/" rel="prev" title="CSS 紀錄">
+                CSS 紀錄 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -790,7 +880,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#流程"><span class="nav-number">2.</span> <span class="nav-text">流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#sitemap"><span class="nav-number">2.1.</span> <span class="nav-text">sitemap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#選擇性增加-robots-txt"><span class="nav-number">2.2.</span> <span class="nav-text">選擇性增加 robots.txt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Google-Search-Console"><span class="nav-number">2.3.</span> <span class="nav-text">Google_Search_Console</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#session-Storage-和-local-Storage-的差別"><span class="nav-number">1.</span> <span class="nav-text">session Storage 和 local Storage 的差別</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#session-和-cookie-的差別"><span class="nav-number">2.</span> <span class="nav-text">session 和 cookie 的差別</span></a></li></ol></div>
             
 
           </div>
@@ -952,9 +1042,9 @@
 
 <script>
   var disqus_config = function() {
-    this.page.url = "https://jimmywei01.github.io/2019/05/09/使用Google-Search-Console和sitemap進行SEO優化/";
-    this.page.identifier = "2019/05/09/使用Google-Search-Console和sitemap進行SEO優化/";
-    this.page.title = '使用Google_Search_Console和sitemap進行SEO優化';
+    this.page.url = "https://jimmywei01.github.io/HTTP/20190514/undefined/";
+    this.page.identifier = "HTTP/20190514/undefined/";
+    this.page.title = 'cookie、session、local storage、session storage 差異';
     };
   function loadComments() {
     var d = document, s = d.createElement('script');
