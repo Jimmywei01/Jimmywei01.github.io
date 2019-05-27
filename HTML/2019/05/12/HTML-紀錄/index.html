@@ -1,0 +1,1605 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-TW">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-139836366-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-139836366-1');
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/QQ2.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/QQ2.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/QQ2.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/lQQ2.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.1.1',
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+
+  <meta name="description" content="紀錄常用的HTML  -&amp;gt; Hyper Text Markup Language (超文本標記語言)">
+<meta name="keywords" content="HTML,HTML5">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML 紀錄">
+<meta property="og:url" content="https://jimmywei01.github.io/HTML/2019/05/12/HTML-紀錄/index.html">
+<meta property="og:site_name" content="Jimmy&#39;s Notes">
+<meta property="og:description" content="紀錄常用的HTML  -&amp;gt; Hyper Text Markup Language (超文本標記語言)">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="https://jimmywei01.github.io/2019/05/12/HTML-紀錄/h1.png">
+<meta property="og:image" content="https://jimmywei01.github.io/2019/05/12/HTML-紀錄/h2.png">
+<meta property="og:image" content="https://jimmywei01.github.io/2019/05/12/HTML-紀錄/h3.png">
+<meta property="og:image" content="https://jimmywei01.github.io/2019/05/12/HTML-紀錄/h7.png">
+<meta property="og:image" content="https://jimmywei01.github.io/2019/05/12/HTML-紀錄/h6.png">
+<meta property="og:image" content="https://jimmywei01.github.io/2019/05/12/HTML-紀錄/h4.png">
+<meta property="og:image" content="https://jimmywei01.github.io/2019/05/12/HTML-紀錄/h5.png">
+<meta property="og:image" content="https://jimmywei01.github.io/2019/05/12/HTML-紀錄/h8.svg">
+<meta property="og:updated_time" content="2019-05-15T04:04:31.232Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML 紀錄">
+<meta name="twitter:description" content="紀錄常用的HTML  -&amp;gt; Hyper Text Markup Language (超文本標記語言)">
+<meta name="twitter:image" content="https://jimmywei01.github.io/2019/05/12/HTML-紀錄/h1.png">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://jimmywei01.github.io/HTML/2019/05/12/HTML-紀錄/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>HTML 紀錄 | Jimmy's Notes</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-TW">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Jimmy's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">你可以沒有熱情，但不應該自我設限</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切換導航欄">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首頁</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>標籤</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分類</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>歸檔</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜尋</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜尋..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://jimmywei01.github.io/HTML/2019/05/12/HTML-紀錄/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jimmy Wei">
+      <meta itemprop="description" content="光電/程式/工藝/設計/哲學">
+      <meta itemprop="image" content="/images/panda.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jimmy's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HTML 紀錄<a href="https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name_posts/HTML-紀錄.md" class="post-edit-link" title="編輯" rel="noopener" target="_blank"><i class="fa fa-pencil"></i></a>
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+
+              
+                
+              
+
+              <time title="創建時間：2019-05-12 23:19:06" itemprop="dateCreated datePublished" datetime="2019-05-12T23:19:06+08:00">2019-05-12</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新於</span>
+                
+                <time title="修改時間：2019-05-15 12:04:31" itemprop="dateModified" datetime="2019-05-15T12:04:31+08:00">2019-05-15</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/HTML/" itemprop="url" rel="index"><span itemprop="name">HTML</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">評論數：</span>
+                <a href="/HTML/2019/05/12/HTML-紀錄/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="HTML/2019/05/12/HTML-紀錄/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote class="blockquote-center"><p>紀錄常用的<br>HTML  -&gt; Hyper Text Markup Language (超文本標記語言)</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="HTML-table-表格"><a href="#HTML-table-表格" class="headerlink" title="HTML - table 表格"></a>HTML - table 表格</h2><ul>
+<li>thead <code>table 頭</code></li>
+<li>tbody <code>table 身體</code></li>
+<li>tfoot <code>table 腳</code></li>
+<li>th <code>預設是粗體置中，主要用在表格標題</code></li>
+<li>td <code>單格</code></li>
+<li>tr <code>整行 (整列)</code></li>
+<li>colspan <code>水平合併</code> </li>
+<li>rowspan <code>垂直合併</code></li>
+</ul>
+<p><img src="/2019/05/12/HTML-紀錄/h1.png" alt="title"></p>
+<figure class="highlight plain"><figcaption><span>html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;table&gt;</span><br><span class="line">  &lt;thead&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">        &lt;th&gt;table標題&lt;/th&gt;</span><br><span class="line">        &lt;th&gt;table標題2&lt;/th&gt;</span><br><span class="line">　   &lt;/tr&gt;</span><br><span class="line">  &lt;/thead&gt;</span><br><span class="line">  &lt;tbody&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">      &lt;td colspan=&quot;2&quot;&gt;這裡是第一行&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">　  &lt;tr&gt;</span><br><span class="line">　     &lt;td&gt;這裡是第二行的第一個欄位&lt;/td&gt;</span><br><span class="line">　     &lt;td rowspan=&quot;2&quot;&gt;這裡是第二行的第二個欄位&lt;/td&gt;</span><br><span class="line">　  &lt;/tr&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">      &lt;td&gt;這裡是第三行的第一個欄位&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">  &lt;/tbody&gt;</span><br><span class="line">  &lt;tfoot&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">　     &lt;td&gt;這裡是第四行的第一個欄位&lt;/td&gt;</span><br><span class="line">　     &lt;td rowspan=&quot;2&quot;&gt;這裡是第四行的第二個欄位&lt;/td&gt;</span><br><span class="line">　  &lt;/tr&gt;</span><br><span class="line">  &lt;/tfoot&gt;</span><br><span class="line">&lt;/table&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="HTML-form-表單"><a href="#HTML-form-表單" class="headerlink" title="HTML - form 表單"></a>HTML - form 表單</h2><p>可參考 -&gt; <a href="https://www.w3schools.com/html/html_form_input_types.asp" target="_blank" rel="noopener">https://www.w3schools.com/html/html_form_input_types.asp</a></p>
+<ul>
+<li>display 預設為 inline 屬性</li>
+</ul>
+<figure class="highlight plain"><figcaption><span>html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=&quot;/searchList&quot; method=&apos;post&apos; enctype=&quot;application/x-www-form-urlencoded&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;text&quot; name=&apos;searchText&apos; id=&apos;text&apos; value = &apos;&apos;&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; id=&apos;send&apos; value=&apos;送出&apos;&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>屬性</th>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>enctype</td>
+<td>application/x-www-form-urlencoded</td>
+<td>在發送前編碼所有字元（預設）</td>
+</tr>
+<tr>
+<td></td>
+<td>multipart/form-data</td>
+<td>不對字元編碼在使用包含文件上傳控件的表單時，必須使用該值</td>
+</tr>
+<tr>
+<td></td>
+<td>text/plain</td>
+<td>空格轉換為”+” 加號，但不對特殊字元編碼</td>
+</tr>
+<tr>
+<td></td>
+<td>application/json</td>
+<td>json 傳送物件資料 要轉成 <font style="color:red;font-size:14px;">‘字串’</font> 傳送 </td>
+</tr>
+<tr>
+<td>accept</td>
+<td>MIME_type</td>
+<td>HTML 5 中不支持 可以用副檔名來指定可接受的檔案類型</td>
+</tr>
+<tr>
+<td>accept-charset</td>
+<td>charset_list</td>
+<td>規定服務器可處理的表單數據字符集</td>
+</tr>
+<tr>
+<td>action</td>
+<td>URL</td>
+<td>提交表單時向何處發送表單數據(詢問後端工程師要在哪驗證)</td>
+</tr>
+<tr>
+<td>autocomplete</td>
+<td>on、off</td>
+<td>規定是否啟用表單的自動完成功能</td>
+</tr>
+<tr>
+<td>method</td>
+<td>get、post</td>
+<td>用於發送 form-data 的 HTTP 方法</td>
+</tr>
+<tr>
+<td>name</td>
+<td>form_name</td>
+<td><font style="color:red;font-size:14px;">傳送給後台串連的名子</font></td>
+</tr>
+<tr>
+<td>novalidate</td>
+<td>novalidate</td>
+<td>如果使用該屬性 則提交表單時不進行驗證</td>
+</tr>
+<tr>
+<td>target</td>
+<td>_blank、_self、_parent、_top、framename</td>
+<td>規定在何處打開 action URL</td>
+</tr>
+<tr>
+<td>value</td>
+<td>form_value</td>
+<td><font style="color:red;font-size:14px;">傳送給後台的值</font></td>
+</tr>
+</tbody>
+</table>
+<h3 id="form-常用操作"><a href="#form-常用操作" class="headerlink" title="form 常用操作"></a>form 常用操作</h3><p><img src="/2019/05/12/HTML-紀錄/h2.png" alt="title"></p>
+<h4 id="input-type"><a href="#input-type" class="headerlink" title="input type"></a>input type</h4><ul>
+<li>required 自動驗證</li>
+<li>pattern=”[A-z]{3}” 自訂驗證規則</li>
+</ul>
+<figure class="highlight plain"><figcaption><span>html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;text&quot; name=&apos;searchText&apos; id=&apos;text&apos; value = &apos;&apos; required pattern=&quot;[A-z]&#123;3&#125;&quot;&gt;</span><br><span class="line">&lt;input type=&quot;submit&quot; id=&apos;send&apos; value=&apos;送出’&gt;</span><br><span class="line">&lt;input type=&quot;file&quot; accept=&quot;.pdf&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>radio 單選題</li>
+</ul>
+<figure class="highlight plain"><figcaption><span>html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;radio&quot; name=&quot;gander&quot; value=&quot;male&quot;&gt;Male</span><br><span class="line">&lt;input type=&quot;radio&quot; name=&quot;gander&quot; value=&quot;female&quot;&gt;Female</span><br></pre></td></tr></table></figure>
+<ul>
+<li>checkbox 多選題</li>
+</ul>
+<figure class="highlight plain"><figcaption><span>html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;checkbox&quot; name=&quot;intersts&quot; value=&quot;reade&quot;&gt;read</span><br><span class="line">&lt;input type=&quot;checkbox&quot; name=&quot;intersts&quot; value=&quot;sleep&quot;&gt;sleep</span><br><span class="line">&lt;input type=&quot;checkbox&quot; name=&quot;intersts&quot; value=&quot;eat&quot;&gt;eat</span><br></pre></td></tr></table></figure>
+<ul>
+<li>label (label for)<ul>
+<li>可用在點選文字 提升UX體驗</li>
+<li>用 id 來對應</li>
+<li>label 標籤的特性包在任何 input 標籤外面，點擊 label 就等於點擊 input</li>
+<li>利用這個特性，將 label 標籤包在 input 上傳按鈕外，再將 input 上傳按鈕隱藏起來，點擊依然有效</li>
+<li>使用圖片代替 input 上傳按鈕，可在 label 裡面放圖片</li>
+<li>input 無法設定的任何 CSS，此時可設定在 label 上</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><figcaption><span>html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;label for=&quot;email&quot;&gt;email&lt;/label&gt;</span><br><span class="line">&lt;input type=&quot;email&quot; id=&quot;email&quot;&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="select-下拉式選單"><a href="#select-下拉式選單" class="headerlink" title="select 下拉式選單"></a>select 下拉式選單</h4><figure class="highlight plain"><figcaption><span>html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;select name=&quot;month&quot;&gt;</span><br><span class="line">  &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;</span><br><span class="line">  &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="button"><a href="#button" class="headerlink" title="button"></a>button</h3><ul>
+<li>submit <ul>
+<li><font style="color:red;font-size:14px;">傳送資料給後台</font></li>
+</ul>
+</li>
+<li>reset<ul>
+<li>將資料重整</li>
+</ul>
+</li>
+<li>button<ul>
+<li>單純按鈕無動作 可與 javascript 搭配完成特殊動作</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><figcaption><span>html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;text&quot;&gt;</span><br><span class="line">&lt;button type=&quot;submit&quot;&gt;submit&lt;/button&gt;</span><br><span class="line">&lt;button type=&quot;reset&quot;&gt;reset&lt;/button&gt;</span><br><span class="line">&lt;button type=&quot;button&quot;&gt;no action&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="multiple"><a href="#multiple" class="headerlink" title="multiple"></a>multiple</h3><ul>
+<li>可同時選擇多個選項</li>
+</ul>
+<figure class="highlight plain"><figcaption><span>html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;select multiple=&quot;multiple&quot;size=&quot;4&quot;&gt;</span><br><span class="line">  &lt;option value =&quot;volvo&quot;&gt;Volvo&lt;/option&gt;</span><br><span class="line">  &lt;option value =&quot;saab&quot;&gt;Saab&lt;/option&gt;</span><br><span class="line">  &lt;option value=&quot;opel&quot;&gt;Opel&lt;/option&gt;</span><br><span class="line">  &lt;option value=&quot;audi&quot;&gt;Audi&lt;/option&gt;</span><br><span class="line">  &lt;option value=&quot;bmw&quot;&gt;BMW&lt;/option&gt;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="textarea"><a href="#textarea" class="headerlink" title="textarea"></a>textarea</h3><p><img src="/2019/05/12/HTML-紀錄/h3.png" alt="title"></p>
+<figure class="highlight plain"><figcaption><span>html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 限制 輸入內容文字長度</span><br><span class="line">&lt;textarea cols=&quot;30&quot; rows=&quot;10&quot;&gt;&lt;/textarea&gt;</span><br><span class="line"></span><br><span class="line">// 限制 textarea 被拉大的區域</span><br><span class="line">&lt;textarea cols=&quot;30&quot; rows=&quot;10&quot;&gt;&lt;/textarea&gt;</span><br><span class="line"></span><br><span class="line">textarea&#123;</span><br><span class="line">  max-width: 300px;</span><br><span class="line">  resize: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="HTML-常犯的錯誤"><a href="#HTML-常犯的錯誤" class="headerlink" title="HTML - 常犯的錯誤"></a>HTML - 常犯的錯誤</h2><ul>
+<li>塊級元素放入了行內元素內</li>
+</ul>
+<figure class="highlight plain"><figcaption><span>html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;#&quot;&gt;&lt;h1&gt;wrong&lt;/h1&gt;&lt;/a&gt;</span><br><span class="line"></span><br><span class="line">&lt;h1&gt;&lt;a href=&quot;#&quot;&gt;right&lt;/a&gt;&lt;/h1&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>圖片 img 沒有包含設定 alt 屬性<ul>
+<li>幫助使用者以及搜尋引擎瞭解這張圖片有什麼意義</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><figcaption><span>html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">不會顯示圖片</span><br><span class="line">&lt;img src=&quot;wrong.png&quot; alt=“”&gt; </span><br><span class="line"></span><br><span class="line">會顯示圖片</span><br><span class="line">&lt;img src=&quot;right.png&quot; alt=&quot;right picture&quot;&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>用＜b＞和＜i＞標籤來達到字體加粗和斜體字的效果<ul>
+<li>‘效果’ 就用 CSS </li>
+<li>‘文章中的重要性’，則使用＜strong＞和＜em＞標籤</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><figcaption><span>html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;b&gt;粗體&lt;/b&gt; &lt;i&gt;斜體&lt;/i&gt;</span><br><span class="line"></span><br><span class="line">&lt;strong&gt;粗體&lt;/strong&gt; &lt;em&gt;斜體&lt;/em&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>使用太多的換行符號(斷行)＜br/＞<ul>
+<li>不要使用 <code>&lt;br/&gt;</code> 來增加文字間距，應該用 CSS 的 margin 屬性、或改用 <code>&lt;p&gt;</code> 完成這件事</li>
+<li><a href="https://developer.mozilla.org/zh-TW/docs/Web/HTML/Element/br" target="_blank" rel="noopener">https://developer.mozilla.org/zh-TW/docs/Web/HTML/Element/br</a></li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><figcaption><span>html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">休息是為了走更長遠的路 </span><br><span class="line">&lt;br/&gt;</span><br><span class="line">&lt;br/&gt;</span><br><span class="line">真的嗎？</span><br><span class="line"></span><br><span class="line">&lt;p&gt;休息是為了走更長遠的路&lt;/p&gt;</span><br><span class="line">&lt;p&gt;真的嗎？&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>沒有使用標籤標題(如H1,H2,H3..)<ul>
+<li>常用 H1、H2、H3 和 <code>&lt;strong&gt;</code> 和 <code>&lt;em&gt;</code>，H4~H6 是我比較少用到</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><figcaption><span>html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;oh&lt;/h1&gt;</span><br><span class="line">&lt;h2&gt;oh&lt;/h2&gt;</span><br><span class="line">&lt;h3&gt;oh&lt;/h3&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="HTML-提問"><a href="#HTML-提問" class="headerlink" title="HTML - 提問"></a>HTML - 提問</h2><ol>
+<li>DOCTYPE 有什麼作用？標準模式與混雜模式如何區分？它們有何意義?<br>告訴瀏覽器使用哪個版本的 HTML 規範來渲染文件，DOCTYPE 不存在或形式不正確會導致 HTML 文件以混雜模式呈現<ul>
+<li>標準模式（Standards mode）以瀏覽器支援的最高標準執行</li>
+<li>混雜模式（Quirks mode）中頁面是一種比較寬鬆的向後相容的方式顯示</li>
+</ul>
+</li>
+</ol>
+<ol start="2">
+<li>HTML5 為什麼只需要寫 <code>&lt;!DOCTYPE HTML&gt;</code>？</li>
+</ol>
+<ul>
+<li>HTML5 不基於 SGML（Standard Generalized Markup Language 標準通用標記語言),因此不需要對 DTD（DTD 文件型別定義）進行引用，但是需要 DOCTYPE 來規範瀏覽器行為</li>
+<li>HTML4.01 基於 SGML，所以需要引用 DTD。才能告知瀏覽器文件所使用的文件型別，如下：<br><code>&lt;!DOCTYPE HTML PUBLIC “-//W3C//DTD HTML 4.01//EN” “http://www.w3.org/TR/html4/strict.dtd”&gt;</code></li>
+</ul>
+<ol start="3">
+<li>行內元素有哪些？塊級元素有哪些？ 空(void)元素有那些？</li>
+</ol>
+<ul>
+<li>塊級元素：<code>&lt;div&gt;  &lt;ul&gt;  &lt;ol&gt;  &lt;li&gt;  &lt;dl&gt;  &lt;dt&gt;  &lt;dd&gt;  &lt;h1&gt;  &lt;p&gt;</code></li>
+<li>行內元素：<code>&lt;a&gt;  &lt;span&gt;  &lt;img&gt;  &lt;input&gt;  &lt;select&gt;</code></li>
+<li>空元素：<code>&lt;hr&gt;  &lt;link&gt;  &lt;meta&gt;</code></li>
+</ul>
+<ol start="4">
+<li>頁面匯入樣式時，使用 link 和 @import 有什麼區別？</li>
+</ol>
+<ul>
+<li>都是外部引用 CSS 方式</li>
+<li>@import 屬於 CSS 範疇，只能載入 CSS</li>
+<li>@import 需要在頁面完全載入以後載入，而且被 @import 引用的 CSS 會等到引用它的 CSS 檔案被載入完才載入</li>
+<li>link 引用 CSS 時候，頁面載入時同時載入</li>
+<li>link 方式的樣式的權重高於 @import 的權重</li>
+<li>import 在 html 使用時候需要 <code>&lt;style type=&quot;text/css&quot;&gt;</code>標籤</li>
+</ul>
+<ol start="5">
+<li>介紹一下瀏覽器核心的理解？</li>
+</ol>
+<p><img src="/2019/05/12/HTML-紀錄/h7.png" alt="title"></p>
+<ul>
+<li><p>可參考</p>
+<ul>
+<li><a href="https://developers.google.com/web/fundamentals/performance/rendering/" target="_blank" rel="noopener">https://developers.google.com/web/fundamentals/performance/rendering/</a></li>
+<li><a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction" target="_blank" rel="noopener">https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction</a></li>
+</ul>
+</li>
+<li><h3 id="渲染引擎"><a href="#渲染引擎" class="headerlink" title="渲染引擎"></a>渲染引擎</h3></li>
+<li>HTML 經過 HTML parser 產生 HTML DOM tree</li>
+</ul>
+<p><img src="/2019/05/12/HTML-紀錄/h6.png" alt="title"></p>
+<ul>
+<li>CSS 經過 CSS parser 產生 CSS rules</li>
+</ul>
+<p><img src="/2019/05/12/HTML-紀錄/h4.png" alt="title"></p>
+<ul>
+<li>進入 style 將 rules 賦予 DOM tree 產生 style tree 的元素</li>
+<li>進入 layout 將 style tree 元素進行排版產生 layout tree</li>
+</ul>
+<p><img src="/2019/05/12/HTML-紀錄/h5.png" alt="title"></p>
+<ul>
+<li>進入 渲染顯示在應用程式上</li>
+</ul>
+<ul>
+<li><h3 id="JS-引擎"><a href="#JS-引擎" class="headerlink" title="JS 引擎"></a>JS 引擎</h3><ul>
+<li>javascript 來實現網頁動態效果的解析和執行</li>
+<li>每解析和執行渲染引擎會重新渲染</li>
+<li>每個動作最好在 16 ms 內完成，因為多數裝置會以 每秒 60 次 重新整理螢幕</li>
+</ul>
+</li>
+</ul>
+<ol start="6">
+<li>HTML 語義化的理解？</li>
+</ol>
+<ul>
+<li>去掉或丟失樣式的時候能夠讓頁面呈現出清晰的結構</li>
+<li>有利於 SEO 和搜尋引擎建立良好溝通，有助於爬蟲抓取更多的資訊，爬蟲依賴於標籤來確定上下文和各個關鍵字的權重</li>
+<li>方便其它裝置解析</li>
+<li>便於團隊開發和維護</li>
+</ul>
+<ol start="7">
+<li><code>&lt;script&gt;</code> 放置的位置？</li>
+</ol>
+<ul>
+<li>可參考<ul>
+<li><a href="https://developer.mozilla.org/zh-TW/docs/Web/HTML/Element/script" target="_blank" rel="noopener">https://developer.mozilla.org/zh-TW/docs/Web/HTML/Element/script</a></li>
+<li><a href="https://html.spec.whatwg.org/multipage/scripting.html" target="_blank" rel="noopener">https://html.spec.whatwg.org/multipage/scripting.html</a></li>
+</ul>
+</li>
+</ul>
+<p><img src="/2019/05/12/HTML-紀錄/h8.svg" alt="title"></p>
+<ul>
+<li>將 <code>&lt;script&gt;</code> 放置在 <code>&lt;head&gt;</code> <ul>
+<li>瀏覽器在解析過程中，發現 <code>&lt;script&gt;</code> 會阻斷頁面上其他 HTML 的解析，下載完所有 <code>&lt;script&gt;</code> 在往下解析 HTML，這會導致使用者感到不順感</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>將  <code>&lt;script&gt;</code> 放置在 <code>&lt;body&gt;</code> 尾端<ul>
+<li>瀏覽器在整個 HTML 解析完成之前都不能下載 <code>&lt;script&gt;</code>，如果 HTML 很大解析完HTML，使用者依然要等待 <code>&lt;script&gt;</code> 下載並執行完成之後才能操作這個網站 </li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>async - asynchronous(非同步)<ul>
+<li>以非同步的方法執行</li>
+<li>如果沒有 src 屬性的話，就不能用這個屬性在這種情況下，它將失去作用</li>
+<li>只要下載完就執行，有可能會導致 script2.js 可能先於 script1.js 執行(載完的先跑)</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;script1.js&quot; async&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;script2.js&quot; async&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>defer - deferred(延遲)<ul>
+<li>與 async 相同在 HTML 在解析時下載 <code>&lt;script&gt;</code>， <code>&lt;script&gt;</code> 會等到 HTML 載完才開始工作，而且會按照順序一個一個來，也就是說 script1.js 永遠優先於 script2.js</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;script1.js&quot; defer&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;script2.js&quot; defer&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HTML/" <i class="fa fa-tag"> HTML</a>
+          
+            <a href="/tags/HTML5/" <i class="fa fa-tag"> HTML5</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/HTML/2019/05/10/HTML-Meta-tages-的屬性設定/" rel="next" title="HTML Meta tages 屬性設定">
+                <i class="fa fa-chevron-left"></i> HTML Meta tages 屬性設定
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/HTTP/2019/05/14/cookie、session、local-storage、session-storage-差異/" rel="prev" title="cookie、session、local storage、session storage 差異">
+                cookie、session、local storage、session storage 差異 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概要
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/panda.png" alt="Jimmy Wei">
+            
+              <p class="site-author-name" itemprop="name">Jimmy Wei</p>
+              <div class="site-description motion-element" itemprop="description">光電/程式/工藝/設計/哲學</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">文章</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">分類</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-name">標籤</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/Jimmywei01" title="GitHub &rarr; https://github.com/Jimmywei01" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://www.facebook.com/profile.php?id=100000193194715" title="FB Page &rarr; https://www.facebook.com/profile.php?id=100000193194715" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-table-表格"><span class="nav-number">1.</span> <span class="nav-text">HTML - table 表格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-form-表單"><span class="nav-number">2.</span> <span class="nav-text">HTML - form 表單</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#form-常用操作"><span class="nav-number">2.1.</span> <span class="nav-text">form 常用操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#input-type"><span class="nav-number">2.1.1.</span> <span class="nav-text">input type</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#select-下拉式選單"><span class="nav-number">2.1.2.</span> <span class="nav-text">select 下拉式選單</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#button"><span class="nav-number">2.2.</span> <span class="nav-text">button</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#multiple"><span class="nav-number">2.3.</span> <span class="nav-text">multiple</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#textarea"><span class="nav-number">2.4.</span> <span class="nav-text">textarea</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-常犯的錯誤"><span class="nav-number">3.</span> <span class="nav-text">HTML - 常犯的錯誤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-提問"><span class="nav-number">4.</span> <span class="nav-text">HTML - 提問</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#渲染引擎"><span class="nav-number">4.1.</span> <span class="nav-text">渲染引擎</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JS-引擎"><span class="nav-number">4.2.</span> <span class="nav-text">JS 引擎</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jimmy Wei</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 強力驅動 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+  
+  <script id="dsq-count-scr" src="https://Jimmywei01.disqus.com/count.js" async></script>
+
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://jimmywei01.github.io/HTML/2019/05/12/HTML-紀錄/";
+    this.page.identifier = "HTML/2019/05/12/HTML-紀錄/";
+    this.page.title = 'HTML 紀錄';
+    };
+  function loadComments() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://Jimmywei01.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', '' + +new Date());
+    (d.head || d.body).appendChild(s);
+  }
+  
+    loadComments();
+  
+</script>
+
+
+
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
