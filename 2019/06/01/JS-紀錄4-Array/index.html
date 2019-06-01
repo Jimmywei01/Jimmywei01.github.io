@@ -113,12 +113,13 @@
 <meta property="og:site_name" content="Jimmy&#39;s Notes">
 <meta property="og:description" content="JavaScript Array 紀錄">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:image" content="https://jimmywei01.github.io/2019/06/01/JS-紀錄4-Array/js1.png">
-<meta property="og:updated_time" content="2019-06-01T08:41:12.431Z">
+<meta property="og:image" content="https://jimmywei01.github.io/2019/06/01/JS-紀錄4-Array/j41.png">
+<meta property="og:image" content="https://jimmywei01.github.io/2019/06/01/JS-紀錄4-Array/j42.png">
+<meta property="og:updated_time" content="2019-06-01T15:25:34.553Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS 紀錄4 - Array">
 <meta name="twitter:description" content="JavaScript Array 紀錄">
-<meta name="twitter:image" content="https://jimmywei01.github.io/2019/06/01/JS-紀錄4-Array/js1.png">
+<meta name="twitter:image" content="https://jimmywei01.github.io/2019/06/01/JS-紀錄4-Array/j41.png">
 
 
 
@@ -412,7 +413,7 @@
                 
               
 
-              <time title="創建時間：2019-06-01 15:32:53 / 修改時間：16:41:12" itemprop="dateCreated datePublished" datetime="2019-06-01T15:32:53+08:00">2019-06-01</time>
+              <time title="創建時間：2019-06-01 15:32:53 / 修改時間：23:25:34" itemprop="dateCreated datePublished" datetime="2019-06-01T15:32:53+08:00">2019-06-01</time>
             
 
             
@@ -485,7 +486,6 @@
         <blockquote class="blockquote-center"><p>JavaScript Array 紀錄</p>
 </blockquote>
 <a id="more"></a>
-<p><img src="/2019/06/01/JS-紀錄4-Array/js1.png" alt="title"></p>
 <h1 id="Array-的方法"><a href="#Array-的方法" class="headerlink" title="Array 的方法"></a>Array 的方法</h1><h2 id="判別是否為陣列"><a href="#判別是否為陣列" class="headerlink" title="判別是否為陣列"></a>判別是否為陣列</h2><ul>
 <li><code>isArray( )</code> - 內建 typeof 去檢查陣列得到 “object” 的結果 回傳 true</li>
 <li><code>toString.call</code> - 所有情況都可以正確判斷。判斷陣列以外的其他特別物件，缺點是效率最差</li>
@@ -495,87 +495,461 @@
 </ul>
 <h2 id="Search-搜尋"><a href="#Search-搜尋" class="headerlink" title="Search(搜尋)"></a>Search(搜尋)</h2><ul>
 <li><code>includes( )</code> - 判斷元素有沒有在 Array 裡面 回傳 true | false</li>
-<li>indexof( ) - 回傳第一個被找到的元素 index；若不存在則回傳 -1</li>
-<li>lastIndexof( ) - 回傳最後一個被找到的元素 index；若不存在則回傳 -1</li>
+<li><code>indexof( )</code> - 回傳第一個被找到的元素 index；若不存在則回傳 -1</li>
+<li><code>lastIndexof( )</code> - 回傳最後一個被找到的元素 index；若不存在則回傳 -1</li>
 </ul>
 <h2 id="Operation-操作"><a href="#Operation-操作" class="headerlink" title="Operation(操作)"></a>Operation(操作)</h2><ul>
-<li>pop( ) - 移除陣列最後面的值，回傳 被移除掉的值</li>
-<li>push( ) - 增加一個 或 多個元素至陣列尾端 ，回傳 陣列的新 length</li>
-<li>shift( ) - 移除陣列最前面的值，回傳 被移除掉的值</li>
-<li>unshift( ) - 增加陣列最前面的值，回傳 陣列的新 length</li>
-<li>slice( ) - 用淺拷貝(shallow copy)的方式分割元素出子陣列，回傳一個新 Array (舊 Array 不變動)</li>
-<li>splice( ) - 藉由刪除並／或增加新元素來改變陣列內容，回傳一個改變後的 Array</li>
-<li>concat( ) - 合併兩個或多個陣列。回傳一個新 Array (舊 Array 不變動)</li>
-<li>join( ) - 把所有陣列裡的值加上 separator(符號)，回傳一個字串</li>
+<li><code>pop( )</code> - 移除陣列最後面的值，回傳 被移除掉的值</li>
+<li><code>push( )</code> - 增加一個 或 多個元素至陣列尾端 ，回傳 陣列的新 length</li>
+<li><code>shift( )</code> - 移除陣列最前面的值，回傳 被移除掉的值</li>
+<li><code>unshift( )</code> - 增加陣列最前面的值，回傳 陣列的新 length</li>
+<li><code>slice( )</code> - 用淺拷貝(shallow copy)的方式分割元素出子陣列，回傳一個新 Array (舊 Array 不變動)</li>
+<li><code>splice( )</code> - 藉由刪除並／或增加新元素來改變陣列內容，回傳一個改變後的 Array</li>
+<li><code>concat( )</code> - 合併兩個或多個陣列。回傳一個新 Array (舊 Array 不變動)</li>
+<li><code>join( )</code> - 把所有陣列裡的值加上 separator(符號)，回傳一個字串</li>
 </ul>
 <h2 id="Iteration-迭代-callback"><a href="#Iteration-迭代-callback" class="headerlink" title="Iteration (迭代 callback)"></a>Iteration (迭代 callback)</h2><ul>
-<li>forEatch( ) - 不會return任何東西 &amp; 中斷，單純執行 function 改變原本陣列裡的事</li>
-<li>find( ) - 回傳一個值，且是 第一個 抓到條件為 true 的值，否則回傳 undefined<ul>
+<li><code>forEatch( )</code> - 不會return任何東西 &amp; 中斷，單純執行 function 改變原本陣列裡的事</li>
+<li><code>find( )</code> - 回傳一個值，且是 第一個 抓到條件為 true 的值，否則回傳 undefined<ul>
 <li>搜尋陣列中符合條件的物件</li>
 </ul>
 </li>
-<li>findIndex( ) - 尋找符合的元素回傳其 index，若沒有符合的對象則回傳 -1</li>
-<li>filter( ) - 回傳一個 Array，只要條件為 true 的所有值 or Array，適合拿來搜尋</li>
-<li>map( ) - return 後方為 true 運算後的值 or 新 Array，用在判斷回傳 true | false</li>
-<li>some( ) - 回傳一個值 false | true，只要部分符合就回傳 true，只要一找到相符的值就跳出</li>
-<li>every( ) - 回傳一個值 false | true，需要全部符合才回傳 true</li>
+<li><code>findIndex( )</code> - 尋找符合的元素回傳其 index，若沒有符合的對象則回傳 -1</li>
+<li><code>filter( )</code> - 回傳一個 Array，只要條件為 true 的所有值 or Array，適合拿來搜尋</li>
+<li><code>map( )</code> - return 後方為 true 運算後的值 or 新 Array，用在判斷回傳 true | false</li>
+<li><code>some( )</code> - 回傳一個值 false | true，只要部分符合就回傳 true，只要一找到相符的值就跳出</li>
+<li><code>every( )</code> - 回傳一個值 false | true，需要全部符合才回傳 true</li>
 </ul>
 <h2 id="Iteration-迭代-callback-Special"><a href="#Iteration-迭代-callback-Special" class="headerlink" title="Iteration (迭代 callback) - Special"></a>Iteration (迭代 callback) - Special</h2><ul>
-<li>reduce( ) - 由 callback function 前後值兩相運算，然後縮減陣列中的元素，最終回傳一個值<ul>
+<li><code>reduce( )</code> - 由 callback function 前後值兩相運算，然後縮減陣列中的元素，最終回傳一個值<ul>
 <li>收到前一個回傳的值供下一個物件使用，很適合用在累加與比對上</li>
 </ul>
 </li>
-<li>rightReduce( ) - 陣列中每一個值（由右至左）傳入 callback function，最終回傳一個值</li>
+<li><code>rightReduce( )</code> - 陣列中每一個值（由右至左）傳入 callback function，最終回傳一個值</li>
 </ul>
 <h2 id="Order-排序"><a href="#Order-排序" class="headerlink" title="Order(排序)"></a>Order(排序)</h2><ul>
-<li>sort( ) - 將 Array 排序，排序順序是根據字串的 Unicode 編碼位置（code points）而定<ul>
+<li><code>sort( )</code> - 將 Array 排序，排序順序是根據字串的 Unicode 編碼位置（code points）而定<ul>
 <li>排序過的陣列，不是原陣列的 copy，而是直接更改原陣列</li>
 <li>localeCompare - 判斷在目前地區設定中兩個字串是否相等</li>
 </ul>
 </li>
-<li>reverse( ) - 反轉後的 Array</li>
+<li><code>reverse( )</code> - 反轉後的 Array</li>
 </ul>
 <h1 id="Array-方法的效果"><a href="#Array-方法的效果" class="headerlink" title="Array 方法的效果"></a>Array 方法的效果</h1><h2 id="判別是否為陣列-1"><a href="#判別是否為陣列-1" class="headerlink" title="判別是否為陣列"></a>判別是否為陣列</h2><ul>
 <li>初始值</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const ary = [&apos;red&apos;,&apos;green&apos;,&apos;blue&apos;]</span><br></pre></td></tr></table></figure>
 <ul>
-<li>Array.isArray(obj)<ul>
+<li>Array.<font style="color:red;font-size:15px;">isArray</font>(obj)<ul>
 <li>Obj - 要檢查的物件</li>
 </ul>
 </li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Array.isArray(ary)        // true</span><br><span class="line">Array.isArray(&apos;foobar&apos;)   // false</span><br><span class="line">Array.isArray(undefined)  // false</span><br><span class="line">Object.prototype.toString.call(variable) === &apos;[object Array]&apos;</span><br></pre></td></tr></table></figure>
 <h2 id="Properties-屬性-1"><a href="#Properties-屬性-1" class="headerlink" title="Properties (屬性)"></a>Properties (屬性)</h2><ul>
-<li>Array.length<ul>
+<li>Array.<font style="color:red;font-size:15px;">isArray</font><ul>
 <li>回傳 Array 元素長度</li>
 </ul>
 </li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ary.length  // 6</span><br></pre></td></tr></table></figure>
-<h2 id="Method-方法"><a href="#Method-方法" class="headerlink" title="Method (方法)"></a>Method (方法)</h2><h3 id="Search-搜尋-1"><a href="#Search-搜尋-1" class="headerlink" title="Search(搜尋)"></a>Search(搜尋)</h3><p>// 初始值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const ary = [9,2,5,3,7,6,1]</span><br></pre></td></tr></table></figure></p>
+<h2 id="Method-方法"><a href="#Method-方法" class="headerlink" title="Method (方法)"></a>Method (方法)</h2><h3 id="Search-搜尋-1"><a href="#Search-搜尋-1" class="headerlink" title="Search(搜尋)"></a>Search(搜尋)</h3><ul>
+<li>初始值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const ary = [9,2,5,3,7,6,1]</span><br></pre></td></tr></table></figure>
 <ul>
-<li>Array.prototype.includes(searchElement[, fromIndex]) -&gt; (搜索元素,[元素的索引])<ul>
+<li>Array.prototype.<font style="color:red;font-size:15px;">includes()</font>(searchElement[, fromIndex]) -&gt; (搜索元素,[元素的索引])<ul>
 <li>判斷陣列是否包含特定的元素 回傳 true | false</li>
 </ul>
 </li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let a = ary.includes(9)</span><br><span class="line">let b = ary.includes(0)</span><br><span class="line"></span><br><span class="line">console.log(a) // true</span><br><span class="line">console.log(b) // false</span><br></pre></td></tr></table></figure>
 <ul>
-<li>Array.prototype.indexOf(searchElement[, fromIndex])  -&gt; (搜索元素,[元素的索引])<ul>
+<li>Array.prototype.<font style="color:red;font-size:15px;">indexOf()</font>(searchElement[, fromIndex])  -&gt; (搜索元素,[元素的索引])<ul>
 <li>回傳第一個被找到的元素 index；若不存在則回傳 -1</li>
 </ul>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const indexArray = ary.indexOf(3)</span><br><span class="line">const notArray = ary.indexOf(8)</span><br><span class="line"></span><br><span class="line">console.log(indexArray) // 3</span><br><span class="line">console.log(notArray)   // -1</span><br><span class="line">console.log(ary)        //[9,2,5,3,7,6,1]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const indexArray = ary.indexOf(3)</span><br><span class="line">const notArray = ary.indexOf(8)</span><br><span class="line"></span><br><span class="line">console.log(indexArray) // 3</span><br><span class="line">console.log(notArray)   // -1</span><br><span class="line">console.log(ary)        // [9,2,5,3,7,6,1]</span><br></pre></td></tr></table></figure>
 <ul>
-<li>Array.prototype.lastIndexOf(searchElement[, fromIndex])  -&gt; (搜索元素,[元素的索引])<ul>
+<li>Array.prototype.<font style="color:red;font-size:15px;">lastIndexOf()</font>(searchElement[, fromIndex])  -&gt; (搜索元素,[元素的索引])<ul>
 <li>回傳最後一個被找到的元素 index；若不存在則回傳 -1</li>
 </ul>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const indexArray = ary.lastIndexOf(7)</span><br><span class="line">const notArray = ary.lastIndexOf(8)</span><br><span class="line"></span><br><span class="line">console.log(indexArray) // 4</span><br><span class="line">console.log(notArray)   // -1</span><br><span class="line">console.log(ary)        //[9,2,5,3,7,6,1]</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const indexArray = ary.lastIndexOf(7)</span><br><span class="line">const notArray = ary.lastIndexOf(8)</span><br><span class="line"></span><br><span class="line">console.log(indexArray) // 4</span><br><span class="line">console.log(notArray)   // -1</span><br><span class="line">console.log(ary)        // [9,2,5,3,7,6,1]</span><br></pre></td></tr></table></figure>
+<h3 id="Operation-操作-1"><a href="#Operation-操作-1" class="headerlink" title="Operation(操作)"></a>Operation(操作)</h3><ul>
+<li>初始值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const color = [&apos;red&apos;,&apos;blue&apos;,&apos;yellow&apos;,&apos;green&apos;]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Array.prototype.<font style="color:red;font-size:15px;">pop()</font><ul>
+<li>移除陣列最後一個元素 </li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const newColor = color.pop()</span><br><span class="line">console.log(newColor)  // &quot;green&quot;</span><br><span class="line">console.log(color)     // [&quot;red&quot;, &quot;blue&quot;, &quot;yellow&quot;]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Array.prototype.<font style="color:red;font-size:15px;">push()</font><ul>
+<li>增加一個 或 多個元素至陣列尾端</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const newColor = color.push(&apos;black’)</span><br><span class="line">console.log(newColor)  // 5</span><br><span class="line">console.log(color)     // [&quot;red&quot;, &quot;blue&quot;, &quot;yellow&quot;, &quot;green&quot;, &quot;black&quot;]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Array.prototype.<font style="color:red;font-size:15px;">shift( )</font><ul>
+<li>移除陣列最前面的值</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const newColor = color.shift()</span><br><span class="line">console.log(newColor) // &quot;red&quot;</span><br><span class="line">console.log(color)    // [&quot;blue&quot;, &quot;yellow&quot;, &quot;green&quot;]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Array.prototype.<font style="color:red;font-size:15px;">unshift</font>(element1[, …[, elementN]]) -&gt; (元素1,[元素N])<ul>
+<li>增加陣列最前面的值</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const newColor = color.unshift(&apos;black&apos;,&apos;white’)</span><br><span class="line">console.log(newColor)  // 6</span><br><span class="line">console.log(color)     // [&quot;black&quot;, &quot;white&quot;, &quot;red&quot;, &quot;blue&quot;, &quot;yellow&quot;, &quot;green&quot;]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Array.prototype.<font style="color:red;font-size:15px;">slice</font>([begin[, end]]) -&gt; (元素開始位置,[元素結束位置])<ul>
+<li>用淺拷貝(shallow copy)的方式分割出元素值陣列，回傳一個新 array (舊 array 不變動)</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2019/06/01/JS-紀錄4-Array/j41.png" alt="title"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const newColor = color.slice(-1)</span><br><span class="line">const newColor2 = color.slice(1,3)</span><br><span class="line">console.log(newColor)   // [&quot;green&quot;]</span><br><span class="line">console.log(newColor2)  // [&quot;blue&quot;, &quot;yellow”]</span><br><span class="line">console.log(color)      // [&quot;red&quot;, &quot;blue&quot;, &quot;yellow&quot;, &quot;green&quot;]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Array.prototype.<font style="color:red;font-size:15px;">splice</font>(start[, deleteCount[, item1[, item2[, …]]]]) -&gt; (元素開始位置,[刪除元素數量],[增加的元素])<ul>
+<li>藉由刪除並｜增加新元素來改變陣列內容，回傳一個改變後的 array</li>
+<li>return 分割出元素值陣列</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const newColor = color.splice(-1)</span><br><span class="line">const newColor2 = color.splice(0,2)</span><br><span class="line">const newColor3 = color.splice(0,3,&apos;c’) // 刪除後增加元素</span><br><span class="line">console.log(newColor)  // [&quot;green”]</span><br><span class="line">console.log(color)     // [&quot;red&quot;, &quot;blue&quot;, &quot;yellow&quot;]</span><br><span class="line">console.log(newColor2) // [&quot;red&quot;, &quot;blue&quot;]</span><br><span class="line">console.log(color)     // [&quot;yellow&quot;, &quot;green&quot;]</span><br><span class="line">console.log(newColor3) // [&quot;red&quot;, &quot;blue&quot;, &quot;yellow&quot;]</span><br><span class="line">console.log(color)     // [&quot;c&quot;, &quot;green&quot;]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Array.prototype.<font style="color:red;font-size:15px;">concat</font>(value1[, value2[, …[, valueN]]]) -&gt; (元素1[, 元素2[, …[, 元素N]]])<ul>
+<li>合併兩個或多個陣列，回傳一個新 array (舊 array 不變動)</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const newArray = color.concat([&apos;1&apos;,&apos;4&apos;,&apos;5&apos;,&apos;3&apos;])</span><br><span class="line">console.log(newArray) // [&quot;red&quot;, &quot;blue&quot;, &quot;yellow&quot;, &quot;green&quot;, &quot;1&quot;, &quot;4&quot;, &quot;5&quot;, &quot;3&quot;]</span><br><span class="line">console.log(color)    // [&quot;red&quot;, &quot;blue&quot;, &quot;yellow&quot;, &quot;green&quot;]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Array.prototype.<font style="color:red;font-size:15px;">join</font>([separator]) -&gt; (符號)<ul>
+<li>把所有陣列裡的值加上 separator(符號)，回傳一個字串</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const newArray = color.join(&quot;-&quot;)</span><br><span class="line">console.log(newArray) // &quot;red-blue-yellow-green&quot;</span><br><span class="line">console.log(color)    // [&quot;red&quot;, &quot;blue&quot;, &quot;yellow&quot;, &quot;green&quot;]</span><br></pre></td></tr></table></figure>
+<h3 id="Iteration-迭代-callback-1"><a href="#Iteration-迭代-callback-1" class="headerlink" title="Iteration (迭代 callback)"></a>Iteration (迭代 callback)</h3><ul>
+<li>(function callback(<font style="color:red;font-size:15px;">currentValue</font>[, <font style="color:red;font-size:15px;">index</font>[, <font style="color:red;font-size:15px;">array</font>]]) { // your iterator }[, <font style="color:red;font-size:15px;">thisAge</font>])<ul>
+<li>項目屬姓名可不同 順序要相同</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>callback 函式將會把 Array 中的每個元素作為參數，帶進 callback 函式裡，每個元素各執行一次，接收三個參數:<ul>
+<li><font style="color:red;font-size:15px;">currentValue</font>(必須) - 原陣列目前所迭代的元素(當前變數) - 元素屬性值</li>
+<li><font style="color:red;font-size:15px;">index</font>(選用) - 原陣列目前所迭代的元素 index(當前變數的index) - 元素index</li>
+<li><font style="color:red;font-size:15px;">array</font>(選用) - 呼叫 forEach() 方法的陣列，也就是上面語法中的 array - 元素array</li>
+<li><font style="color:red;font-size:15px;">thisAge</font>(選用) - 執行 callback function 時被當作 this 的物件</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>初始值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const airport = [</span><br><span class="line">  &#123;go:&apos;japan&apos;,back:&apos;taiwan&apos;,goTime:&apos;1200&apos;,backTime:&apos;1429&apos;&#125;,</span><br><span class="line">  &#123;go:&apos;Italy&apos;,back:&apos;New Zealand&apos;,goTime:&apos;1260&apos;,backTime:&apos;2349&apos;&#125;,</span><br><span class="line">  &#123;go:&apos;Rome&apos;,back:&apos;Austria&apos;,goTime:&apos;0534&apos;,backTime:&apos;1229&apos;&#125;,</span><br><span class="line">  &#123;go:&apos;Germany&apos;,back:&apos;taiwan&apos;,goTime:&apos;1670&apos;,backTime:&apos;1529&apos;&#125;,</span><br><span class="line">  &#123;go:&apos;Singapore&apos;,back:&apos;Singapore&apos;,goTime:&apos;1980&apos;,backTime:&apos;2429&apos;&#125;,</span><br><span class="line">  &#123;go:&apos;Canada&apos;,back:&apos;japan&apos;,goTime:&apos;1230&apos;,backTime:&apos;2349&apos;&#125;,</span><br><span class="line">  &#123;go:&apos;United States&apos;,back:&apos;Rome&apos;,goTime:&apos;1748&apos;,backTime:&apos;2158&apos;&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Array.prototype.<font style="color:red;font-size:15px;">forEach</font>(currentValue, currentIndex, array[, thisArg])<ul>
+<li>不會return任何東西，單純執行 function 改變原本陣列裡的事</li>
+<li>forEach( ) 不會為沒有值的數組元素執行函數</li>
+<li>forEach 這類型的方法無法中斷，如果想要中斷迴圈的執行會建議使用傳統的 for…loop</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">let air = airport.forEach(function(i)&#123;</span><br><span class="line">  return i.go</span><br><span class="line">&#125;)</span><br><span class="line">console.log(air) // undefined, 不會 return 東西</span><br><span class="line"></span><br><span class="line">/*----------------------------------</span><br><span class="line">airport.forEach(function(i)&#123;</span><br><span class="line">  i.goTime = 100</span><br><span class="line">&#125;)</span><br><span class="line">console.log(airport) // goTime 都變為 100</span><br><span class="line"></span><br><span class="line">/*----------------------------------</span><br><span class="line">function logArrayElements(element, index, array) &#123;</span><br><span class="line">  console.log(&apos;a[&apos; + index + &apos;] = &apos; + element);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 空值沒用到會跳過</span><br><span class="line">[2, 5, , 9].forEach(logArrayElements);</span><br><span class="line">/* </span><br><span class="line">&quot;a[0] = 2&quot;</span><br><span class="line">&quot;a[1] = 5&quot;</span><br><span class="line">&quot;a[3] = 9&quot;</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Array.prototype.<font style="color:red;font-size:15px;">find</font>(currentValue, currentIndex, array[, thisArg])<ul>
+<li>回傳一個值，且是 第一個 抓到條件為 true 的值，否則回傳 undefined</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">const go = airport.find(function(item)&#123;</span><br><span class="line">  return item.backTime &gt; 1400</span><br><span class="line">&#125;)</span><br><span class="line">console.log(go)</span><br><span class="line">//[object Object] &#123;</span><br><span class="line">  back: &quot;taiwan&quot;,</span><br><span class="line">  backTime: &quot;1429&quot;,</span><br><span class="line">  go: &quot;japan&quot;,</span><br><span class="line">  goTime: &quot;1200&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/*----------------------------------</span><br><span class="line">const j = airport.find(function(item)&#123;</span><br><span class="line">&#125;)</span><br><span class="line">console.log(j) // undefined</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Array.prototype.<font style="color:red;font-size:15px;">findIndex</font>(currentValue, currentIndex, array[, thisArg])<ul>
+<li>尋找符合的元素回傳第一個其 index，若沒有符合的對象則回傳 -1</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const go = airport.findIndex(function(item)&#123;</span><br><span class="line">  return item.backTime &gt; 2400</span><br><span class="line">&#125;)</span><br><span class="line">console.log(go) // 4</span><br><span class="line"></span><br><span class="line">/*----------------------------------</span><br><span class="line">const j = airport.findIndex(function(item)&#123;</span><br><span class="line">&#125;)</span><br><span class="line">console.log(j) // -1</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Array.prototype.<font style="color:red;font-size:15px;">filter</font>(currentValue, currentIndex, array[, thisArg])<ul>
+<li>回傳一個 array，只要條件為 true 的就會包含在此陣列，適合拿來搜尋符合條件的參數</li>
+<li>是否滿足特定條件並返回一個新 array</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">const go = airport.filter(function(item)&#123;</span><br><span class="line">  return item.backTime &gt; 1800</span><br><span class="line">&#125;)</span><br><span class="line">console.log(go)</span><br><span class="line">/*</span><br><span class="line">[&#123;back: &quot;New Zealand&quot;,backTime: &quot;2349&quot;,go: &quot;Italy&quot;,goTime: &quot;1260&quot;&#125;,</span><br><span class="line"> &#123;back: &quot;Singapore&quot;,backTime: &quot;2429&quot;,go: &quot;Singapore&quot;,goTime: &quot;1980&quot;&#125;, </span><br><span class="line"> &#123;back: &quot;japan&quot;,backTime: &quot;2349&quot;,go: &quot;Canada&quot;,goTime: &quot;1230&quot;&#125;,</span><br><span class="line"> &#123;back: &quot;Rome&quot;,backTime: &quot;2158&quot;,go: &quot;United States&quot;,goTime: &quot;1748&quot;&#125;]</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">/*----------------------------------</span><br><span class="line">const j = airport.filter(function(item)&#123;</span><br><span class="line">&#125;)</span><br><span class="line">console.log(j) // []</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Array.prototype.<font style="color:red;font-size:15px;">map</font>(currentValue, currentIndex, array[, thisArg])<ul>
+<li>將原陣列的每一個元素經由 callback function 運算後所回傳的新 array</li>
+<li>用 ES6 ‘=&gt;’ 不用加 return</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">const go = airport.map(function(item)&#123;</span><br><span class="line">  return item.backTime * 3</span><br><span class="line">&#125;)</span><br><span class="line">console.log(go) // [4287, 7047, 3687, 4587, 7287, 7047, 6474]</span><br><span class="line"></span><br><span class="line">/*----------------------------------</span><br><span class="line">const j = airport.filter(function(item)&#123;</span><br><span class="line">&#125;)</span><br><span class="line">console.log(j) // []</span><br><span class="line"></span><br><span class="line">/*----------------------------------</span><br><span class="line">const mapTime = airport.map(a =&gt; a.goTime)</span><br><span class="line">console.log(mapTime) // [&quot;1200&quot;, &quot;1260&quot;, &quot;0534&quot;, &quot;1670&quot;, &quot;1980&quot;, &quot;1230&quot;, &quot;1748”]</span><br><span class="line"></span><br><span class="line">/*----------------------------------</span><br><span class="line">const air = airport.map(num =&gt; num.goTime*2).filter(num =&gt; num &gt; 2100)</span><br><span class="line">console.log(air) // [4287, 7047, 3687, 4587, 7287, 7047, 6474]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Array.prototype.<font style="color:red;font-size:15px;">some</font>(currentValue, currentIndex, array[, thisArg])<ul>
+<li>回傳一個值 false | true，只要一找到相符的值就跳出</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const back = airport.some(function(i)&#123;</span><br><span class="line">  return i.back = &apos;taiwan&apos;</span><br><span class="line">&#125;)</span><br><span class="line">console.log(back) // true</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Array.prototype.<font style="color:red;font-size:15px;">every</font>(currentValue, currentIndex, array[, thisArg])<ul>
+<li>回傳一個值 false | true，需要全部符合才回傳 true</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const back = airport.every(function(i)&#123;</span><br><span class="line">  return i.goTime &gt; 1304</span><br><span class="line">&#125;)</span><br><span class="line">console.log(back) // fales</span><br></pre></td></tr></table></figure>
+<h3 id="Iteration-迭代-callback-Special-1"><a href="#Iteration-迭代-callback-Special-1" class="headerlink" title="Iteration (迭代 callback) - Special"></a>Iteration (迭代 callback) - Special</h3><ul>
+<li>reduce( ) - (function callback([<font style="color:red;font-size:15px;">accumlator</font>, <font style="color:red;font-size:15px;">currentValue</font>, <font style="color:red;font-size:15px;">index</font>, <font style="color:red;font-size:15px;">array</font>]),[<font style="color:red;font-size:15px;">initialValue</font>])</li>
+<li>rightReduce( ) - (function callback([<font style="color:red;font-size:15px;">previousValue</font>, <font style="color:red;font-size:15px;">currentValue</font>, <font style="color:red;font-size:15px;">index</font>, <font style="color:red;font-size:15px;">array</font>]),[<font style="color:red;font-size:15px;">initialValue</font>])</li>
+<li>callback 函式將會把 Array 中的每個元素作為參數，帶進 callback 函式裡，每個元素各執行一次，接收四個參數:<ul>
+<li><font style="color:red;font-size:15px;">accumlator</font> <ul>
+<li>前一個參數，如果是第一個陣列的話，值是以另外傳入或初始化的值</li>
+<li>暫時存放回呼函式回傳值的累加器(累加器是上一次呼叫後，所回傳的累加數值)</li>
+<li>第一個元素從 initialValue 開始，沒有提供 initialValue，則 accumulator 會等於陣列的第一個元素值，且 currentValue 將會等於陣列的第二個元素值</li>
+</ul>
+</li>
+<li><font style="color:red;font-size:15px;">currentValue</font> - 原陣列目前所迭代的元素(當前變數) - 項目屬性值</li>
+<li><font style="color:red;font-size:15px;">index</font>(選用) - 原陣列目前所迭代的元素 index(當前變數的 index) - 項目 index<ul>
+<li>若有傳入 initialValue，則由索引 0 之元素開始，若無則自索引 1 之元素開始</li>
+</ul>
+</li>
+<li><font style="color:red;font-size:15px;">array</font>(選用) - 呼叫 reduce() 方法的陣列 - 項目 array</li>
+<li><font style="color:red;font-size:15px;">initialValue</font> - 初始值</li>
+<li><font style="color:red;font-size:15px;">previousValue</font> - 最後一個元素從 initialValue 開始．若沒有提供 initialValue，則 previousValue 會等於陣列的最後一個元素值，且 currentValue 將會等於陣列的倒數第二個元素值</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">let people = [</span><br><span class="line">  &#123;</span><br><span class="line">    name: &apos;上校薯條&apos;,</span><br><span class="line">    money: 500</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    name: &apos;巨無霸漢堡&apos;,</span><br><span class="line">    money: 3000</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    name: &apos;完美薯條&apos;,</span><br><span class="line">    money: 60000</span><br><span class="line">  &#125;</span><br><span class="line">];</span><br><span class="line">/*----------------------------------</span><br><span class="line">var reducePlus = people.reduce(function(accumulator, currentValue, currentIndex, array)&#123;</span><br><span class="line"></span><br><span class="line">// 分別為前一個回傳值, 目前值, 當前索引值</span><br><span class="line">  console.log(accumulator, currentValue, currentIndex);</span><br><span class="line">  return accumulator + currentValue.money;  // 與前一個值相加</span><br><span class="line">&#125;, 0);                                      // 傳入初始化值為 0</span><br><span class="line"></span><br><span class="line">console.log(reducePlus);                    // 總和為 63500</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 比較最大值</span><br><span class="line">let max = people.reduce(function(prev,item)&#123;</span><br><span class="line">    console.log(prev,item.money)</span><br><span class="line">/*</span><br><span class="line">0    500</span><br><span class="line">500  3000</span><br><span class="line">3000 60000</span><br><span class="line">*/</span><br><span class="line">    return Math.max(prev,item.money) // 與前一個值比較</span><br><span class="line">&#125;,0)</span><br><span class="line">console.log(&apos;large&apos;,max)             // large 60000</span><br></pre></td></tr></table></figure>
+<ul>
+<li>初始值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let num = [4,2,65]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Array.prototype.<font style="color:red;font-size:15px;">reduce</font>(accumulator, currentValue, currentIndex, array [, initialValue])<ul>
+<li>由 callback function 前後值兩相運算，然後縮減陣列中的元素，最終回傳一個值</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let a = num.reduce(function(accumulator, currentValue, currentIndex)&#123;</span><br><span class="line">      return accumulator+currentValue</span><br><span class="line">&#125;,0)</span><br><span class="line">console.log(a) // 71</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>callback</th>
+<th>accumulator</th>
+<th>currentValue</th>
+<th>currentIndex</th>
+<th>array</th>
+<th>return value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>First call</td>
+<td>0</td>
+<td>4</td>
+<td>0</td>
+<td>[4,2,65]</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Second call</td>
+<td>4</td>
+<td>2</td>
+<td>1</td>
+<td>[4,2,65]</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Third call</td>
+<td>6</td>
+<td>65</td>
+<td>2</td>
+<td>[4,2,65]</td>
+<td>71</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>initialValue - 初始值變更</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let a = num.initialValue(function(accumulator, currentValue, currentIndex)&#123;</span><br><span class="line">      return accumulator+currentValue</span><br><span class="line">&#125;,100)</span><br><span class="line">console.log(a) // 171</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>callback</th>
+<th>accumulator</th>
+<th>currentValue</th>
+<th>currentIndex</th>
+<th>array</th>
+<th>return value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>First call</td>
+<td>100</td>
+<td>4</td>
+<td>0</td>
+<td>[4,2,65]</td>
+<td>104</td>
+</tr>
+<tr>
+<td>Second call</td>
+<td>104</td>
+<td>2</td>
+<td>1</td>
+<td>[4,2,65]</td>
+<td>106</td>
+</tr>
+<tr>
+<td>Third call</td>
+<td>106</td>
+<td>65</td>
+<td>2</td>
+<td>[4,2,65]</td>
+<td>171</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Array.prototype.<font style="color:red;font-size:15px;">reduceRight</font>(accumulator, currentValue, currentIndex, array [, initialValue])<ul>
+<li>陣列中每一個值（由右至左）傳入callback function，最終回傳一個值</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let a = num.reduceRight(function(accumulator, currentValue, currentIndex)&#123;</span><br><span class="line">      return accumulator+currentValue</span><br><span class="line">&#125;,0)</span><br><span class="line">console.log(a) // 71</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>callback</th>
+<th>accumulator</th>
+<th>currentValue</th>
+<th>currentIndex</th>
+<th>array</th>
+<th>return value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>First call</td>
+<td>0</td>
+<td>65</td>
+<td>0</td>
+<td>[4,2,65]</td>
+<td>65</td>
+</tr>
+<tr>
+<td>Second call</td>
+<td>65</td>
+<td>2</td>
+<td>1</td>
+<td>[4,2,65]</td>
+<td>67</td>
+</tr>
+<tr>
+<td>Third call</td>
+<td>67</td>
+<td>4</td>
+<td>2</td>
+<td>[4,2,65]</td>
+<td>71</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>initialValue - 初始值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let a = num.initialValue(function(accumulator, currentValue, currentIndex)&#123;</span><br><span class="line">      return accumulator+currentValue</span><br><span class="line">&#125;,100)</span><br><span class="line">console.log(a) // 171</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>callback</th>
+<th>accumulator</th>
+<th>currentValue</th>
+<th>currentIndex</th>
+<th>array</th>
+<th>return value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>First call</td>
+<td>100</td>
+<td>65</td>
+<td>0</td>
+<td>[4,2,65]</td>
+<td>165</td>
+</tr>
+<tr>
+<td>Second call</td>
+<td>165</td>
+<td>2</td>
+<td>1</td>
+<td>[4,2,65]</td>
+<td>167</td>
+</tr>
+<tr>
+<td>Third call</td>
+<td>167</td>
+<td>4</td>
+<td>2</td>
+<td>[4,2,65]</td>
+<td>171</td>
+</tr>
+</tbody>
+</table>
+<h4 id="map-filter-reduce-差異-這張好懂"><a href="#map-filter-reduce-差異-這張好懂" class="headerlink" title="map filter reduce 差異 (這張好懂)"></a>map filter reduce 差異 (這張好懂)</h4><ul>
+<li>map - 就像每一個基本食物素材加工後輸出我想要的樣子</li>
+<li>filter - 選我想要吃的</li>
+<li>reduce - 把這些食物吃完做後的結果</li>
+</ul>
+<ul>
+<li>引用 François-Guillaume Ribreau</li>
+</ul>
+<p><img src="/2019/06/01/JS-紀錄4-Array/j42.png" alt="title"></p>
+<h3 id="Order-排序-1"><a href="#Order-排序-1" class="headerlink" title="Order(排序)"></a>Order(排序)</h3><ul>
+<li>初始值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const num = [40, 1, 5, 200]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Array.prototype.<font style="color:red;font-size:15px;">sort</font>(compareFunction)<ul>
+<li>將 array 排序，排序順序是根據字串的 Unicode 編碼位置（code points）而定</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">const item = num.sort(function(i)&#123;</span><br><span class="line">  return i</span><br><span class="line">&#125;)</span><br><span class="line">console.log(item) // [200, 5, 1, 40]</span><br><span class="line"></span><br><span class="line">// 照數字大小排列</span><br><span class="line">let b = num.sort(CompareForSort);</span><br><span class="line">console.log(b); // [1, 5, 40, 200]</span><br><span class="line"></span><br><span class="line">function CompareForSort(first, second)</span><br><span class="line">&#123;</span><br><span class="line">    if (first == second) // 回傳 0，則 a 與 b 不會改變彼此的順序</span><br><span class="line">        return 0;</span><br><span class="line">    if (first &lt; second) // 回傳 -1，則 b 在 a 前面</span><br><span class="line">        return -1;</span><br><span class="line">    else</span><br><span class="line">        return 1;     // 回傳 1，則 a 在 b 前面</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Sort 中文字排序 - 用 string的方法 得到中文排序</li>
+<li>String.prototype.localeCompare(compareString[, locales[, options]])<ul>
+<li>string(必要) - 要比較的第一個字串</li>
+<li>gtggtggggtgffddfdlocaleCompare - 判斷在目前地區設定中兩個字串是否相等</li>
+<li>compareString(必要) - 要比較的第二個字串</li>
+<li>locales(選用) - 語言環境</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 初始值</span><br><span class="line">const fruitArray = [&apos;蘋果&apos;, &apos;芒果&apos;, &apos;櫻桃&apos;, &apos;香蕉&apos;, &apos;大香蕉&apos;, &apos;小香蕉’ ]</span><br><span class="line"></span><br><span class="line">let s = fruitArray.sort()</span><br><span class="line">console.log(s) // [&quot;大香蕉&quot;, &quot;小香蕉&quot;, &quot;櫻桃&quot;, &quot;芒果&quot;, &quot;蘋果&quot;, &quot;香蕉&quot;]</span><br><span class="line"></span><br><span class="line">//按筆劃從小到大排序</span><br><span class="line">fruitArray.sort(function(a,b)&#123;</span><br><span class="line">  return a.localeCompare(b,&apos;zh-Hans-TW-u-co-stroke&apos;)</span><br><span class="line">&#125;)</span><br><span class="line">console.log(fruitArray) // [&quot;大香蕉&quot;, &quot;小香蕉&quot;, &quot;芒果&quot;, &quot;香蕉&quot;, &quot;蘋果&quot;, &quot;櫻桃&quot;]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Array.prototype.<font style="color:red;font-size:15px;">reverse</font>()<ul>
+<li>反轉後的陣列</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = [&apos;one&apos;, &apos;two&apos;, &apos;three&apos;];</span><br><span class="line">var reversed = a.reverse(); </span><br><span class="line">console.log(a);        // [&apos;three&apos;, &apos;two&apos;, &apos;one&apos;]</span><br><span class="line">console.log(reversed); // [&apos;three&apos;, &apos;two&apos;, &apos;one&apos;]</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -851,7 +1225,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Array-的方法"><span class="nav-number">1.</span> <span class="nav-text">Array 的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#判別是否為陣列"><span class="nav-number">1.1.</span> <span class="nav-text">判別是否為陣列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Properties-屬性"><span class="nav-number">1.2.</span> <span class="nav-text">Properties (屬性)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Search-搜尋"><span class="nav-number">1.3.</span> <span class="nav-text">Search(搜尋)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Operation-操作"><span class="nav-number">1.4.</span> <span class="nav-text">Operation(操作)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Iteration-迭代-callback"><span class="nav-number">1.5.</span> <span class="nav-text">Iteration (迭代 callback)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Iteration-迭代-callback-Special"><span class="nav-number">1.6.</span> <span class="nav-text">Iteration (迭代 callback) - Special</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Order-排序"><span class="nav-number">1.7.</span> <span class="nav-text">Order(排序)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Array-方法的效果"><span class="nav-number">2.</span> <span class="nav-text">Array 方法的效果</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#判別是否為陣列-1"><span class="nav-number">2.1.</span> <span class="nav-text">判別是否為陣列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Properties-屬性-1"><span class="nav-number">2.2.</span> <span class="nav-text">Properties (屬性)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Method-方法"><span class="nav-number">2.3.</span> <span class="nav-text">Method (方法)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Search-搜尋-1"><span class="nav-number">2.3.1.</span> <span class="nav-text">Search(搜尋)</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Array-的方法"><span class="nav-number">1.</span> <span class="nav-text">Array 的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#判別是否為陣列"><span class="nav-number">1.1.</span> <span class="nav-text">判別是否為陣列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Properties-屬性"><span class="nav-number">1.2.</span> <span class="nav-text">Properties (屬性)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Search-搜尋"><span class="nav-number">1.3.</span> <span class="nav-text">Search(搜尋)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Operation-操作"><span class="nav-number">1.4.</span> <span class="nav-text">Operation(操作)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Iteration-迭代-callback"><span class="nav-number">1.5.</span> <span class="nav-text">Iteration (迭代 callback)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Iteration-迭代-callback-Special"><span class="nav-number">1.6.</span> <span class="nav-text">Iteration (迭代 callback) - Special</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Order-排序"><span class="nav-number">1.7.</span> <span class="nav-text">Order(排序)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Array-方法的效果"><span class="nav-number">2.</span> <span class="nav-text">Array 方法的效果</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#判別是否為陣列-1"><span class="nav-number">2.1.</span> <span class="nav-text">判別是否為陣列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Properties-屬性-1"><span class="nav-number">2.2.</span> <span class="nav-text">Properties (屬性)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Method-方法"><span class="nav-number">2.3.</span> <span class="nav-text">Method (方法)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Search-搜尋-1"><span class="nav-number">2.3.1.</span> <span class="nav-text">Search(搜尋)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Operation-操作-1"><span class="nav-number">2.3.2.</span> <span class="nav-text">Operation(操作)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Iteration-迭代-callback-1"><span class="nav-number">2.3.3.</span> <span class="nav-text">Iteration (迭代 callback)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Iteration-迭代-callback-Special-1"><span class="nav-number">2.3.4.</span> <span class="nav-text">Iteration (迭代 callback) - Special</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#map-filter-reduce-差異-這張好懂"><span class="nav-number">2.3.4.1.</span> <span class="nav-text">map filter reduce 差異 (這張好懂)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Order-排序-1"><span class="nav-number">2.3.5.</span> <span class="nav-text">Order(排序)</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
