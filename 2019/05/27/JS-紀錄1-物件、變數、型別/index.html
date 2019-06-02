@@ -114,7 +114,7 @@
 <meta property="og:description" content="JavaScript 基本觀念紀錄">
 <meta property="og:locale" content="zh-TW">
 <meta property="og:image" content="https://jimmywei01.github.io/2019/05/27/JS-紀錄1-物件、變數、型別/js1.png">
-<meta property="og:updated_time" content="2019-06-02T08:53:13.822Z">
+<meta property="og:updated_time" content="2019-06-02T09:19:29.758Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS 紀錄1 - 物件、變數、型別">
 <meta name="twitter:description" content="JavaScript 基本觀念紀錄">
@@ -429,7 +429,7 @@
                 
                   <span class="post-meta-item-text">更新於</span>
                 
-                <time title="修改時間：2019-06-02 16:53:13" itemprop="dateModified" datetime="2019-06-02T16:53:13+08:00">2019-06-02</time>
+                <time title="修改時間：2019-06-02 17:19:29" itemprop="dateModified" datetime="2019-06-02T17:19:29+08:00">2019-06-02</time>
               
             
           </span>
@@ -587,7 +587,7 @@
 <ul>
 <li>let ( block scope )</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// scope 範圍</span><br><span class="line">function  myFunction () &#123;</span><br><span class="line">   let myVar =  &quot; Nick &quot; ;</span><br><span class="line">   if ( true ) &#123;</span><br><span class="line">     let myVar =  &quot; John &quot; ;</span><br><span class="line">     console.log (myVar); // &quot;John&quot;</span><br><span class="line">  &#125;</span><br><span class="line">  console.log (myVar);    // &quot;Nick&quot;</span><br><span class="line">&#125;</span><br><span class="line">console.log (myVar);      // undefined, myVar在函數範圍外部無法被使用</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function  myFunction () &#123;</span><br><span class="line">   let myVar =  &quot; Nick &quot; ;</span><br><span class="line">   if ( true ) &#123;</span><br><span class="line">     let myVar =  &quot; John &quot; ;</span><br><span class="line">     console.log (myVar); // &quot;John&quot;</span><br><span class="line">  &#125;</span><br><span class="line">  console.log (myVar);    // &quot;Nick&quot;</span><br><span class="line">&#125;</span><br><span class="line">console.log (myVar);      // undefined, myVar在函數範圍外部無法被使用</span><br></pre></td></tr></table></figure>
 <h4 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h4><ul>
 <li>var<ul>
 <li>污染全域(window)</li>
