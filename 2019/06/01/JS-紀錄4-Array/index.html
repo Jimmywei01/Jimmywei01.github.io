@@ -115,7 +115,7 @@
 <meta property="og:locale" content="zh-TW">
 <meta property="og:image" content="https://jimmywei01.github.io/2019/06/01/JS-紀錄4-Array/j41.png">
 <meta property="og:image" content="https://jimmywei01.github.io/2019/06/01/JS-紀錄4-Array/j42.png">
-<meta property="og:updated_time" content="2019-06-01T15:25:34.553Z">
+<meta property="og:updated_time" content="2019-06-02T02:03:04.563Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS 紀錄4 - Array">
 <meta name="twitter:description" content="JavaScript Array 紀錄">
@@ -413,12 +413,24 @@
                 
               
 
-              <time title="創建時間：2019-06-01 15:32:53 / 修改時間：23:25:34" itemprop="dateCreated datePublished" datetime="2019-06-01T15:32:53+08:00">2019-06-01</time>
+              <time title="創建時間：2019-06-01 15:32:53" itemprop="dateCreated datePublished" datetime="2019-06-01T15:32:53+08:00">2019-06-01</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新於</span>
+                
+                <time title="修改時間：2019-06-02 10:03:04" itemprop="dateModified" datetime="2019-06-02T10:03:04+08:00">2019-06-02</time>
               
             
           </span>
@@ -944,12 +956,187 @@
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 初始值</span><br><span class="line">const fruitArray = [&apos;蘋果&apos;, &apos;芒果&apos;, &apos;櫻桃&apos;, &apos;香蕉&apos;, &apos;大香蕉&apos;, &apos;小香蕉’ ]</span><br><span class="line"></span><br><span class="line">let s = fruitArray.sort()</span><br><span class="line">console.log(s) // [&quot;大香蕉&quot;, &quot;小香蕉&quot;, &quot;櫻桃&quot;, &quot;芒果&quot;, &quot;蘋果&quot;, &quot;香蕉&quot;]</span><br><span class="line"></span><br><span class="line">//按筆劃從小到大排序</span><br><span class="line">fruitArray.sort(function(a,b)&#123;</span><br><span class="line">  return a.localeCompare(b,&apos;zh-Hans-TW-u-co-stroke&apos;)</span><br><span class="line">&#125;)</span><br><span class="line">console.log(fruitArray) // [&quot;大香蕉&quot;, &quot;小香蕉&quot;, &quot;芒果&quot;, &quot;香蕉&quot;, &quot;蘋果&quot;, &quot;櫻桃&quot;]</span><br></pre></td></tr></table></figure>
 <ul>
-<li>Array.prototype.<font style="color:red;font-size:15px;">reverse</font>()<ul>
+<li>Array.prototype.<font style="color:red;font-size:15px;">reverse()</font><ul>
 <li>反轉後的陣列</li>
 </ul>
 </li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = [&apos;one&apos;, &apos;two&apos;, &apos;three&apos;];</span><br><span class="line">var reversed = a.reverse(); </span><br><span class="line">console.log(a);        // [&apos;three&apos;, &apos;two&apos;, &apos;one&apos;]</span><br><span class="line">console.log(reversed); // [&apos;three&apos;, &apos;two&apos;, &apos;one&apos;]</span><br></pre></td></tr></table></figure>
+<h1 id="統整"><a href="#統整" class="headerlink" title="統整"></a>統整</h1><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Array data</th>
+<th>return</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Search(搜尋)</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>includes( )</td>
+<td>不變</td>
+<td>true ｜ false</td>
+<td>搜尋陣列中有沒有要找的元素值(boolean)</td>
+</tr>
+<tr>
+<td>indexof( )</td>
+<td>不變</td>
+<td>第一個元素 index / 不存在則回傳 -1</td>
+<td>回傳第一個被找到的元素 index</td>
+</tr>
+<tr>
+<td>lastIndexof( )</td>
+<td>不變</td>
+<td>最後一個元素 index / 不存在則回傳 -1</td>
+<td>回傳最後一個被找到的元素 index</td>
+</tr>
+<tr>
+<td>Operation(操作)</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>pop( )</td>
+<td><font style="color:red;font-size:15px;">改變</font></td>
+<td>一個值</td>
+<td>移除 Array 尾端的值</td>
+</tr>
+<tr>
+<td>push( )</td>
+<td><font style="color:red;font-size:15px;">改變</font></td>
+<td>新 length</td>
+<td>增加一個 或 多個元素到 Array 尾端</td>
+</tr>
+<tr>
+<td>shift( )</td>
+<td><font style="color:red;font-size:15px;">改變</font></td>
+<td>一個值</td>
+<td>移除 Array 最前端的值</td>
+</tr>
+<tr>
+<td>unshift( )</td>
+<td><font style="color:red;font-size:15px;">改變</font></td>
+<td>新 length</td>
+<td>增加值到 Array 最前端</td>
+</tr>
+<tr>
+<td>splice( )</td>
+<td><font style="color:red;font-size:15px;">改變</font></td>
+<td>新 Array</td>
+<td>在一定範圍分割出要的 Array 值 or 增加 Array 值</td>
+</tr>
+<tr>
+<td>slice()</td>
+<td>不變</td>
+<td>新 Array</td>
+<td>在一定範圍分割出要的 Array 值</td>
+</tr>
+<tr>
+<td>concat( )</td>
+<td>不變</td>
+<td>新 Array</td>
+<td>合併兩個 or 多個 Array</td>
+</tr>
+<tr>
+<td>join( )</td>
+<td>不變</td>
+<td>string</td>
+<td>合併符號產生 String</td>
+</tr>
+<tr>
+<td>Iteration (迭代 callback)</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>forEatch( )</td>
+<td><font style="color:red;font-size:15px;">改變</font></td>
+<td>不會 return 任何東西</td>
+<td>無法 break 或者 return false 中斷，會跳過空元素</td>
+</tr>
+<tr>
+<td>find( )</td>
+<td>不變</td>
+<td>一個值</td>
+<td>找到一個符合條件的元素值</td>
+</tr>
+<tr>
+<td>findIndex( )</td>
+<td>不變</td>
+<td>index</td>
+<td>找到一個符合條件的元素值 index</td>
+</tr>
+<tr>
+<td>filter( )</td>
+<td>不變</td>
+<td>值 or Array</td>
+<td>return 後方為 true 符合條件的所有值 or Array</td>
+</tr>
+<tr>
+<td>map( )</td>
+<td>不變</td>
+<td>值 or Array</td>
+<td>return 後方為 true 運算後的值 or 新 Array，用在判斷回傳 true｜false</td>
+</tr>
+<tr>
+<td>some( )</td>
+<td>不變</td>
+<td>false｜true</td>
+<td>條件部分符合</td>
+</tr>
+<tr>
+<td>every( )</td>
+<td>不變</td>
+<td>false｜true</td>
+<td>條件全部符合</td>
+</tr>
+<tr>
+<td>Iteration (迭代 callback) - Special</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>reduce( )</td>
+<td>不變</td>
+<td>一個值</td>
+<td>接續上一個 or 尾端初始值與元素值進行計算</td>
+</tr>
+<tr>
+<td>rightReduce( )</td>
+<td>不變</td>
+<td>一個值</td>
+<td>接續上一個 or 尾端初始值與元素值從右邊開始進行計算</td>
+</tr>
+<tr>
+<td>Order(排序)</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>sort( )</td>
+<td><font style="color:red;font-size:15px;">改變</font></td>
+<td>新 Array</td>
+<td>將 Array 排序(依照 Unicode 編碼位置)</td>
+</tr>
+<tr>
+<td>reverse( )</td>
+<td><font style="color:red;font-size:15px;">改變</font></td>
+<td>新 Array</td>
+<td>反轉元素</td>
+</tr>
+</tbody>
+</table>
+
       
     </div>
 
@@ -1225,7 +1412,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Array-的方法"><span class="nav-number">1.</span> <span class="nav-text">Array 的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#判別是否為陣列"><span class="nav-number">1.1.</span> <span class="nav-text">判別是否為陣列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Properties-屬性"><span class="nav-number">1.2.</span> <span class="nav-text">Properties (屬性)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Search-搜尋"><span class="nav-number">1.3.</span> <span class="nav-text">Search(搜尋)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Operation-操作"><span class="nav-number">1.4.</span> <span class="nav-text">Operation(操作)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Iteration-迭代-callback"><span class="nav-number">1.5.</span> <span class="nav-text">Iteration (迭代 callback)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Iteration-迭代-callback-Special"><span class="nav-number">1.6.</span> <span class="nav-text">Iteration (迭代 callback) - Special</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Order-排序"><span class="nav-number">1.7.</span> <span class="nav-text">Order(排序)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Array-方法的效果"><span class="nav-number">2.</span> <span class="nav-text">Array 方法的效果</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#判別是否為陣列-1"><span class="nav-number">2.1.</span> <span class="nav-text">判別是否為陣列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Properties-屬性-1"><span class="nav-number">2.2.</span> <span class="nav-text">Properties (屬性)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Method-方法"><span class="nav-number">2.3.</span> <span class="nav-text">Method (方法)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Search-搜尋-1"><span class="nav-number">2.3.1.</span> <span class="nav-text">Search(搜尋)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Operation-操作-1"><span class="nav-number">2.3.2.</span> <span class="nav-text">Operation(操作)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Iteration-迭代-callback-1"><span class="nav-number">2.3.3.</span> <span class="nav-text">Iteration (迭代 callback)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Iteration-迭代-callback-Special-1"><span class="nav-number">2.3.4.</span> <span class="nav-text">Iteration (迭代 callback) - Special</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#map-filter-reduce-差異-這張好懂"><span class="nav-number">2.3.4.1.</span> <span class="nav-text">map filter reduce 差異 (這張好懂)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Order-排序-1"><span class="nav-number">2.3.5.</span> <span class="nav-text">Order(排序)</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Array-的方法"><span class="nav-number">1.</span> <span class="nav-text">Array 的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#判別是否為陣列"><span class="nav-number">1.1.</span> <span class="nav-text">判別是否為陣列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Properties-屬性"><span class="nav-number">1.2.</span> <span class="nav-text">Properties (屬性)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Search-搜尋"><span class="nav-number">1.3.</span> <span class="nav-text">Search(搜尋)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Operation-操作"><span class="nav-number">1.4.</span> <span class="nav-text">Operation(操作)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Iteration-迭代-callback"><span class="nav-number">1.5.</span> <span class="nav-text">Iteration (迭代 callback)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Iteration-迭代-callback-Special"><span class="nav-number">1.6.</span> <span class="nav-text">Iteration (迭代 callback) - Special</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Order-排序"><span class="nav-number">1.7.</span> <span class="nav-text">Order(排序)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Array-方法的效果"><span class="nav-number">2.</span> <span class="nav-text">Array 方法的效果</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#判別是否為陣列-1"><span class="nav-number">2.1.</span> <span class="nav-text">判別是否為陣列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Properties-屬性-1"><span class="nav-number">2.2.</span> <span class="nav-text">Properties (屬性)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Method-方法"><span class="nav-number">2.3.</span> <span class="nav-text">Method (方法)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Search-搜尋-1"><span class="nav-number">2.3.1.</span> <span class="nav-text">Search(搜尋)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Operation-操作-1"><span class="nav-number">2.3.2.</span> <span class="nav-text">Operation(操作)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Iteration-迭代-callback-1"><span class="nav-number">2.3.3.</span> <span class="nav-text">Iteration (迭代 callback)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Iteration-迭代-callback-Special-1"><span class="nav-number">2.3.4.</span> <span class="nav-text">Iteration (迭代 callback) - Special</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#map-filter-reduce-差異-這張好懂"><span class="nav-number">2.3.4.1.</span> <span class="nav-text">map filter reduce 差異 (這張好懂)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Order-排序-1"><span class="nav-number">2.3.5.</span> <span class="nav-text">Order(排序)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#統整"><span class="nav-number">3.</span> <span class="nav-text">統整</span></a></li></ol></div>
             
 
           </div>
