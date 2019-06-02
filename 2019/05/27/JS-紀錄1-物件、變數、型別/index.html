@@ -114,7 +114,7 @@
 <meta property="og:description" content="JavaScript 基本觀念紀錄">
 <meta property="og:locale" content="zh-TW">
 <meta property="og:image" content="https://jimmywei01.github.io/2019/05/27/JS-紀錄1-物件、變數、型別/js1.png">
-<meta property="og:updated_time" content="2019-05-27T12:19:48.128Z">
+<meta property="og:updated_time" content="2019-06-02T08:53:13.822Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS 紀錄1 - 物件、變數、型別">
 <meta name="twitter:description" content="JavaScript 基本觀念紀錄">
@@ -412,12 +412,24 @@
                 
               
 
-              <time title="創建時間：2019-05-27 13:57:39 / 修改時間：20:19:48" itemprop="dateCreated datePublished" datetime="2019-05-27T13:57:39+08:00">2019-05-27</time>
+              <time title="創建時間：2019-05-27 13:57:39" itemprop="dateCreated datePublished" datetime="2019-05-27T13:57:39+08:00">2019-05-27</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新於</span>
+                
+                <time title="修改時間：2019-06-02 16:53:13" itemprop="dateModified" datetime="2019-06-02T16:53:13+08:00">2019-06-02</time>
               
             
           </span>
@@ -568,6 +580,14 @@
 </tr>
 </tbody>
 </table>
+<h4 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h4><ul>
+<li>var ( funcotion socpe )</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function  myFunction () &#123;</span><br><span class="line">   var myVar =  &quot; Nick &quot; ;</span><br><span class="line">   if ( true ) &#123;</span><br><span class="line">     var myVar =  &quot; John &quot; ;</span><br><span class="line">     console.log (myVar); // &quot;John&quot; </span><br><span class="line">  &#125;</span><br><span class="line">  console.log (myVar);    // &quot;John&quot; </span><br><span class="line">&#125;</span><br><span class="line">console.log (myVar);      // undefined, myVar在函數範圍外部無法被使用</span><br></pre></td></tr></table></figure>
+<ul>
+<li>let ( block scope )</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// scope 範圍</span><br><span class="line">function  myFunction () &#123;</span><br><span class="line">   let myVar =  &quot; Nick &quot; ;</span><br><span class="line">   if ( true ) &#123;</span><br><span class="line">     let myVar =  &quot; John &quot; ;</span><br><span class="line">     console.log (myVar); // &quot;John&quot;</span><br><span class="line">  &#125;</span><br><span class="line">  console.log (myVar);    // &quot;Nick&quot;</span><br><span class="line">&#125;</span><br><span class="line">console.log (myVar);      // undefined, myVar在函數範圍外部無法被使用</span><br></pre></td></tr></table></figure>
 <h4 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h4><ul>
 <li>var<ul>
 <li>污染全域(window)</li>
@@ -1160,7 +1180,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#變數"><span class="nav-number">1.</span> <span class="nav-text">變數</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#建立方式"><span class="nav-number">1.1.</span> <span class="nav-text">建立方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#屬性"><span class="nav-number">1.1.1.</span> <span class="nav-text">屬性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#變數-也可能是屬性"><span class="nav-number">1.1.2.</span> <span class="nav-text">變數(也可能是屬性)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注意事項"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">注意事項</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hosting"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">hosting</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#變數指派差異"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">變數指派差異</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#型別"><span class="nav-number">2.</span> <span class="nav-text">型別</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#型別分類"><span class="nav-number">2.1.</span> <span class="nav-text">型別分類</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#型別判斷"><span class="nav-number">2.2.</span> <span class="nav-text">型別判斷</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#typeof"><span class="nav-number">2.2.1.</span> <span class="nav-text">typeof</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#instanceof"><span class="nav-number">2.2.2.</span> <span class="nav-text">instanceof</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基礎類型"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">基礎類型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#複雜類型"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">複雜類型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他類型"><span class="nav-number">2.2.2.3.</span> <span class="nav-text">其他類型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#型別參數傳遞"><span class="nav-number">2.3.</span> <span class="nav-text">型別參數傳遞</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Call-by-value"><span class="nav-number">2.3.1.</span> <span class="nav-text">Call by value</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Call-by-reference"><span class="nav-number">2.3.2.</span> <span class="nav-text">Call by reference</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Call-by-Sharing-（共享參考）"><span class="nav-number">2.3.3.</span> <span class="nav-text">Call by Sharing （共享參考）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#物件"><span class="nav-number">3.</span> <span class="nav-text">物件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#物件取屬性值"><span class="nav-number">3.1.</span> <span class="nav-text">物件取屬性值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#物件複製"><span class="nav-number">3.2.</span> <span class="nav-text">物件複製</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#變數"><span class="nav-number">1.</span> <span class="nav-text">變數</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#建立方式"><span class="nav-number">1.1.</span> <span class="nav-text">建立方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#屬性"><span class="nav-number">1.1.1.</span> <span class="nav-text">屬性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#變數-也可能是屬性"><span class="nav-number">1.1.2.</span> <span class="nav-text">變數(也可能是屬性)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#作用域"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">作用域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注意事項"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">注意事項</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hosting"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">hosting</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#變數指派差異"><span class="nav-number">1.1.2.4.</span> <span class="nav-text">變數指派差異</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#型別"><span class="nav-number">2.</span> <span class="nav-text">型別</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#型別分類"><span class="nav-number">2.1.</span> <span class="nav-text">型別分類</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#型別判斷"><span class="nav-number">2.2.</span> <span class="nav-text">型別判斷</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#typeof"><span class="nav-number">2.2.1.</span> <span class="nav-text">typeof</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#instanceof"><span class="nav-number">2.2.2.</span> <span class="nav-text">instanceof</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基礎類型"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">基礎類型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#複雜類型"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">複雜類型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他類型"><span class="nav-number">2.2.2.3.</span> <span class="nav-text">其他類型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#型別參數傳遞"><span class="nav-number">2.3.</span> <span class="nav-text">型別參數傳遞</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Call-by-value"><span class="nav-number">2.3.1.</span> <span class="nav-text">Call by value</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Call-by-reference"><span class="nav-number">2.3.2.</span> <span class="nav-text">Call by reference</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Call-by-Sharing-（共享參考）"><span class="nav-number">2.3.3.</span> <span class="nav-text">Call by Sharing （共享參考）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#物件"><span class="nav-number">3.</span> <span class="nav-text">物件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#物件取屬性值"><span class="nav-number">3.1.</span> <span class="nav-text">物件取屬性值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#物件複製"><span class="nav-number">3.2.</span> <span class="nav-text">物件複製</span></a></li></ol></li></ol></div>
             
 
           </div>
