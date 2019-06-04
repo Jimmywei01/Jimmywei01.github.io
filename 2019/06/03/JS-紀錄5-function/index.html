@@ -113,7 +113,7 @@
 <meta property="og:site_name" content="Jimmy&#39;s Notes">
 <meta property="og:description" content="JavaScript function 紀錄1">
 <meta property="og:locale" content="zh-TW">
-<meta property="og:updated_time" content="2019-06-03T03:34:47.087Z">
+<meta property="og:updated_time" content="2019-06-03T07:54:37.423Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS 紀錄5 - function">
 <meta name="twitter:description" content="JavaScript function 紀錄1">
@@ -410,7 +410,7 @@
                 
               
 
-              <time title="創建時間：2019-06-03 09:28:43 / 修改時間：11:34:47" itemprop="dateCreated datePublished" datetime="2019-06-03T09:28:43+08:00">2019-06-03</time>
+              <time title="創建時間：2019-06-03 09:28:43 / 修改時間：15:54:37" itemprop="dateCreated datePublished" datetime="2019-06-03T09:28:43+08:00">2019-06-03</time>
             
 
             
@@ -488,6 +488,10 @@
 </ul>
 <h2 id="函式物件-function"><a href="#函式物件-function" class="headerlink" title="函式物件(function)"></a>函式物件(function)</h2><ul>
 <li>就是一般物件外加可以被呼叫的能力</li>
+<li>將 function 儲存成變數</li>
+<li>function 當成參數代入另一個 function 中</li>
+<li>在 function 中回傳另一個 function</li>
+<li>分割片段功能 &amp; 多層級組合</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = function () &#123; &#125; </span><br><span class="line"> console.log(typeof (a)) // function</span><br><span class="line">a.x = 1;</span><br><span class="line">console.log(a.x) // 1</span><br></pre></td></tr></table></figure>
 <ul>
@@ -500,7 +504,23 @@
 <li>提供了變數的作用域 (Scope)</li>
 </ul>
 </li>
+<li>語法<ul>
+<li>name<ul>
+<li>函式名稱</li>
 </ul>
+</li>
+<li>param<ul>
+<li>要被傳入函式的引數名稱，一個函式最多可以擁有 255 個引數</li>
+</ul>
+</li>
+<li>statements<ul>
+<li>statements 構成了函式內容的陳述式</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function name([param[, param[, ... param]]]) &#123;</span><br><span class="line">   statements</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
 <h1 id="function-expressions-和-function-declaration-函數表達式＆函數語句"><a href="#function-expressions-和-function-declaration-函數表達式＆函數語句" class="headerlink" title="function expressions 和 function declaration - 函數表達式＆函數語句"></a>function expressions 和 function declaration - 函數表達式＆函數語句</h1><ul>
 <li>有什麼特性<ul>
@@ -661,6 +681,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/06/04/JS-紀錄6-function-2/" rel="prev" title="JS 紀錄6 - function 2">
+                JS 紀錄6 - function 2 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -737,7 +761,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">文章</span>
                   </a>
                 </div>

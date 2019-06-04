@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-TW">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-139836366-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-139836366-1');
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/QQ2.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/QQ2.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/QQ2.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/lQQ2.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.1.1',
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+
+  <meta name="description" content="JavaScript function 紀錄2">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS 紀錄6 - function 2">
+<meta property="og:url" content="https://jimmywei01.github.io/2019/06/04/JS-紀錄6-function-2/index.html">
+<meta property="og:site_name" content="Jimmy&#39;s Notes">
+<meta property="og:description" content="JavaScript function 紀錄2">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:updated_time" content="2019-06-04T04:20:52.967Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS 紀錄6 - function 2">
+<meta name="twitter:description" content="JavaScript function 紀錄2">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://jimmywei01.github.io/2019/06/04/JS-紀錄6-function-2/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>JS 紀錄6 - function 2 | Jimmy's Notes</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-TW">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Jimmy's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">你可以沒有熱情，但不應該自我設限</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切換導航欄">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首頁</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>標籤</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分類</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>歸檔</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜尋</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜尋..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://jimmywei01.github.io/2019/06/04/JS-紀錄6-function-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jimmy Wei">
+      <meta itemprop="description" content="光電/程式/工藝/設計/哲學">
+      <meta itemprop="image" content="/images/panda.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jimmy's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JS 紀錄6 - function 2<a href="https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name_posts/JS-紀錄6-function-2.md" class="post-edit-link" title="編輯" rel="noopener" target="_blank"><i class="fa fa-pencil"></i></a>
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+
+              
+                
+              
+
+              <time title="創建時間：2019-06-04 09:19:06 / 修改時間：12:20:52" itemprop="dateCreated datePublished" datetime="2019-06-04T09:19:06+08:00">2019-06-04</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">評論數：</span>
+                <a href="/2019/06/04/JS-紀錄6-function-2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/06/04/JS-紀錄6-function-2/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote class="blockquote-center"><p>JavaScript function 紀錄2</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="IIFE-Immediately-Invoked-Functions-Expressions-立即執行函式"><a href="#IIFE-Immediately-Invoked-Functions-Expressions-立即執行函式" class="headerlink" title="IIFE(Immediately Invoked Functions Expressions) - 立即執行函式"></a>IIFE(Immediately Invoked Functions Expressions) - 立即執行函式</h1><p><strong>有什麼特性</strong></p>
+<ul>
+<li>IIFE 在執行環境一讀取到就會立即執行，而不像一般的函式需要呼叫才會執行</li>
+<li>限制變數存在的作用域，讓變數不輕易成為「全域變數」的方法</li>
+<li>closure 的應用封裝物件的公用與私有成員</li>
+<li>希望不同 execution context 的變數之間不要互相影響</li>
+</ul>
+<p><strong>判斷</strong></p>
+<ul>
+<li>(function () { … })(要執行的)</li>
+<li>(function () { … }(要執行的))</li>
+</ul>
+<p><strong>寫法</strong></p>
+<ul>
+<li>函式表達式 + 匿名函式</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(function (a, b)&#123;  </span><br><span class="line">    var c = 10; </span><br><span class="line">    return  a + b + c;</span><br><span class="line">&#125;)(10,20);  // 40</span><br></pre></td></tr></table></figure>
+<ul>
+<li>迴圈遇到 function<ul>
+<li>var i 為 global 每次 for 迴圈都用同個記憶體位置紀錄，所以跑完後的值為 5 </li>
+<li>非同步執行 不會等待 window.setTimeout 結束後才繼續，而是在執行階段就一口氣跑完</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">for(var i = 0; i&lt;5; i++)&#123;</span><br><span class="line">  window.setTimeout(function() &#123;</span><br><span class="line">      console.log(i);     // 5 5 5 5 5</span><br><span class="line">    &#125;,1000)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>IIFE<ul>
+<li>window.setTimeout 透過「立即函式」來包裝</li>
+<li>為了保留每一次執行迴圈時那個「當下的」i 將它包覆起來然後 i 作為參數傳入 x</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">for( var i = 0; i &lt; 5; i++ ) &#123;</span><br><span class="line">// closure 參數 x 會被內部 function keep 住</span><br><span class="line">  (function(x)&#123; </span><br><span class="line">    window.setTimeout(function() &#123;</span><br><span class="line">      console.log(x);     // 0 1 2 3 4 </span><br><span class="line">    &#125;, 1000);</span><br><span class="line">  &#125;)(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>let 宣告<ul>
+<li>用 let 的 scope 在 for 迴圈鎖住讓每次跑的迴圈都建立到一個新的記憶體位置</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">for(let i =0;i&lt;5;i++)&#123;</span><br><span class="line">  window.setTimeout(function()&#123;</span><br><span class="line">    console.log(i)        // 0 1 2 3 4</span><br><span class="line">  &#125;,1000)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="callback-function-heigh-order-function"><a href="#callback-function-heigh-order-function" class="headerlink" title="callback function( heigh order function)"></a>callback function( heigh order function)</h1><p><strong>有什麼特性</strong></p>
+<ul>
+<li>callback function 跟一般的函式沒什麼不同，差別在於被呼叫執行的時機</li>
+<li>函式之間的相依過深，ES5 callback 多層之後產生的「波動拳」維護就要用 ES6 Promise, ES7 Async/Await</li>
+</ul>
+<p><strong>判斷</strong></p>
+<ul>
+<li>把函式當作另一個函式的引數(參數)，透過另一個函式來呼叫它(回傳函式)</li>
+<li>function A 將 function B 當成參數傳入使用，當這個 function A 執行後會觸發 function B 的執行</li>
+</ul>
+<p><strong>寫法</strong></p>
+<ul>
+<li>將函式當成參數傳遞給其他函式</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function get(url,handler)&#123;</span><br><span class="line">    $.get(url,function(data)&#123;  </span><br><span class="line">        handler(data);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>以具名函式方式傳入 (也可以透過匿名函式傳入)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function callback(data)&#123;</span><br><span class="line">    $(&apos;.result&apos;).html(data);</span><br><span class="line">&#125;</span><br><span class="line">get(&apos;ajax/test.html’, callback);</span><br><span class="line"></span><br><span class="line">/*----------------------------------</span><br><span class="line">name(function()&#123;</span><br><span class="line">  console.log(&apos;My name is jimmy&apos;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">function name(callback)&#123;</span><br><span class="line">  var Greeting = &apos;Here is some work...&apos;;</span><br><span class="line">  callback();     // My name is jimmy</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>事件動作(ex.點擊事件)後，呼叫點擊事件內要執行的 function</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// function 可獨立出來</span><br><span class="line">box.addEventListener(&apos;click&apos;,function()&#123;&apos;box向左移動&apos;&#125;,false)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>多個動作要進行那就必須控制多個 function 間執行的順序(執行順序的排程)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function logWord(word)&#123;</span><br><span class="line">  setTimeout(function()&#123;</span><br><span class="line">    console.log(word)     // b,c,a or c,a,b 沒有固定順序</span><br><span class="line">  &#125;,Math.floor(Math.random()*100)+1)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function wordAll()&#123;</span><br><span class="line">  logWord(&apos;a&apos;)</span><br><span class="line">  logWord(&apos;b&apos;)</span><br><span class="line">  logWord(&apos;c&apos;)</span><br><span class="line">&#125;</span><br><span class="line">wordAll()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>callback 方式執行順序</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function logWord(word,funCallback)&#123;</span><br><span class="line">  setTimeout(function()&#123;</span><br><span class="line">    console.log(word)           // &apos;a&apos;,&apos;b&apos;,&apos;c&apos; 固定順序</span><br><span class="line">// 傳入型態判定是否為 function</span><br><span class="line">    if(typeof funCallback === &apos;function&apos;)&#123;</span><br><span class="line">      funCallback()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function wordAll()&#123;</span><br><span class="line">// 決定執行順序</span><br><span class="line">  logWord(&apos;a&apos;,function()&#123;</span><br><span class="line">    logWord(&apos;b&apos;,function()&#123;</span><br><span class="line">      logWord(&apos;c&apos;,function()&#123;&#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line">wordAll()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>callback 帶入參數(引數)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function showMessage(greeting, name, callback) &#123;</span><br><span class="line">    console.log(&apos;you call showMessage&apos;)   // you call showMessage</span><br><span class="line">    if(typeof callback === &apos;function&apos;)&#123;</span><br><span class="line">      callback(greeting, name)</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br><span class="line">showMessage(&apos;Hello!&apos;, &apos;Eddy&apos;, function(param1, param2) &#123;</span><br><span class="line">    console.log(param1 + &apos; &apos; + param2)    // Hello! Eddy</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="function-傳入參數預設值-ES5-ES6"><a href="#function-傳入參數預設值-ES5-ES6" class="headerlink" title="function 傳入參數預設值( || ) ES5 (=)ES6"></a>function 傳入參數預設值( || ) ES5 (=)ES6</h1><p><strong>有什麼特性</strong></p>
+<ul>
+<li>進行預設值的設定</li>
+<li>沒有傳入任何參數，回傳 undefined 這個參數</li>
+</ul>
+<p><strong>判斷</strong></p>
+<ul>
+<li>用 typeof 的回傳值來判斷是否為undefined，或是用 (=) 或 (||)運算符 的預設值設定方式</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">// ES5</span><br><span class="line">function myfavorite(phone,name,job)&#123;</span><br><span class="line">  job = job || &apos;bnanan&apos;</span><br><span class="line">  console.log(phone)</span><br><span class="line">  console.log(name)</span><br><span class="line">  console.log(job)</span><br><span class="line">&#125;</span><br><span class="line">myfavorite() // undefined undefined banana</span><br><span class="line"></span><br><span class="line">/*----------------------------------</span><br><span class="line">// ES6</span><br><span class="line">function myfavorite(phone,name=&apos;jimmy&apos;,job)&#123;</span><br><span class="line">  job = job || &apos;bnanan&apos;</span><br><span class="line">  console.log(phone)</span><br><span class="line">  console.log(name)</span><br><span class="line">  console.log(job)</span><br><span class="line">&#125;</span><br><span class="line">myfavorite() // undefined jimmy banana</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="function-無名的傳入參數-arguments"><a href="#function-無名的傳入參數-arguments" class="headerlink" title="function 無名的傳入參數(arguments)"></a>function 無名的傳入參數(arguments)</h1><p><strong>有什麼特性</strong></p>
+<ul>
+<li>JS 有預設的參數 arguments 可直接帶入，這種參數<font style="color:red;font-size:15px;">不須預先設定，所有函式都內建此參數</font></li>
+<li>arguments 雖是一個物件資料類型，但它有”陣列”的一些基本特性，不過缺少大部份陣列中的方法，所以被稱作”pseudo-array”(偽陣列)</li>
+</ul>
+<p><strong>判斷</strong></p>
+<ul>
+<li>不管有沒有參數的 function 都有 arguments </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">// 無參數</span><br><span class="line">function sum()&#123;</span><br><span class="line">    let b = 0</span><br><span class="line">    for(i in arguments)&#123;</span><br><span class="line">    b += arguments[i]</span><br><span class="line">    &#125;</span><br><span class="line">  return b</span><br><span class="line">&#125;</span><br><span class="line">console.log(sum(1,2,3,5)) // 12</span><br><span class="line"></span><br><span class="line">/*----------------------------------</span><br><span class="line">// 有參數</span><br><span class="line">function myfavorite(phone,name,job)&#123;</span><br><span class="line">  job = job || &apos;bnanan&apos;</span><br><span class="line">  if(arguments.length === 0)&#123;</span><br><span class="line">    console.log(&apos;呵呵呵’)  // &apos;呵呵呵&apos;</span><br><span class="line">    return</span><br><span class="line">  &#125;</span><br><span class="line">  console.log(arguments)</span><br><span class="line">&#125;</span><br><span class="line">myfavorite()</span><br><span class="line"></span><br><span class="line">/*----------------------------------</span><br><span class="line">// 儲值系統</span><br><span class="line">// 先預設裡面沒錢 myMoney</span><br><span class="line">// 每儲一次 相加</span><br><span class="line">var myMoney = 0</span><br><span class="line">function cashMoney()&#123;</span><br><span class="line">  var machsion = 0</span><br><span class="line">  for(var i = 0; i &lt; arguments.length; i++)&#123;</span><br><span class="line">    machsion +=arguments[i];</span><br><span class="line">    console.log(machsion) // 10 110 310</span><br><span class="line">  &#125;</span><br><span class="line">   var machsionMoney = machsion + myMoney</span><br><span class="line">    console.log(&quot;現在總共儲值”+machsionMoney+”元&quot;)</span><br><span class="line">&#125;</span><br><span class="line">cashMoney(10,100,200,500) // &quot;現在總共儲值810元”</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="function-不固定傳入參數-Variadic-與其餘參數-spread-ES6"><a href="#function-不固定傳入參數-Variadic-與其餘參數-spread-ES6" class="headerlink" title="function 不固定傳入參數(Variadic)與其餘參數(spread) ES6"></a>function 不固定傳入參數(Variadic)與其餘參數(spread) ES6</h1><p><strong>有什麼特性</strong></p>
+<ul>
+<li>在 function 中定義有三個傳入參數，在呼叫函式時傳入的參數值(arguments)沒有預設的情況下會視為 undefined or NaN，或是多出來的情況是會被直接略過</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function sum(x, y, z) &#123;</span><br><span class="line">  return x+y+z</span><br><span class="line">&#125;</span><br><span class="line">console.log(sum(1, 2, 3))      //6</span><br><span class="line">console.log(sum(1, 2))         //NaN</span><br><span class="line">console.log(sum(1, 2, 3, 4))   //6</span><br></pre></td></tr></table></figure>
+<ul>
+<li>改善1 […arguments] 透過變數宣告</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function updateSum()&#123;</span><br><span class="line">  let num = [...arguments]</span><br><span class="line">  let sum = num.reduce(function(item,currItem)&#123;</span><br><span class="line">    return item + currItem</span><br><span class="line">  &#125;,0)</span><br><span class="line">  console.log(sum)</span><br><span class="line">&#125;</span><br><span class="line">updateSum(1,2,3)       // 6</span><br><span class="line">updateSum(1,2)         // 3</span><br><span class="line">updateSum(1,2,3,4)     // 10</span><br></pre></td></tr></table></figure>
+<ul>
+<li>改善 2 (…arg) 透過參數</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function sum2(...arg)&#123;</span><br><span class="line">  let total = 0</span><br><span class="line">  for(let i = 0; i &lt; arg.length; i++)&#123;</span><br><span class="line">    total+= arg[i]</span><br><span class="line">  &#125;</span><br><span class="line">  return total</span><br><span class="line">&#125;</span><br><span class="line">console.log(sum2(1,2,3))   // 6</span><br><span class="line">console.log(sum2(1,2))     // 3</span><br><span class="line">console.log(sum2(1,2,3,4)) // 10</span><br></pre></td></tr></table></figure>
+<p><strong>判斷</strong></p>
+<ul>
+<li>其餘參數 spread (…)<ul>
+<li>(…參數名稱)</li>
+</ul>
+</li>
+<li>spread 只是扮演好參數的角色，代表<font style="color:red;font-size:15px;">不確定的其他參數名稱</font></li>
+<li>如果一個函式中的參數值有其他的確定傳入參數名稱，其餘參數名稱應該要寫在最後一個位子，而且<font style="color:red;font-size:15px;">一個函式只能有一個其餘參數名稱</font></li>
+<li>將類陣列轉為陣列的方式<ul>
+<li>[…spread]</li>
+<li>Array.from()</li>
+</ul>
+</li>
+</ul>
+<p><strong>範例</strong></p>
+<ul>
+<li>其餘參數</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function moreMoney(...money) &#123;</span><br><span class="line">    console.log(money);   // 100, 200, 300,400</span><br><span class="line">&#125;</span><br><span class="line">moreMoney(100, 200, 300,400)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>使用展開語法，合併陣列</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let groupA = [&apos;薯條&apos;, &apos;可樂&apos;, &apos;漢堡&apos;];</span><br><span class="line">let groupB = [&apos;雞排&apos;, &apos;炸雞&apos;];</span><br><span class="line">let groupAll = groupA.concat(groupB)</span><br><span class="line">let groupAll2 = [...groupA,...groupB]</span><br><span class="line">console.log(groupAll)  // [&quot;薯條&quot;, &quot;可樂&quot;, &quot;漢堡&quot;, &quot;雞排&quot;, &quot;炸雞&quot;]</span><br><span class="line">console.log(groupAll2) // [&quot;薯條&quot;, &quot;可樂&quot;, &quot;漢堡&quot;, &quot;雞排&quot;, &quot;炸雞&quot;]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>淺複製 (shallow copy)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let groupA = [&apos;薯條&apos;, &apos;杰倫&apos;, &apos;漢堡&apos;];</span><br><span class="line">let groupB = groupA;</span><br><span class="line">let groupB = [...groupA] // 將值一個一個取出來在 return 回陣列</span><br><span class="line">groupB.push(&apos;阿明&apos;);</span><br><span class="line">console.log(groupA); // [&quot;薯條&quot;, &quot;可樂&quot;, &quot;漢堡&quot;, &quot;阿明&quot;]</span><br><span class="line">console.log(groupB)  // [&quot;薯條&quot;, &quot;可樂&quot;, &quot;漢堡&quot;, &quot;阿明&quot;]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>類陣列 Array.from</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let doms = document.querySelectorAll(&apos;li&apos;);</span><br><span class="line">let doms2 = [...doms]</span><br><span class="line">let doms3 = Array.from(document.querySelectorAll(&apos;li&apos;)) // 轉為陣列</span><br><span class="line">console.log(doms); // NodeList (缺少 array 的方法)</span><br><span class="line">console.log(doms2) // array</span><br><span class="line">console.log(doms3) // array</span><br></pre></td></tr></table></figure>
+<ul>
+<li>類陣列 […arguments]</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var originCash = 1000;</span><br><span class="line">function updateEasyCard() &#123;</span><br><span class="line">let arg = arguments       // arg.reduce is not a function (類陣列沒有 array 的方法)</span><br><span class="line">let arg = [...arguments]  // 轉為陣列</span><br><span class="line">let sum = arg.reduce(function (accumulator, currentValue) &#123;</span><br><span class="line">    return accumulator + currentValue;</span><br><span class="line">    &#125;, 0);</span><br><span class="line">  console.log(&apos;我有 &apos; + sum + &apos; 元&apos;);</span><br><span class="line">&#125;</span><br><span class="line">updateEasyCard(0); // 我有 1000 元</span><br><span class="line">updateEasyCard(10, 50, 100, 50, 5, 1, 1, 1, 500); // 我有 718 元</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>spread 與 arguments 物件的幾個簡單比較</p>
+<ul>
+<li>spread 只是代表其餘的傳入參數值，而 arguments 物件是代表所有傳入的參數值</li>
+<li>其餘參數傳入值是一個標準陣列，可以使用所有的陣列方法</li>
+<li>arguments 是”偽”陣列的物件類型，不能使用陣列的大部份內建方法</li>
+<li>spread 需要定義才能使用，arguments 物件不需要定義即可使用，它是隱藏機制</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="function-遞迴"><a href="#function-遞迴" class="headerlink" title="function 遞迴"></a>function 遞迴</h1><ul>
+<li>函式呼叫函式自己的行為</li>
+<li>通過呼叫函數本身來重複將問題分解為同類的子問題而解決問題的方法</li>
+<li>遞回函式一定記得設定終止條件，否則很容易跳不出來，導致無窮迴圈的情況產生</li>
+<li>遞迴函式會收到兩個輸入：結束遞迴的基本情況（base case）或是延續遞迴的遞迴情況（recursive case)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function foo(x) &#123;</span><br><span class="line">// 基本情況</span><br><span class="line">    if ( x &lt; 5 ) return x</span><br><span class="line">// 遞迴情況</span><br><span class="line">    return foo(x / 2)</span><br><span class="line">&#125;</span><br><span class="line">foo(6)</span><br><span class="line">foo(10)</span><br><span class="line">foo(12)</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Step1</th>
+<th>Step2</th>
+<th>Step3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>foo(6)</td>
+<td>(6 / 2)  return 3</td>
+<td>(3 &lt; 5) return 3</td>
+<td></td>
+</tr>
+<tr>
+<td>foo(10)</td>
+<td>(10 / 2) return 5</td>
+<td>(5 / 2) return 2.5</td>
+<td>(2.5 &lt; 5) return 2.5</td>
+</tr>
+<tr>
+<td>foo(12)</td>
+<td>(12 / 2) return 6</td>
+<td>(6 / 2) return 3</td>
+<td>(3 &lt; 5) return 3</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" <i class="fa fa-tag"> JavaScript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/03/JS-紀錄5-function/" rel="next" title="JS 紀錄5 - function">
+                <i class="fa fa-chevron-left"></i> JS 紀錄5 - function
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概要
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/panda.png" alt="Jimmy Wei">
+            
+              <p class="site-author-name" itemprop="name">Jimmy Wei</p>
+              <div class="site-description motion-element" itemprop="description">光電/程式/工藝/設計/哲學</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">文章</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">分類</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-name">標籤</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/Jimmywei01" title="GitHub &rarr; https://github.com/Jimmywei01" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://www.facebook.com/profile.php?id=100000193194715" title="FB Page &rarr; https://www.facebook.com/profile.php?id=100000193194715" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#IIFE-Immediately-Invoked-Functions-Expressions-立即執行函式"><span class="nav-number">1.</span> <span class="nav-text">IIFE(Immediately Invoked Functions Expressions) - 立即執行函式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#callback-function-heigh-order-function"><span class="nav-number">2.</span> <span class="nav-text">callback function( heigh order function)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#function-傳入參數預設值-ES5-ES6"><span class="nav-number">3.</span> <span class="nav-text">function 傳入參數預設值( || ) ES5 (=)ES6</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#function-無名的傳入參數-arguments"><span class="nav-number">4.</span> <span class="nav-text">function 無名的傳入參數(arguments)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#function-不固定傳入參數-Variadic-與其餘參數-spread-ES6"><span class="nav-number">5.</span> <span class="nav-text">function 不固定傳入參數(Variadic)與其餘參數(spread) ES6</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#function-遞迴"><span class="nav-number">6.</span> <span class="nav-text">function 遞迴</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jimmy Wei</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 強力驅動 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+  
+  <script id="dsq-count-scr" src="https://Jimmywei01.disqus.com/count.js" async></script>
+
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://jimmywei01.github.io/2019/06/04/JS-紀錄6-function-2/";
+    this.page.identifier = "2019/06/04/JS-紀錄6-function-2/";
+    this.page.title = 'JS 紀錄6 - function 2';
+    };
+  function loadComments() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://Jimmywei01.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', '' + +new Date());
+    (d.head || d.body).appendChild(s);
+  }
+  
+    loadComments();
+  
+</script>
+
+
+
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
