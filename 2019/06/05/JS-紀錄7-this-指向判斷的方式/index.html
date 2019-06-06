@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-TW">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-139836366-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-139836366-1');
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/QQ2.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/QQ2.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/QQ2.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/lQQ2.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.1.1',
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+
+  <meta name="description" content="JavaScript this">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS 紀錄7 - this 指向判斷的方式">
+<meta property="og:url" content="https://jimmywei01.github.io/2019/06/05/JS-紀錄7-this-指向判斷的方式/index.html">
+<meta property="og:site_name" content="Jimmy&#39;s Notes">
+<meta property="og:description" content="JavaScript this">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:updated_time" content="2019-06-06T05:41:28.582Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS 紀錄7 - this 指向判斷的方式">
+<meta name="twitter:description" content="JavaScript this">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://jimmywei01.github.io/2019/06/05/JS-紀錄7-this-指向判斷的方式/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>JS 紀錄7 - this 指向判斷的方式 | Jimmy's Notes</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-TW">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Jimmy's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">你可以沒有熱情，但不應該自我設限</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切換導航欄">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首頁</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>標籤</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分類</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>歸檔</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜尋</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜尋..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://jimmywei01.github.io/2019/06/05/JS-紀錄7-this-指向判斷的方式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jimmy Wei">
+      <meta itemprop="description" content="光電/程式/工藝/設計/哲學">
+      <meta itemprop="image" content="/images/panda.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jimmy's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JS 紀錄7 - this 指向判斷的方式<a href="https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name_posts/JS-紀錄7-this-指向判斷的方式.md" class="post-edit-link" title="編輯" rel="noopener" target="_blank"><i class="fa fa-pencil"></i></a>
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+
+              
+                
+              
+
+              <time title="創建時間：2019-06-05 14:22:22" itemprop="dateCreated datePublished" datetime="2019-06-05T14:22:22+08:00">2019-06-05</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新於</span>
+                
+                <time title="修改時間：2019-06-06 13:41:28" itemprop="dateModified" datetime="2019-06-06T13:41:28+08:00">2019-06-06</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">評論數：</span>
+                <a href="/2019/06/05/JS-紀錄7-this-指向判斷的方式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/06/05/JS-紀錄7-this-指向判斷的方式/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote class="blockquote-center"><p>JavaScript this</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="this-是什麼？"><a href="#this-是什麼？" class="headerlink" title="this 是什麼？"></a>this 是什麼？</h1><ul>
+<li>this 用來 <font style="color:red;font-size:15px;">‘傳遞’</font> 一個 object 的引用</li>
+<li>function 呼叫方法會影響 this</li>
+<li>在同個範圍(global,function)裡面傳遞不同的東西(物件,變數)</li>
+</ul>
+<h1 id="this-判定方式"><a href="#this-判定方式" class="headerlink" title="this 判定方式"></a>this 判定方式</h1><ul>
+<li>判斷函數被調用時 this 指向誰，立馬看 ( ) 左邊的部分<ul>
+<li>如果 ( ) 左邊是一個引用(參照)，那麼函數 this 指向的就是這個引用所屬的對象</li>
+<li>否則 this 指向的就是全局對象(global)</li>
+<li>this 會因執行的環境與上下文 (context) 的不同，而有不同的結果</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var foo = &#123;</span><br><span class="line">    baz: function() &#123;</span><br><span class="line">        console.log(this);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">foo.baz();    // foo object，() 左邊是 baz，baz 屬於 foo，所以指向 foo</span><br><span class="line"></span><br><span class="line">var anotherBaz = foo.baz;</span><br><span class="line">anotherBaz(); // window ，() 左邊是 anotherBaz，anotherBaz 屬於 window，所以這個指向 window</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>context 是什麼？</p>
+<ul>
+<li>函式在被呼叫執行時，所處的物件環境</li>
+</ul>
+</li>
+<li><p>‘use strict’</p>
+<ul>
+<li>在<font style="color:red;font-size:15px;">非嚴格模式</font>下，this 的內容就會是<font style="color:red;font-size:15px;">global 物件</font> </li>
+<li>在<font style="color:red;font-size:15px;">嚴格模式</font>下，this 的內容就會是 <font style="color:red;font-size:15px;">undefined</font> </li>
+</ul>
+</li>
+</ul>
+<h1 id="有什麼方法"><a href="#有什麼方法" class="headerlink" title="有什麼方法"></a>有什麼方法</h1><ul>
+<li>默認綁定 Global Object (Window 物件)</li>
+<li>隱式綁定 函數功能(function)</li>
+<li>顯式綁定 (call、apply、bind) </li>
+<li>建構式綁定(constructor)</li>
+<li>DOM</li>
+</ul>
+<h1 id="方法有什麼效果"><a href="#方法有什麼效果" class="headerlink" title="方法有什麼效果"></a>方法有什麼效果</h1><h2 id="默認綁定-Global-Object-Window-物件"><a href="#默認綁定-Global-Object-Window-物件" class="headerlink" title="默認綁定 Global Object (Window 物件)"></a>默認綁定 Global Object (Window 物件)</h2><ul>
+<li>不加任何的修飾符直接調用函數</li>
+<li>瀏覽器的執行環境下，global object 指的就是 Window 物件</li>
+<li>NodeJS 的執行環境下，global object 指的就是 Global 物件</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">console.log(this)  // Window</span><br><span class="line"></span><br><span class="line">/*----------------------------------</span><br><span class="line">function statement() &#123;</span><br><span class="line">    console.log(this);</span><br><span class="line">&#125;</span><br><span class="line">statement(); // Window</span><br><span class="line"></span><br><span class="line">/*----------------------------------</span><br><span class="line">let expression = function() &#123;</span><br><span class="line">console.log(this);</span><br><span class="line">&#125;</span><br><span class="line">expression(); // Window</span><br><span class="line"></span><br><span class="line">/*----------------------------------</span><br><span class="line">function statement() &#123;</span><br><span class="line">&apos;use strict&apos;</span><br><span class="line">console.log(this);</span><br><span class="line">&#125;</span><br><span class="line">statement(); // undefined</span><br></pre></td></tr></table></figure>
+<h2 id="隱式綁定-函數功能-function"><a href="#隱式綁定-函數功能-function" class="headerlink" title="隱式綁定 函數功能(function)"></a>隱式綁定 函數功能(function)</h2><ul>
+<li>呼叫的物件不同，所以執行的結果也會不同</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">// 回到上一層 this = widows 在指定到 a,b</span><br><span class="line">let people = function()&#123;</span><br><span class="line">  return this.name  // this 代表的是 function 執行時所屬的物件</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 回到上一層 this = widows 在指定到 a</span><br><span class="line">let people = function()&#123;</span><br><span class="line">  return a.name  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let a =&#123;</span><br><span class="line">  name:&apos;Jimmy&apos;,</span><br><span class="line">  people:people</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let b = &#123;</span><br><span class="line">  name:&apos;Amy&apos;,</span><br><span class="line">  people:people</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 在函數中 this 的指向改變了 ，所以 this 不是靜態的 </span><br><span class="line">console.log(a.people()) // “Jimmy” &quot;Jimmy&quot;</span><br><span class="line">console.log(b.people()) // “Jimmy” “Amy&quot;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>物件在指向的時候是 by reference 的方式</li>
+<li>window   錯誤 - 在物件方法內再建立方法(function)時，物件屬性值指向 window 並經由 scop china 找到上一層的物件屬性值 所以 再次設定的物件屬性不會等於正確設定的屬性值</li>
+<li><p>可由 let self = this , let that = this  來設定取代 </p>
+</li>
+<li><p>一般寫法</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">// f1 function 執行完後離開 execution stack ，所以在執行 f2 function 會指定到 window</span><br><span class="line">let o = &#123;</span><br><span class="line">  f1: function () &#123;</span><br><span class="line">    console.log(this);      // object</span><br><span class="line">    let f2 = function () &#123;</span><br><span class="line">      console.log(this);    // window </span><br><span class="line">    &#125;();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">o.f1()</span><br><span class="line"></span><br><span class="line">/*----------------------------------</span><br><span class="line">// 在第二個 function 定義 this 還是 window (function in function)</span><br><span class="line">let o = &#123;</span><br><span class="line">  f1: function() &#123;</span><br><span class="line">    console.log(this);      // object</span><br><span class="line">    let f2 = function() &#123;</span><br><span class="line">      let self = this</span><br><span class="line">      console.log(self);    // window  錯誤</span><br><span class="line">    &#125;();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">o.f1()</span><br><span class="line"></span><br><span class="line">/*----------------------------------</span><br><span class="line">// 固定變數的 this 值必須在第一個 function 定義 </span><br><span class="line">let o = &#123;</span><br><span class="line">  f1: function() &#123;</span><br><span class="line">    let self = this</span><br><span class="line">    console.log(self);      // object</span><br><span class="line">    let f2 = function() &#123;</span><br><span class="line">      console.log(self);    // object  正確</span><br><span class="line">    &#125;();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">o.f1()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>嚴格模式 ‘use strict’</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">// 嚴格模式 不允許使用內層 this</span><br><span class="line">let o = &#123;</span><br><span class="line">  f1: function () &#123;</span><br><span class="line">    &apos;use strict&apos;</span><br><span class="line">    console.log(this);      // object</span><br><span class="line">    let f2 = function () &#123;</span><br><span class="line">      console.log(this);    // undefined</span><br><span class="line">    &#125;();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">o.f1()</span><br><span class="line"></span><br><span class="line">/*----------------------------------</span><br><span class="line">// 若在 嚴格模式 使用內層 this 要在第一個 function 定義</span><br><span class="line">let o = &#123;</span><br><span class="line">  f1: function() &#123;</span><br><span class="line">    &apos;use strict&apos;</span><br><span class="line">    let self = this</span><br><span class="line">    console.log(self);      // object</span><br><span class="line">    let f2 = function() &#123;</span><br><span class="line">      console.log(self);    // object</span><br><span class="line">    &#125;();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">o.f1()</span><br><span class="line"></span><br><span class="line">/*----------------------------------</span><br><span class="line">// 使用嚴格模式在 forEach 中內層 this 不會指向外部 this，而指向 undefined</span><br><span class="line">let obj =&#123;</span><br><span class="line">  name:&apos;jan&apos;,</span><br><span class="line">  friends:[&apos;Tarzan&apos;,&apos;Cheeta&apos;],</span><br><span class="line">  loop:function()&#123;</span><br><span class="line">    &apos;use strict&apos;</span><br><span class="line">    console.log(this)                           //object</span><br><span class="line">    this.friends.forEach(function(friends)&#123;</span><br><span class="line">      console.log(this)                         // undefined</span><br><span class="line">      console.log(this.name+&apos; knows &apos;+friends)  // error</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.loop()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>解法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">// 解法1.指定變數給 this</span><br><span class="line">let obj =&#123;</span><br><span class="line">  name:&apos;jan&apos;,</span><br><span class="line">  friends:[&apos;Tarzan&apos;,&apos;Cheeta&apos;],</span><br><span class="line">  loop:function()&#123;</span><br><span class="line">    &apos;use strict&apos;</span><br><span class="line">    let self = this</span><br><span class="line">    console.log(self)                         // object</span><br><span class="line">    self.friends.forEach(function(friends)&#123;</span><br><span class="line">      console.log(self)                       // object</span><br><span class="line">      console.log(self.name+&apos; knows &apos;+friends)</span><br><span class="line">      //jan knows Tarzan</span><br><span class="line">      //jan knows Cheeta</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.loop()</span><br><span class="line"></span><br><span class="line">/*----------------------------------</span><br><span class="line">// 解法2.用 callback function 的特性 [, thisArg] 來指定 this 值</span><br><span class="line">let obj =&#123;</span><br><span class="line">  name:&apos;jan&apos;,</span><br><span class="line">  friends:[&apos;Tarzan&apos;,&apos;Cheeta&apos;],</span><br><span class="line">  loop:function()&#123;</span><br><span class="line">    &apos;use strict&apos;</span><br><span class="line">    console.log(this)                         // object</span><br><span class="line">    this.friends.forEach(function(friends)&#123;</span><br><span class="line">      console.log(this)                       // object</span><br><span class="line">      console.log(this.name+&apos; knows &apos;+friends)</span><br><span class="line">      //jan knows Tarzan</span><br><span class="line">      //jan knows Cheeta</span><br><span class="line">    &#125;,this)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.loop()</span><br><span class="line"></span><br><span class="line">/*----------------------------------</span><br><span class="line">// 解法3.用 bind 強制內層 this 指定為外層 object  </span><br><span class="line">var obj =&#123;</span><br><span class="line">  name:&apos;jan&apos;,</span><br><span class="line">  friends:[&apos;Tarzan&apos;,&apos;Cheeta&apos;],</span><br><span class="line">  loop:function()&#123;</span><br><span class="line">    &apos;use strict&apos;</span><br><span class="line">    console.log(this)                         //object</span><br><span class="line">    this.friends.forEach(function(friends)&#123;</span><br><span class="line">      console.log(this)                       //object</span><br><span class="line">      console.log(this.name+&apos; knows &apos;+friends)</span><br><span class="line">      //jan knows Tarzan</span><br><span class="line">      //jan knows Cheeta</span><br><span class="line">    &#125;.bind(this))</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.loop()</span><br></pre></td></tr></table></figure>
+<h2 id="顯式綁定-call、apply、bind"><a href="#顯式綁定-call、apply、bind" class="headerlink" title="顯式綁定 (call、apply、bind)"></a>顯式綁定 (call、apply、bind)</h2><ul>
+<li>為什麼要用 顯示綁定？<ul>
+<li>callback function 中的 this 往往會改變指向，造成不是我們要的結果</li>
+<li>明確(強制)指定要執行 function 中的 this 是什麼，就不用透過另一個變數來暫存 this 的方式來獲取</li>
+</ul>
+</li>
+</ul>
+<h3 id="function-method"><a href="#function-method" class="headerlink" title="function method"></a>function method</h3><ul>
+<li>call<ul>
+<li><code>function.call (thisArg, arg1, arg2, ...)</code></li>
+<li>提供的 this 值與傳入參數值(arguments)傳進目標函式</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>apply<ul>
+<li><code>function.apply (thisArg, [argsArray])</code></li>
+<li>this 值傳入外，另一個傳入參數值使用 array</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>call apply 兩者共通<ul>
+<li>重新定義函數的執行環境(this)</li>
+<li>使用在 context <font style="color:red;font-size:15px;">較常變動的場景</font>，依照呼叫時的需要帶入不同物件作為該 function 的 this </li>
+<li>thisArg 可以指定為 null，this 指向為 window</li>
+<li>呼叫的當下就立即執行</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>call apply 差異<ul>
+<li>傳入參數的形式不同</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">貓吃魚，狗吃肉，有一天貓不僅想吃肉，還想吃豬肉牛肉羊肉</span><br><span class="line"></span><br><span class="line">// function.call(thisArg, arg1, arg2, ...)</span><br><span class="line">狗.吃肉.call(貓，豬肉，牛肉，羊肉)</span><br><span class="line"></span><br><span class="line">// function.apply(thisArg, [argsArray])</span><br><span class="line">狗.吃肉.apply(貓, [豬肉, 牛肉, 羊肉])</span><br></pre></td></tr></table></figure>
+<ul>
+<li>以 DOM 來看 call 和 apply 可以用來重新定義函數的執行環境(this的指向)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function changeStyle(attr, value)&#123;</span><br><span class="line">// 自定義屬性</span><br><span class="line">    this.style[attr] = value;</span><br><span class="line">&#125;</span><br><span class="line">console.log(this)       // window</span><br><span class="line">let box = document.getElementById(&apos;box’);</span><br><span class="line"></span><br><span class="line">window.changeStyle.call(box, &quot;height&quot;, &quot;200px&quot;);</span><br><span class="line">console.log(box)        // [object HTMLDivElement]</span><br><span class="line"></span><br><span class="line">window.changeStyle.apply(box, [&apos;height&apos;, &apos;200px&apos;]);</span><br><span class="line">console.log(box)        // [object HTMLDivElement]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>thisArg 可以指定為 null，this 指向為 window</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function add(a,b)&#123;</span><br><span class="line">  console.log(a+b)</span><br><span class="line">  console.log(this)</span><br><span class="line">&#125;</span><br><span class="line">add(5,3)              // 8 window</span><br><span class="line">add.call(null,5,3)    // 8 window</span><br><span class="line">add.apply(null,[5,3]) // 8 window</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Math 中用 apply 把 array 當參數傳入直接求 array 中最大值，不用自己去遍歷求值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let arr = (6,3,2,8,9)</span><br><span class="line">console.log(this)   // window</span><br><span class="line">let max = Math.max.call(null, arr);</span><br><span class="line">console.log(max)    // 9</span><br></pre></td></tr></table></figure>
+<ul>
+<li>bind<ul>
+<li><code>function.bind (thisArg[, arg1[, arg2[, ...]]])</code> <ul>
+<li>前者為套用 this 的物件，後者以後都是 function 的參數</li>
+</ul>
+</li>
+<li>使用 bind <font style="color:red;font-size:15px;">寫死要綁定的物件</font>，可避免函式呼叫時退回到預設綁定</li>
+<li>執行 function 前，綁定指定的物件這樣 this 就會是這個物件</li>
+<li>新函式在呼叫時，建立一個新函式提供的 this 值與一連串的傳入參數值來進行呼叫，不需要參數則不要傳入即可</li>
+<li>常用在像是 callback function 這種類型，可以先綁定好 this，然後讓 function 在需要時才被呼叫</li>
+<li>不會立即執行</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">  msg:&apos;Hi!&apos;</span><br><span class="line">&#125;</span><br><span class="line">// 綁定指定的物件 this</span><br><span class="line">setTimeout(function() &#123;</span><br><span class="line">  console.log(this.msg);  // &quot;Hi!&quot;</span><br><span class="line">&#125;.bind(obj), 2000);</span><br><span class="line"></span><br><span class="line">//-------------------------</span><br><span class="line">let cat = &#123;</span><br><span class="line">  name: &apos;Hello Kitty&apos;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">let dog = &#123;</span><br><span class="line">  name: &apos;Snoopy&apos;</span><br><span class="line">&#125;;</span><br><span class="line">// 新函式提供的 this 值</span><br><span class="line">function sayHi() &#123;</span><br><span class="line">  console.log(&apos;Hello, I am &apos; + this.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sayHi.bind(cat)(); // &quot;Hello, I am Hello Kitty&quot;</span><br><span class="line">sayHi.bind(dog)(); // &quot;Hello, I am Snoopy&quot;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>硬綁定(hard binding)是指使用 bind 寫死要綁定的物件，可避免函式呼叫時退回到預設綁定</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">在 bind(foo, obj) 中，將 foo 的 this 強制指定為 obj，並將結果指定給 bar，</span><br><span class="line">因此當執行 bar(3) 時，this.a 對 obj 查找屬性 a（找到為 2，並非退回到全域範疇）</span><br><span class="line">且加上傳入的數字 3，而得到結果 b 為 5</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">function foo(something) &#123;</span><br><span class="line">  console.log(this.a, something);</span><br><span class="line">  return this.a + something;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 簡易的綁定 this 的 helper</span><br><span class="line">function bind(fn, obj) &#123;</span><br><span class="line">  return function() &#123;</span><br><span class="line">    return fn.apply(obj, arguments);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var obj = &#123;</span><br><span class="line">  a: 2</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 寫死要綁定的物件</span><br><span class="line">var bar = bind(foo, obj);</span><br><span class="line">var b = bar(3); // 2 3</span><br><span class="line">console.log(b); // 5</span><br></pre></td></tr></table></figure>
+<h2 id="function-currying"><a href="#function-currying" class="headerlink" title="function currying"></a>function currying</h2><ul>
+<li>類似預設參數</li>
+<li>將接受 n 個參數的 function，轉變成 n 個到只接受一個參數的 function 過程</li>
+<li>簡化參數的處理，基本上是一次處理一個參數，藉以提高程式的彈性和可讀性</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">// setTimeout function 的 this 指向為 window</span><br><span class="line">setTimeout(function()&#123;</span><br><span class="line">  console.log(this) // window</span><br><span class="line">&#125;, 1000);</span><br><span class="line"></span><br><span class="line">/*----------------------------------</span><br><span class="line">// 在 myobj 裡面不是指向 obj 而是 window 造成呼叫時 undefined 找不到結果</span><br><span class="line">var myObj = &#123;</span><br><span class="line">  id: &quot;rettamkrad&quot;,</span><br><span class="line">  printId: function() &#123;</span><br><span class="line">    console.log(&apos;The id is &apos;+ this.id + &apos; &apos;+ this.toString());</span><br><span class="line">    console.log(this)                         // window object object</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">setTimeout(myObj.printId, 100); </span><br><span class="line">// &quot;The id is undefined [object Window]”</span><br><span class="line"></span><br><span class="line">setTimeout(myObj.printId.bind(myObj), 100);   // bind 寫法</span><br><span class="line">// &quot;The id is rettamkrad [object Object]”</span><br><span class="line"></span><br><span class="line">setTimeout(function()&#123;myObj.printId()&#125;, 100); // closure (IIFE)寫法</span><br><span class="line">// &quot;The id is rettamkrad [object Object]”</span><br></pre></td></tr></table></figure>
+<ul>
+<li>實例</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">// function currying  </span><br><span class="line">function add(a, b) &#123;</span><br><span class="line">  return a + b;</span><br><span class="line">&#125;</span><br><span class="line">let add1 = add.bind(null, 1);</span><br><span class="line">console.log(add1(2));    // 3</span><br><span class="line">console.log(add1(4));    // 5</span><br><span class="line"></span><br><span class="line">/*----------------------------------</span><br><span class="line">// function borrowing</span><br><span class="line">// bind,call,apply 借用 person 物件裡面 fullname 這個 method</span><br><span class="line">var person = &#123;</span><br><span class="line">  firstname:&apos;Jimmy&apos;,</span><br><span class="line">  lastname:&apos;Wei&apos;,</span><br><span class="line">  fullname: function(firstname,lastname)&#123;</span><br><span class="line">      console.log(this)</span><br><span class="line">      var name = this.firstname+&quot; &quot;+this.lastname</span><br><span class="line">      return name;  </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// person2 屬性值傳入 person 的 fullname method</span><br><span class="line">var person2 = &#123;</span><br><span class="line"> firstname: &apos;Chien-Ming&apos;,</span><br><span class="line"> lastname: &apos;Wang&apos;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// holiday 取用 person 的 fullname method</span><br><span class="line">var holiday = function(location1,location2)&#123;</span><br><span class="line">  console.log(&apos;log: &apos;+this.fullname()) // 取用 person method</span><br><span class="line">  console.log(&apos;assion: &apos;+location1+&quot; &quot;+location2)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// this = object person</span><br><span class="line">// &quot;log: Jimmy Wei&quot;</span><br><span class="line">// &quot;assion: taiwan japan&quot;</span><br><span class="line">// &quot;assion: londan taiwan&quot;</span><br><span class="line">// &quot;assion: usa taiwan&quot;</span><br><span class="line">holiday.call(person,&apos;taiwan&apos;,&apos;japan&apos;)</span><br><span class="line">holiday.apply(person,[&apos;londan&apos;,&apos;taiwan&apos;])</span><br><span class="line">holiday.bind(person,&apos;usa&apos;,&apos;taiwan&apos;)()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// person2 跟 person 調用 method</span><br><span class="line">// this = object person2</span><br><span class="line">// &quot;Chien-Ming Wang”</span><br><span class="line">console.log(person.fullname.call(person2))</span><br><span class="line">console.log(person.fullname.apply(person2))</span><br><span class="line">console.log(person.fullname.bind(person2)())</span><br></pre></td></tr></table></figure>
+<h2 id="建構式綁定-constructor-物件產生時會被呼叫的方法"><a href="#建構式綁定-constructor-物件產生時會被呼叫的方法" class="headerlink" title="建構式綁定(constructor 物件產生時會被呼叫的方法)"></a>建構式綁定(constructor 物件產生時會被呼叫的方法)</h2><ul>
+<li>new constructor[([arguments])] </li>
+<li>這個新建構的物件 this 會指向新建構的物件</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">let x = 2;</span><br><span class="line">function test(x) &#123;</span><br><span class="line">  this.x = x || 1   // 預設參數 1</span><br><span class="line">  console.log(this) // object</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var obj = new test();</span><br><span class="line">var obj2 = new test(3);</span><br><span class="line">console.log(x)      // 2</span><br><span class="line">console.log(obj.x)  // 1 object</span><br><span class="line">console.log(obj2.x) // 3 object</span><br></pre></td></tr></table></figure>
+<h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><ul>
+<li>元素觸發事件，this 就指向那個元素</li>
+<li>DOM 調用 function 就如同物件調用 function，所以此 this 所指向的則是該 DOM</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function doAlert() &#123; </span><br><span class="line">  console.log(this) // window  </span><br><span class="line">  console.log(this.innerHTML)            // undefined </span><br><span class="line">&#125; </span><br><span class="line">doAlert(); </span><br><span class="line"></span><br><span class="line">let myElem = document.querySelector(&apos;#test&apos;); </span><br><span class="line">myElem.onclick = doAlert;</span><br><span class="line">console.log(myElem.onclick === doAlert); // true </span><br><span class="line">myElem.onclick();                        // I am an element object</span><br></pre></td></tr></table></figure>
+<h2 id="比較優先順序"><a href="#比較優先順序" class="headerlink" title="比較優先順序"></a>比較優先順序</h2><ul>
+<li>顯式綁定和建構式綁定無法直接比較(會報錯)</li>
+<li>匹配的優先順序由 <font style="color:blue;font-size:15px;">高至低</font>排列<ul>
+<li><font style="color:red;font-size:15px;">建構式綁定</font>：this 會指向 new 出來的物件</li>
+<li><font style="color:red;font-size:15px;">顯示綁定</font>：使用 call、apply、bind，明確指出要綁定給 this 的物件</li>
+<li><font style="color:red;font-size:15px;">隱式綁定</font>：當函式為物件的方法（method）時，在執行階段 this 就會被綁定至該物件</li>
+<li><font style="color:red;font-size:15px;">預設綁定</font>：當其他規則都不適用時，沒有使用 bind、call、apply 或不屬於任何物件的 method，就套用預設綁定，在<font style="color:red;font-size:15px;">非嚴格</font>下，瀏覽器環境 this 的值就是預設值<code>全域物件 window</code>，而在<font style="color:red;font-size:15px;">嚴格模式</font>下，this 的值就是 <code>undefined</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h1><ul>
+<li>this 代表的是 function 執行時所屬的物件</li>
+<li>判斷函數被調用時 this 指向誰，立馬看 ( )左邊的部分</li>
+<li>function 內用嚴格模式下，默認的 this 就是 undefined</li>
+<li>可由 let self = this , let that = this 來設定變數取代 this</li>
+<li>call、apply、bind 明確(強制)指定要執行 function 中的 this 是什麼，不用設定變數</li>
+<li>new 綁定這個新建構的物件 this 會指向新建構的物件</li>
+<li>DOM 元素觸發事件，this 就指向那個元素</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>執行方式</th>
+<th>範例語法</th>
+<th>this等於</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Global</td>
+<td>this</td>
+<td>Global object (eg. window) </td>
+</tr>
+<tr>
+<td>Global Function</td>
+<td>foo()</td>
+<td>Global object </td>
+</tr>
+<tr>
+<td>Object Function</td>
+<td>myObject.foo()</td>
+<td>myObject </td>
+</tr>
+<tr>
+<td>Function using call</td>
+<td>foo.call(myCall,myArg)</td>
+<td>myCall </td>
+</tr>
+<tr>
+<td>Function using apply</td>
+<td>foo.apply(myCall,[myArgs])</td>
+<td>myApply </td>
+</tr>
+<tr>
+<td>Constructor Function</td>
+<td>var newObj = new foo()</td>
+<td>newObj </td>
+</tr>
+<tr>
+<td>Evaluation</td>
+<td>eval(thing_to_eval)</td>
+<td>等同eval層級 </td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>顯式綁定</th>
+<th>bind</th>
+<th>call</th>
+<th>apply</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>適用狀況</td>
+<td>在執行前先綁定物件做為該 function 的 this，需要時才被呼叫<font style="color:red;font-size:15px;">不會立即執行</font></td>
+<td>依照呼叫時的需要帶入不同的物件作為該 function 的 this，在呼叫的當下就<font style="color:red;font-size:15px;">立即執行</font></td>
+<td>與 call 相同 </td>
+</tr>
+<tr>
+<td>傳參數的方式</td>
+<td>代入指定的物件 <code>func.bind (thisArg[, arg1[, arg2[, ...]]])</code></td>
+<td>參數需要一個一個指定 <code>function.call (thisArg, arg1, arg2, ...)</code></td>
+<td>參數使用陣列傳入 <code>function.apply (thisArg, [argsArray])</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="element-addEventListener-中使用-this-＆-e-target-＆-e-currentTarget-差異"><a href="#element-addEventListener-中使用-this-＆-e-target-＆-e-currentTarget-差異" class="headerlink" title="element.addEventListener 中使用 this ＆ e.target ＆ e.currentTarget 差異"></a>element.addEventListener 中使用 this ＆ e.target ＆ e.currentTarget 差異</h2><ul>
+<li>this 總是會拿到被監聽的對象本身，也就是 element.addEventListener(<eventhandler>) 的 element</eventhandler></li>
+<li>e.currentTarget === this</li>
+<li>e.target 則是指事件被觸發時的對象，有可能不是 element 本身</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;hero&quot;&gt;</span><br><span class="line">&lt;h1 contenteditable&gt;🔥WOAH!&lt;/h1&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">const hero = document.querySelector(&apos;.hero&apos;)</span><br><span class="line">hero.addEventListener(&apos;mousemove&apos;, moveShadow)</span><br><span class="line"></span><br><span class="line">function moveShadow (e) &#123;</span><br><span class="line">    console.log(&apos;this&apos;, this)  // 回傳的一定是 &quot;.hero”</span><br><span class="line">    console.log(&apos;currentTarge&apos;, e.currentTarget) </span><br><span class="line">// 等同於this</span><br><span class="line">// &lt;div class=&quot;hero&quot;&gt;</span><br><span class="line">// &lt;h1 contenteditable&gt;🔥WOAH!&lt;/h1&gt;</span><br><span class="line">// &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    console.log(’target&apos;, e.target) </span><br><span class="line">// 回傳的可能是 &quot;.hero&quot; 也可能是 “h1” </span><br><span class="line">// &lt;h1 contenteditable&gt;🔥WOAH!&lt;/h1&gt; 回傳元素裡面的內容</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" <i class="fa fa-tag"> JavaScript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/04/JS-紀錄6-function-2/" rel="next" title="JS 紀錄6 - function 2">
+                <i class="fa fa-chevron-left"></i> JS 紀錄6 - function 2
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概要
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/panda.png" alt="Jimmy Wei">
+            
+              <p class="site-author-name" itemprop="name">Jimmy Wei</p>
+              <div class="site-description motion-element" itemprop="description">光電/程式/工藝/設計/哲學</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-name">文章</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">分類</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-name">標籤</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/Jimmywei01" title="GitHub &rarr; https://github.com/Jimmywei01" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://www.facebook.com/profile.php?id=100000193194715" title="FB Page &rarr; https://www.facebook.com/profile.php?id=100000193194715" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#this-是什麼？"><span class="nav-number">1.</span> <span class="nav-text">this 是什麼？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#this-判定方式"><span class="nav-number">2.</span> <span class="nav-text">this 判定方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#有什麼方法"><span class="nav-number">3.</span> <span class="nav-text">有什麼方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法有什麼效果"><span class="nav-number">4.</span> <span class="nav-text">方法有什麼效果</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#默認綁定-Global-Object-Window-物件"><span class="nav-number">4.1.</span> <span class="nav-text">默認綁定 Global Object (Window 物件)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隱式綁定-函數功能-function"><span class="nav-number">4.2.</span> <span class="nav-text">隱式綁定 函數功能(function)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#顯式綁定-call、apply、bind"><span class="nav-number">4.3.</span> <span class="nav-text">顯式綁定 (call、apply、bind)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#function-method"><span class="nav-number">4.3.1.</span> <span class="nav-text">function method</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#function-currying"><span class="nav-number">4.4.</span> <span class="nav-text">function currying</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建構式綁定-constructor-物件產生時會被呼叫的方法"><span class="nav-number">4.5.</span> <span class="nav-text">建構式綁定(constructor 物件產生時會被呼叫的方法)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM"><span class="nav-number">4.6.</span> <span class="nav-text">DOM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#比較優先順序"><span class="nav-number">4.7.</span> <span class="nav-text">比較優先順序</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#結論"><span class="nav-number">5.</span> <span class="nav-text">結論</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#element-addEventListener-中使用-this-＆-e-target-＆-e-currentTarget-差異"><span class="nav-number">5.1.</span> <span class="nav-text">element.addEventListener 中使用 this ＆ e.target ＆ e.currentTarget 差異</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jimmy Wei</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 強力驅動 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.1"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.1"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+  
+  <script id="dsq-count-scr" src="https://Jimmywei01.disqus.com/count.js" async></script>
+
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://jimmywei01.github.io/2019/06/05/JS-紀錄7-this-指向判斷的方式/";
+    this.page.identifier = "2019/06/05/JS-紀錄7-this-指向判斷的方式/";
+    this.page.title = 'JS 紀錄7 - this 指向判斷的方式';
+    };
+  function loadComments() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://Jimmywei01.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', '' + +new Date());
+    (d.head || d.body).appendChild(s);
+  }
+  
+    loadComments();
+  
+</script>
+
+
+
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
