@@ -129,7 +129,7 @@
 <meta property="og:image" content="https://jimmywei01.github.io/2019/06/19/瀏覽器跟伺服器要資料發生的事情/205-1.png">
 <meta property="og:image" content="https://jimmywei01.github.io/2019/06/19/瀏覽器跟伺服器要資料發生的事情/206-1.png">
 <meta property="og:image" content="https://jimmywei01.github.io/2019/06/19/瀏覽器跟伺服器要資料發生的事情/207-1.png">
-<meta property="og:updated_time" content="2019-06-20T07:02:02.652Z">
+<meta property="og:updated_time" content="2019-06-20T07:57:31.051Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="瀏覽器跟伺服器要資料發生的事情">
 <meta name="twitter:description" content="瀏覽器的內部運作機制">
@@ -444,7 +444,7 @@
                 
                   <span class="post-meta-item-text">更新於</span>
                 
-                <time title="修改時間：2019-06-20 15:02:02" itemprop="dateModified" datetime="2019-06-20T15:02:02+08:00">2019-06-20</time>
+                <time title="修改時間：2019-06-20 15:57:31" itemprop="dateModified" datetime="2019-06-20T15:57:31+08:00">2019-06-20</time>
               
             
           </span>
@@ -823,7 +823,7 @@
 <li>每個動作最好在 16 ms 內更新，因為多數裝置會以 每秒 60 次 重新整理螢幕</li>
 </ul>
 <h1 id="總結"><a href="#總結" class="headerlink" title="總結"></a>總結</h1><h2 id="當在瀏覽器輸入一個網址，中間會發生什麼事？"><a href="#當在瀏覽器輸入一個網址，中間會發生什麼事？" class="headerlink" title="當在瀏覽器輸入一個網址，中間會發生什麼事？"></a>當在瀏覽器輸入一個網址，中間會發生什麼事？</h2><ul>
-<li>瀏覽器發出一個 get 請求，會先進行 DNS 解析看 IP 在哪裡， 在由 TCP / IP 三次握手進行雙向溝通，發出 request，response TCP 封包獲得 200 ok，如果有其他 request 需要會在發送請求給伺服器後再回傳 200 ok，最後再渲染，在渲染過程中如果是 HTML 會先 parser，CSS 會 parser 為 style tree 在合在一起變成 layout 在 pain 上去合成，完成後四次揮手結束連線</li>
+<li>瀏覽器發出一個 get 請求，會先進行 DNS 解析看 IP 在哪裡， 在由 TCP / IP 三項交握進行雙向溝通，發出 request，response TCP 封包獲得 200 ok，如果有其他 request 需要會在發送請求給伺服器後再回傳 200 ok，最後再渲染，在渲染過程中如果是 HTML 會先 parser，CSS 會 parser 為 style tree 在合在一起變成 layout 在 pain 上去合成，完成後四次揮手結束連線</li>
 </ul>
 <h2 id="HTTPS-amp-HTTP-差異"><a href="#HTTPS-amp-HTTP-差異" class="headerlink" title="HTTPS &amp; HTTP 差異"></a>HTTPS &amp; HTTP 差異</h2><ul>
 <li>HTTPS <ul>
